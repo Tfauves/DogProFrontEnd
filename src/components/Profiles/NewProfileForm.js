@@ -4,7 +4,7 @@ import Form from '../common/Form';
 import InlineInputContainer from '../common/InlineInputContainer';
 import Input from '../common/Input';
 
-const NewUserForm = (props) => {
+const NewProfileForm = (props) => {
   const {query, updateForm, onSubmit} = props;
 
   const handleChange = (e) => {
@@ -25,19 +25,19 @@ const NewUserForm = (props) => {
     >
       <InlineInputContainer>
         <Input
-          id="fname"
-          placeholder="First Name"
+          id="name"
+          placeholder="Name"
           onChange={handleChange}
           value={query.fname}
         />
-        <Input
+        {/* <Input
           id="lname"
           placeholder="Last Name"
           onChange={handleChange}
           value={query.lname}
-        />
+        /> */}
       </InlineInputContainer>
-      <InlineInputContainer>
+      {/* <InlineInputContainer>
         <Input
           id="username"
           placeholder="Email address"
@@ -45,8 +45,8 @@ const NewUserForm = (props) => {
           onChange={handleChange}
           value={query.username}
         />
-      </InlineInputContainer>
-      <InlineInputContainer>
+      </InlineInputContainer> */}
+      {/* <InlineInputContainer>
         <Input
           id="password"
           placeholder="Password"
@@ -61,7 +61,7 @@ const NewUserForm = (props) => {
           onChange={handleChange}
           value={query.confirm}
         />
-      </InlineInputContainer>
+      </InlineInputContainer> */}
       {/* <InlineInputContainer>
         <Input
           id="cohort"
@@ -77,4 +77,4 @@ const NewUserForm = (props) => {
 
 }
 
-export default NewUserForm;
+export default NewProfileForm;

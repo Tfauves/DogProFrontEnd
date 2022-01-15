@@ -6,7 +6,7 @@ const Input = (props) => {
       <input
         style={
           props.error
-            ? // DR: Had to change 'style' to 'styles'.
+            ? 
               { ...styles.inputError, ...props.errorStyle }
             : { ...styles.input, ...props.style }
         }

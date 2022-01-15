@@ -1,10 +1,10 @@
 import React, {useState, useContext} from 'react';
 import axios from 'axios';
-import {AuthContext} from '../Providers/AuthProvider';
 import {useNavigate} from 'react-router-dom';
-import LoginForm from './LoginForm';
+import NewProfileForm from './NewProfileForm';
 
-const Login = () => {
+
+const NewProfile = () => {
 
   const [query, setQuery] = useState({
     username: '',
@@ -13,8 +13,7 @@ const Login = () => {
   const [submitting, setSubmitting] = useState(false);
   // const [errors, setErrors] = useState({});
   const navigate = useNavigate();
-  const [auth, setAuth] = useContext(AuthContext);
-
+ 
   const updateForm = (field, value) => {
     setQuery({
       ...query,
@@ -26,8 +25,8 @@ const Login = () => {
     // submit query to backend to login.
     setSubmitting(true);
     try {
-      const res = await axios.post('http://localhost:8080/api/auth/signin', query);
-      setAuth({...auth, token: res.data.token});
+      const res = await axios.post('http://localhost:8080/api/profile/new', query);
+      
       setSubmitting(false);
       navigate('/profiles');
     } catch (err) {
@@ -46,7 +45,7 @@ const Login = () => {
       minHeight: '100vh',
     }}>
       <h1>Login</h1>
-      <LoginForm 
+      <NewProfileForm 
         query={query} 
         updateForm={updateForm} 
         onSubmit={onSubmit}
@@ -56,4 +55,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default NewProfile;
