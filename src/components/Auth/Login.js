@@ -29,7 +29,7 @@ const Login = () => {
       const res = await axios.post('http://localhost:8080/api/auth/signin', query);
       setAuth({...auth, token: res.data.token});
       setSubmitting(false);
-      navigate('/profiles');
+      navigate('/profile');
     } catch (err) {
       console.error(err.response.data.message);
       alert(err.response.data.error);

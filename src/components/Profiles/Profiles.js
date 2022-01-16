@@ -6,7 +6,7 @@ import Profile from './Profile';
 
 const Profiles = (props) => {
   const [auth] = useContext(AuthContext)
-  const [profiles, setProfiles] = useState([]);
+  const [profiles, setProfile] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // use effect to pull list of developers
@@ -14,11 +14,11 @@ const Profiles = (props) => {
   // neet bearer token to get the developer list.
 
   useEffect(() => {
-    const _getProfiles = async () => {
+    const _getProfile = async () => {
       try {
 
         const res = await axios.get(
-          'http://localhost:8080/api/profile',
+          'http://localhost:8080/api/profile/self',
           {
             headers: {
               "Authorization": `Bearer ${auth.token}`
@@ -27,7 +27,7 @@ const Profiles = (props) => {
         )
         console.log(res.data)
         setLoading(false);
-        setProfiles(res.data);
+        setProfile(res.data);
       } catch (err) {
         console.log(err.response.message)
       }
@@ -35,7 +35,7 @@ const Profiles = (props) => {
 
     }
     setLoading(true);
-    _getProfiles();
+    _getProfile();
   },[auth.token])
 
   const displayProfiles = () => {
@@ -50,7 +50,7 @@ const Profiles = (props) => {
       alignItems: 'center',
       minHeight: '100vh',
     }}>
-      <h1>Developers</h1>
+      <h1>Welcome</h1>
       {loading ? 
         <Spinner /> 
       :

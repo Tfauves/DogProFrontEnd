@@ -3,12 +3,12 @@ import BorderCard from '../common/BorderCard';
 
 const Profile = (props) => {
 
-  const {name, greeting} = props.profile
+  // const {name} = props.profile
 
   return (
     <BorderCard>
-      <h2>{greeting}</h2>
-      <p>{name}</p>
+      <h2>{"Hello"}</h2>
+      {/* <p>{name}</p> */}
     </BorderCard>
   )
 }
