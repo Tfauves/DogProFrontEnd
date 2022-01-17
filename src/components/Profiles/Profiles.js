@@ -6,7 +6,7 @@ import Profile from './Profile';
 
 const Profiles = (props) => {
   const [auth] = useContext(AuthContext)
-  const [profiles, setProfile] = useState([]);
+  const [profiles, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
 
   // use effect to pull list of developers
@@ -39,7 +39,9 @@ const Profiles = (props) => {
   },[auth.token])
 
   const displayProfiles = () => {
-    return profiles.map(pro => <Profile profile={pro} key={pro.id}/>)
+    return (
+      <h2 style={{marginTop: 100, color: '#cfd4e2'}}>{profiles.name}</h2>
+    )
   }
 
   return (
