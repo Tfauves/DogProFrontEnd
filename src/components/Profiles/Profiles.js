@@ -9,10 +9,6 @@ const Profiles = (props) => {
   const [profiles, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
 
-  // use effect to pull list of developers
-  // use state to store the developers
-  // neet bearer token to get the developer list.
-
   useEffect(() => {
     const _getProfile = async () => {
       try {

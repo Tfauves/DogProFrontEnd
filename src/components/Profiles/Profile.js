@@ -1,6 +1,6 @@
 import React from 'react';
 import BorderCard from '../common/BorderCard';
-import Profiles from './Profiles';
+
 
 const Profile = (props) => {
 
