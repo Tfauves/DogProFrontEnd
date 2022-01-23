@@ -3,10 +3,10 @@ import BorderCard from '../common/BorderCard';
 
 const Owner = (props) => {
 
-  const {name} = props.owner
+  const {name, id} = props.owner
 
   return (
-    <BorderCard>
+    <BorderCard onClick={() => props.onSelect(id)}>
       <h2>{"hello"}</h2>
       <p>{name}</p>
     </BorderCard>
