@@ -16,7 +16,7 @@ const Profile = (props) => {
   useEffect(() => {
     const _fetchOwner = async () => {
       const res = await axios.get(
-        `http://localhost:8080/api/profile/${profile.id}`,
+        `http://localhost:8080/api/profile/${owner.id}`,
         {
           headers: {
             Authorization: `Bearer ${auth.token}`
