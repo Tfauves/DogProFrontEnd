@@ -6,7 +6,7 @@ import Profile from './Profile';
 
 const Profiles = (props) => {
   const [auth] = useContext(AuthContext)
-  const [profiles, setProfile] = useState({});
+  const [profiles, setProfile] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Profiles = (props) => {
       try {
 
         const res = await axios.get(
-          'http://localhost:8080/api/profile/self',
+          'http://localhost:8080/api/profile',
           {
             headers: {
               "Authorization": `Bearer ${auth.token}`
@@ -35,9 +35,8 @@ const Profiles = (props) => {
   },[auth.token])
 
   const displayProfiles = () => {
-    return (
-      <h2 style={{marginTop: 100, color: '#cfd4e2'}}>{profiles.name}</h2>
-    )
+    return profiles.map(pro => <Profile profile={pro} key={pro.id}/>)
+ 
   }
 
   return (
