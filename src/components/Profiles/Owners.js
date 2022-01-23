@@ -2,15 +2,15 @@ import React, {useContext, useEffect, useState} from 'react';
 import {AuthContext} from '../Providers/AuthProvider';
 import Spinner from '../faCommon/Spinner';
 import axios from 'axios';
-import Profile from './Profile';
+import Owner from './Profiles';
 
-const Profiles = (props) => {
+const Owners = (props) => {
   const [auth] = useContext(AuthContext)
-  const [profiles, setProfile] = useState([]);
+  const [owners, setOwners] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const _getProfile = async () => {
+    const _getOwners = async () => {
       try {
 
         const res = await axios.get(
@@ -23,7 +23,7 @@ const Profiles = (props) => {
         )
         console.log(res.data)
         setLoading(false);
-        setProfile(res.data);
+        setOwners(res.data);
       } catch (err) {
         console.log(err.response.message)
       }
@@ -31,11 +31,11 @@ const Profiles = (props) => {
 
     }
     setLoading(true);
-    _getProfile();
+    _getOwners();
   },[auth.token])
 
   const displayProfiles = () => {
-    return profiles.map(pro => <Profile profile={pro} key={pro.id}/>)
+    return owners.map(own => <Owner owner={own} key={own.id}/>)
  
   }
 
@@ -57,4 +57,4 @@ const Profiles = (props) => {
   )
 }
 
-export default Profiles;
+export default Owners;

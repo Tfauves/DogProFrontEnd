@@ -7,14 +7,14 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 const Profile = (props) => {
   const params = useParams();
-  const [profile, setProfile] = useState({
+  const [owner, setOwner] = useState({
     id: params.proId
   });
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
 
   useEffect(() => {
-    const _fetchProfile = async () => {
+    const _fetchOwner = async () => {
       const res = await axios.get(
         `http://localhost:8080/api/profile/${profile.id}`,
         {
@@ -24,14 +24,14 @@ const Profile = (props) => {
         }
       )
       console.log(res.data);
-      setProfile(res.data);
+      setOwner(res.data);
     }
-    _fetchProfile();
+    _fetchOwner();
   }, [])
 
   return (
 
-    <h1>Profile</h1>
+    <h1>Profile, {owner.name}</h1>
 
   )
 }
