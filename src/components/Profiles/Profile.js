@@ -5,6 +5,10 @@ import { AuthContext } from "../Providers/AuthProvider";
 import Spinner from "../faCommon/Spinner";
 import Button from "../common/Button";
 import { Fragment } from "react/cjs/react.production.min";
+import image from '../../assets/bgimg.jpg'
+import {faUserPlus, faUserSlash} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 
 const Profile = (props) => {
   const params = useParams();
@@ -36,6 +40,17 @@ const Profile = (props) => {
   const displayProfile = () => {
     return (
       <Fragment>
+         <div style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: 'cover',
+          height: '27vh',
+          display: 'flex',
+          flexDirection: 'row',
+          margin: '1rem 0rem',
+          padding: '8px',
+          maxWidth: '900px',
+          width: '100%'
+        }}>
             <div style={{
             flex: 1,
             flexDirection: 'column',
@@ -55,6 +70,28 @@ const Profile = (props) => {
             <h1>{owner.name.toUpperCase()}</h1>
             <h2>Dog {owner.myDogs}</h2>
           </div>
+        </div>
+        {/* <div style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+          width: '100%',
+          maxWidth: '900px'
+        }}>
+          <Button style={{
+            width: 'auto',
+            color: '#F1F1F1',
+          }}>
+            <FontAwesomeIcon icon={faUserPlus} /> Add Friend
+          </Button>
+          <Button style={{
+            width: 'auto',
+            color: '#F1F1F1',
+            backgroundColor: 'red'
+          }}>
+            Block <FontAwesomeIcon icon={faUserSlash} />
+          </Button> 
+        </div> */}
       </Fragment>
     )
   }
