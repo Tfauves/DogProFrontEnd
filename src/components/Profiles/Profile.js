@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Spinner from "../faCommon/Spinner";
-
+import Button from "../common/Button";
+import { Fragment } from "react/cjs/react.production.min";
 
 const Profile = (props) => {
   const params = useParams();
@@ -31,6 +32,33 @@ const Profile = (props) => {
     _fetchOwner();
   }, [])
 
+
+  const displayProfile = () => {
+    return (
+      <Fragment>
+            <div style={{
+            flex: 1,
+            flexDirection: 'column',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+            <img src="https://via.placeholder.com/200" />
+          </div>
+          <div style={{
+            flex: 2,
+            flexDirection: 'column',
+            color: '#F1F1F1',
+            display: 'flex',
+            justifyContent: 'center'
+          }}>
+            <h1>{owner.name.toUpperCase()}</h1>
+            <h2>Dog {owner.myDogs}</h2>
+          </div>
+      </Fragment>
+    )
+  }
+
   return (
     <div style={{
       display: "flex",
@@ -42,7 +70,9 @@ const Profile = (props) => {
       {loading ? (
         <Spinner /> 
       ) : 
-      <h1>Profile, {owner.name}</h1>
+      // <h1>Profile, {owner.name}</h1>
+      displayProfile()
+   
       }
     </div>
 
