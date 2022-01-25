@@ -12,7 +12,6 @@ const Register = () => {
     username: "",
     password: "",
     confirm: "",
-    cohort: "",
     fname: "",
     lname: "",
   });

@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from "react";
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-
+import Spinner from "../faCommon/Spinner";
 
 
 const Profile = (props) => {
@@ -25,13 +25,28 @@ const Profile = (props) => {
       )
       console.log(res.data);
       setOwner(res.data);
+      setLoading(false);
     }
+    setLoading(true);
     _fetchOwner();
   }, [])
 
   return (
+    <div style={{
+      display: "flex",
+      flex: "1",
+      flexDirection: "column",
+      alignItems: 'center',
+      minHeight: '100vh',
+    }}>
+      {loading ? (
+        <Spinner /> 
+      ) : 
+      <h1>Profile, {owner.name}</h1>
+      }
+    </div>
 
-    <h1>Profile, {owner.name}</h1>
+   
 
   )
 }
