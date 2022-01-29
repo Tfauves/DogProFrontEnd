@@ -8,7 +8,7 @@ import { Fragment } from "react/cjs/react.production.min";
 import image from '../../assets/bgimg.jpg'
 import {faUserPlus, faUserSlash} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-
+import Avatar from "./Avatar";
 
 const Profile = (props) => {
   const params = useParams();
@@ -58,7 +58,7 @@ const Profile = (props) => {
             justifyContent: 'center',
             alignItems: 'center'
           }}>
-            <img src="https://via.placeholder.com/200" />
+            <img src= {<Avatar/>} alt="profile pic" />
           </div>
           <div style={{
             flex: 2,
