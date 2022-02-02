@@ -20,12 +20,12 @@ const Profile = (props) => {
 
   useEffect(() => {
     const _fetchOwner = async () => {
-      setLoading(true);
-      const apiHost = process.env.REACT_APP_API_HOST || "http://localhost:8080"
+      // setLoading(true);
+      // const apiHost = process.env.REACT_APP_API_HOST || "http://localhost:8080"
 
-      // const res = await axios.get(
-      //   `http://localhost:8080/api/profile/${owner.id}`,
-      const res = await axios.get(`${apiHost}/api/developers`,
+      const res = await axios.get(
+        `http://localhost:8080/api/profile/${owner.id}`,
+      // const res = await axios.get(`${apiHost}/api/profile`,
         {
           headers: {
             Authorization: `Bearer ${auth.token}`
@@ -38,7 +38,7 @@ const Profile = (props) => {
     }
     setLoading(true);
     _fetchOwner();
-  }, [auth.token,setLoading, setOwner])
+  }, [])
 
 
   const displayProfile = () => {
@@ -62,7 +62,7 @@ const Profile = (props) => {
             justifyContent: 'center',
             alignItems: 'center'
           }}>
-            <img src= {<Avatar/>} alt="profile pic" />
+            <img src="https://via.placeholder.com/200" alt="placeholder img" />
           </div>
           <div style={{
             flex: 2,
