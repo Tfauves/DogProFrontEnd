@@ -20,8 +20,12 @@ const Profile = (props) => {
 
   useEffect(() => {
     const _fetchOwner = async () => {
-      const res = await axios.get(
-        `http://localhost:8080/api/profile/${owner.id}`,
+      setLoading(true);
+      const apiHost = process.env.REACT_APP_API_HOST || "http://localhost:8080"
+
+      // const res = await axios.get(
+      //   `http://localhost:8080/api/profile/${owner.id}`,
+      const res = await axios.get(`${apiHost}/api/developers`,
         {
           headers: {
             Authorization: `Bearer ${auth.token}`
@@ -34,7 +38,7 @@ const Profile = (props) => {
     }
     setLoading(true);
     _fetchOwner();
-  }, [])
+  }, [auth.token,setLoading, setOwner])
 
 
   const displayProfile = () => {

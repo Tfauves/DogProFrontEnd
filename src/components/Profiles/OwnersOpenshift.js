@@ -36,7 +36,7 @@ const Owners = (props) => {
     }
     setLoading(true);
     _getOwners();
-  },[auth.token])
+  },[auth.token, setLoading, setOwners])
 
   const displayProfiles = () => {
     return owners.map(own => <Owner owner={own} key={own.id} onSelect={onSelect}/>)
