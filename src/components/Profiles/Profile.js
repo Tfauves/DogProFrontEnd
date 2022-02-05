@@ -75,7 +75,7 @@ const Profile = (props) => {
             <h2>Dog {owner.myDogs}</h2>
           </div>
         </div>
-        {/* <div style={{
+        <div style={{
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'flex-end',
@@ -95,7 +95,7 @@ const Profile = (props) => {
           }}>
             Block <FontAwesomeIcon icon={faUserSlash} />
           </Button> 
-        </div> */}
+        </div>
       </Fragment>
     )
   }
