@@ -16,8 +16,6 @@ const Register = () => {
     lname: "",
   });
 
-  // submitting context
-
   const [auth, setAuth] = useContext(AuthContext)
 
   const updateForm = (field, value) => {
