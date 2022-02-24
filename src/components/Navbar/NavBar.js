@@ -23,7 +23,7 @@ const NavBar = (props) => {
         alignItems: 'center',
         padding: '0em 1.2em'
       }}>
-        <h1 style={{color: "lightgreen"}}>Companion</h1>
+        <h1 style={{color: "lightgreen"}}>DogPro</h1>
       </div>
         <div style={{
           flex: 1,
