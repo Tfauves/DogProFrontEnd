@@ -26,8 +26,15 @@ const Login = () => {
     // submit query to backend to login.
     setSubmitting(true);
     try {
-      const res = await axios.post('http://localhost:8080/api/auth/signin', query);
-      setAuth({...auth, token: res.data.token});
+      const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
+      const res = await axios.post(`{host}/api/auth/signin`, query);
+      const profileRes = await axios.get(`${host}/api/profile/self`,{
+        headers: {
+          "Authorization": `Bearer ${res.data.token}`
+        }
+      });
+      console.log(profileRes.data);
+      setAuth({token: res.data.token, profile: profileRes.data});
       setSubmitting(false);
       navigate('/profile');
     } catch (err) {
