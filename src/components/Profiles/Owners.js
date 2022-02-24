@@ -12,11 +12,12 @@ const Owners = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
     const _getOwners = async () => {
       try {
 
         const res = await axios.get(
-          'http://localhost:8080/api/profile',
+          `${host}/api/profile`,
           {
             headers: {
               "Authorization": `Bearer ${auth.token}`
