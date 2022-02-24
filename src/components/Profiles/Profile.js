@@ -6,7 +6,7 @@ import Spinner from "../faCommon/Spinner";
 import Button from "../common/Button";
 import { Fragment } from "react/cjs/react.production.min";
 import image from '../../assets/bgimg.jpg'
-import {faUserPlus, faUserSlash} from '@fortawesome/free-solid-svg-icons'
+import {faPaw} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Avatar from "./Avatar";
 
@@ -17,15 +17,13 @@ const Profile = (props) => {
   });
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
+  const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
 
   useEffect(() => {
     const _fetchOwner = async () => {
-      // setLoading(true);
-      // const apiHost = process.env.REACT_APP_API_HOST || "http://localhost:8080"
-
+  
       const res = await axios.get(
-        `http://localhost:8080/api/profile/${owner.id}`,
-      // const res = await axios.get(`${apiHost}/api/profile`,
+        `${host}/api/profile/${owner.id}`,
         {
           headers: {
             Authorization: `Bearer ${auth.token}`
@@ -72,7 +70,7 @@ const Profile = (props) => {
             justifyContent: 'center'
           }}>
             <h1>{owner.name.toUpperCase()}</h1>
-            <h2>Dog {owner.myDogs}</h2>
+            {/* <h2>Dog {owner.myDogs}</h2> */}
           </div>
         </div>
         <div style={{
@@ -85,15 +83,16 @@ const Profile = (props) => {
           <Button style={{
             width: 'auto',
             color: '#F1F1F1',
+            backgroundColor: '#23881c'
           }}>
-            <FontAwesomeIcon icon={faUserPlus} /> Add Friend
+            <FontAwesomeIcon icon={faPaw} /> Add New Dog
           </Button>
           <Button style={{
             width: 'auto',
             color: '#F1F1F1',
-            backgroundColor: 'red'
+            backgroundColor: '#cf0303'
           }}>
-            Block <FontAwesomeIcon icon={faUserSlash} />
+            Delete Dog <FontAwesomeIcon icon={faPaw} />
           </Button> 
         </div>
       </Fragment>

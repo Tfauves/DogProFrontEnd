@@ -36,7 +36,7 @@ const Register = () => {
     data.name = query.fname + " " + query.lname;
     data.cohort = parseInt(query.cohort);
     try {
-      const res = await axios.post(`{host}/api/auth/signup`, data)
+      const res = await axios.post(`${host}/api/auth/signup`, data)
   
       login(data);
     } catch (err) {
