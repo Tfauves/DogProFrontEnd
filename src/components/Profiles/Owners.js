@@ -42,6 +42,10 @@ const Owners = (props) => {
  
   }
 
+  const displayDogs = () => {
+    
+  }
+
   const onSelect = (ownId) => {
     navigate(`/profile/${ownId}`)
   }
