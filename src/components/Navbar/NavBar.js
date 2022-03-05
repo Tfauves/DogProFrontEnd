@@ -8,14 +8,14 @@ const NavBar = (props) => {
   return (
     <nav style={{
       display:'flex',
-      backgroundColor: "blue",
+      backgroundColor: "#303030",
       position: "absolute",
       width: "100%",
       zIndex: 9999,
       top: 0,
       left: 0,
       flexDirection:'row',
-      height: '75px'
+      height: '50px'
     }}>
       
       <div style={{
@@ -23,7 +23,7 @@ const NavBar = (props) => {
         alignItems: 'center',
         padding: '0em 1.2em'
       }}>
-        <h1 style={{color: "lightgreen"}}>DogPro</h1>
+        <h1 style={{color: "#F1F1F1"}}>DogPro</h1>
       </div>
         <div style={{
           flex: 1,
