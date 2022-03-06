@@ -1,6 +1,8 @@
 import React, {useContext, Fragment} from 'react';
 import NavButton from './NavButton';
 import {AuthContext} from '../Providers/AuthProvider'
+import {Navbar, Nav, Button} from 'react-bootstrap';
+
 
 const NavBar = (props) => {
   const [auth] = useContext(AuthContext)

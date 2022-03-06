@@ -2,28 +2,11 @@ import React from "react";
 import image from "../../assets/landingPage.jpg";
 
 const Home = () => {
-  //   const displayLandingImg = () => {
-  //     return(
-  //         <div style={{
-  //             backgroundImage: `url(${image})`,
-  //             backgroundSize: 'cover',
-  //             height: '27vh',
-  //             display: 'flex',
-  //             flexDirection: 'row',
-  //             margin: '1rem 0rem',
-  //             padding: '8px',
-  //             maxWidth: '900px',
-  //             width: '100%'
-  //         }}>
-
-  //         </div>
-
-  //     )
-  // }
-
+  
   return (
     <div
       style={{
+        backgroundColor: "gray",
         display: "flex",
         flex: "1",
         flexDirection: "column",

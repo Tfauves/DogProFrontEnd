@@ -1,8 +1,9 @@
-import React from 'react';
+  import React from 'react';
 import Form from '../common/Form';
 import Input from '../common/Input';
-import FaButton from '../faCommon/FaButton';
+// import FaButton from '../faCommon/FaButton';
 import InlineInputContainer from '../common/InlineInputContainer';
+import Button from 'react-bootstrap/Button';
 
 const LoginForm = ({query, submitting, updateForm, onSubmit}) => {
 
@@ -42,7 +43,10 @@ const LoginForm = ({query, submitting, updateForm, onSubmit}) => {
           required
         />
       </InlineInputContainer>
-      <FaButton disabled={submitting}>Login</FaButton>
+      
+        
+      <Button style={{marginTop: "10px"}} variant='primary' size='lg' type='submit'>Submit</Button>
+      {/* <FaButton disabled={submitting}>Login</FaButton> */}
     </Form>
   )
 }

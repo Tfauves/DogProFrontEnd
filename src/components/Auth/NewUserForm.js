@@ -1,8 +1,10 @@
 import React from 'react';
-import Button from '../common/Button';
+// import Button from '../common/Button';
 import Form from '../common/Form';
 import InlineInputContainer from '../common/InlineInputContainer';
 import Input from '../common/Input';
+import Button from 'react-bootstrap/Button';
+
 
 const NewUserForm = (props) => {
   const {query, updateForm, onSubmit} = props;
@@ -62,16 +64,8 @@ const NewUserForm = (props) => {
           value={query.confirm}
         />
       </InlineInputContainer>
-      {/* <InlineInputContainer>
-        <Input
-          id="cohort"
-          placeholder="Cohort Number"
-          type="number"
-          onChange={handleChange}
-          value={query.cohort}
-        />
-      </InlineInputContainer> */}
-      <Button>Submit</Button>
+      <Button style={{marginTop: "10px"}} variant='primary' size='lg' type='submit'>Submit</Button>
+      {/* <Button>Submit</Button> */}
     </Form>
   )
 
