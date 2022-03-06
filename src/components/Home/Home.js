@@ -1,7 +1,6 @@
 import React from 'react';
-// import Button from '../common/Button';
-// import CounterBoxes from '../Counter/CounterBoxes';
-
+import { Fragment } from 'react/cjs/react.production.min';
+import image from '../../assets/landingPage.jpg'
 const Home = () => {
 
   // const [count, setCount] = useState(0);
@@ -22,20 +21,9 @@ const Home = () => {
       alignItems: 'center',
       minHeight: '100vh',
     }}>
+      
       <h1>Home</h1>
-      {/* <div style={{display: 'flex', width: '100%', flexDirection: 'row'}}>
-        <Button onClick={handleReduce} style={{backgroundColor: 'red'}} disabled={count === 0} >
-          <p>
-            Remove
-          </p>  
-        </Button>
-        <Button onClick={handleClick}>
-          <p>Click Me!</p>
-        </Button> */}
-      {/* </div>
-      <div style={{width: "100%"}}>
-        <CounterBoxes count={count}/>
-      </div> */}
+   
     </div>
   )
 }
