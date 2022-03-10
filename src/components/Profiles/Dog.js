@@ -9,7 +9,6 @@ const Dog = (props) => {
     <BorderCard onClick={() => props.onSelect(id)}>
       <h2>{name}</h2>
       <p>{breed}</p>
-      {/* <p>{myDogs}</p> */}
     </BorderCard>
   )
 }

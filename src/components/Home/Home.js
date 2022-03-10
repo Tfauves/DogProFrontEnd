@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div
       style={{
-        backgroundColor: "gray",
+        backgroundColor: "#f1f1f1",
         display: "flex",
         flex: "1",
         flexDirection: "column",
