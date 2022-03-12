@@ -11,7 +11,7 @@ const NavBar = (props) => {
     <nav style={{
       display:'flex',
       backgroundColor: "#303030",
-      position: "absolute",
+      position: "fixed",
       width: "100%",
       zIndex: 9999,
       top: 0,
@@ -40,7 +40,6 @@ const NavBar = (props) => {
           justifyContent: 'flex-end'
         }}>
           <NavButton to="/" label="home" />
-          {/* <NavButton to="/news" label="news" /> */}
           {auth.token ? (
             <NavButton to="/profile" label="Profile" />
           ) : (

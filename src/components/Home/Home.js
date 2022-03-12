@@ -1,34 +1,27 @@
 import React from "react";
-import image from "../../assets/landingPage.jpg";
+import splashImage from "../../assets/splash.jpg";
+// import Container from "../common/Container";
+import Splash from "../common/Splash";
+import { Container, Row } from "react-bootstrap";
 
 const Home = () => {
-  
   return (
-    <div
-      style={{
-        backgroundColor: "#f1f1f1",
-        display: "flex",
-        flex: "1",
-        flexDirection: "column",
-        alignItems: "center",
-        minHeight: "100vh",
-      }}
-    >
-      <h1>Home</h1>
-      <div
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundSize: "cover",
-          height: "50vh",
-          display: "flex",
-          flexDirection: "row",
-          margin: "1rem 0rem",
-          padding: "8px",
-          maxWidth: "900px",
-          width: "100%",
-        }}
-      ></div>
-    </div>
+    // <Container>
+    //   <Splash image={splashImage} style={{ color: "F1F1F1" }}>
+    //     <h1 style={{}}>Lorem Ipsum</h1>
+    //     <h2 style={{}}>do eiusmod tempor incididunt ut labore </h2>
+
+    //     </Splash>
+    // </Container>
+
+    <Container fluid="xlg">
+      <Row>
+        <Splash image={splashImage} style={{ color: "F1F1F1" }}>
+          <h1 style={{}}>Lorem Ipsum</h1>
+          <h2 style={{}}>do eiusmod tempor incididunt ut labore </h2>
+        </Splash>
+      </Row>
+    </Container>
   );
 };
 
