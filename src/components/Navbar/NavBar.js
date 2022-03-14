@@ -1,7 +1,7 @@
 import React, {useContext, Fragment} from 'react';
 import NavButton from './NavButton';
 import {AuthContext} from '../Providers/AuthProvider'
-import {Navbar, Nav, Button} from 'react-bootstrap';
+
 
 
 const NavBar = (props) => {
@@ -41,11 +41,11 @@ const NavBar = (props) => {
         }}>
           <NavButton to="/" label="home" />
           {auth.token ? (
-            <NavButton to="/profile" label="Profile" />
+            <NavButton to="/profile" label="profile" />
           ) : (
             <Fragment>
               <NavButton to="/login" label="login" />
-              <NavButton to="/register" label="Sign up" />
+              <NavButton to="/register" label="sign up" />
             </Fragment>
           ) }
           
