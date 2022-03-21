@@ -12,6 +12,7 @@ const defaultStyle = {
   flexDirection: "column",
   alignItems: "center",
   minHeight: "100vh",
+  width: "100%"
 };
 
 export default Container;

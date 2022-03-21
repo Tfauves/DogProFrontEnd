@@ -3,7 +3,7 @@ import Form from "../common/Form";
 import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Button from "react-bootstrap/Button";
-import image from "../../assets/loginBg.jpg";
+import image from "../../assets/loginSplash.jpg";
 
 const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
   const handleChange = (e) => {

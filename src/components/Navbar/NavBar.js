@@ -17,7 +17,7 @@ const NavBar = (props) => {
       top: 0,
       left: 0,
       flexDirection:'row',
-      height: '50px'
+      height: '60px'
     }}>
       
       <div style={{
@@ -25,7 +25,7 @@ const NavBar = (props) => {
         alignItems: 'center',
         padding: '0em 1.2em'
       }}>
-        <h1 style={{color: "#F1F1F1"}}>DogPro</h1>
+        <h1 style={{color: "#F1F1F1", fontFamily: 'specialElite, cursive'}}>DogPro</h1>
       </div>
         <div style={{
           flex: 1,
@@ -37,15 +37,15 @@ const NavBar = (props) => {
           userSelect: "none",
           alignItems: 'center',
           padding: '0em 1.2em',
-          justifyContent: 'flex-end'
+          justifyContent: 'flex-end', 
         }}>
-          <NavButton to="/" label="home" />
+          <NavButton style={{fontFamily: 'specialElite, cursive'}} to="/" label="home" />
           {auth.token ? (
-            <NavButton to="/profile" label="profile" />
+            <NavButton style={{fontFamily: 'specialElite, cursive'}} to="/profile" label="profile" />
           ) : (
             <Fragment>
-              <NavButton to="/login" label="login" />
-              <NavButton to="/register" label="sign up" />
+              <NavButton style={{fontFamily: 'specialElite, cursive'}} to="/login" label="login" />
+              <NavButton style={{fontFamily: 'specialElite, cursive'}} to="/register" label="sign up" />
             </Fragment>
           ) }
           
