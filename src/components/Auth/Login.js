@@ -52,7 +52,7 @@ const Login = () => {
       alignItems: 'center',
       minHeight: '100vh',
     }}>
-      <h1 style={{marginTop: "1em,"}}>Login</h1>
+      <h1 style={{marginTop: "1em"}}>Login</h1>
       <LoginForm 
         query={query} 
         updateForm={updateForm} 
