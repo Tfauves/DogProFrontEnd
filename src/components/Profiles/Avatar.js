@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from "react";
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-import Spinner from "../faCommon/Spinner";
+// import Spinner from "../faCommon/Spinner";
 
 
 const Avatar = (props) => {

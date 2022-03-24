@@ -3,12 +3,12 @@ import axios from 'axios';
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Spinner from "../faCommon/Spinner";
-import Button from "../common/Button";
+// import Button from "../common/Button";
 import { Fragment } from "react/cjs/react.production.min";
 import image from '../../assets/bgimg.jpg'
-import {faPaw} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import Avatar from "./Avatar";
+// import {faPaw} from '@fortawesome/free-solid-svg-icons'
+// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+// import Avatar from "./Avatar";
 
 const Profile = (props) => {
   const params = useParams();
@@ -99,51 +99,51 @@ const Profile = (props) => {
     )
   }
 
-  const displayDogProfile = () => {
-    return (
-      <Fragment>
-         <div style={{
-          backgroundImage: `url(${image})`,
-          backgroundSize: 'cover',
-          height: '27vh',
-          display: 'flex',
-          flexDirection: 'row',
-          margin: '1rem 0rem',
-          padding: '8px',
-          maxWidth: '900px',
-          width: '100%'
-        }}>
-            <div style={{
-            flex: 1,
-            flexDirection: 'column',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}>
-            <img src="https://via.placeholder.com/200" alt="placeholder img" />
-          </div>
-          <div style={{
-            flex: 2,
-            flexDirection: 'column',
-            color: '#F1F1F1',
-            display: 'flex',
-            justifyContent: 'center'
-          }}>
-            {/* <h1>{owner.name.toUpperCase()}</h1> */}
-            <h1>Dog {owner.myDogs}</h1>
-          </div>
-        </div>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'flex-end',
-          width: '100%',
-          maxWidth: '900px'
-        }}>
-        </div>
-      </Fragment>
-    )
-  }
+  // const displayDogProfile = () => {
+  //   return (
+  //     <Fragment>
+  //        <div style={{
+  //         backgroundImage: `url(${image})`,
+  //         backgroundSize: 'cover',
+  //         height: '27vh',
+  //         display: 'flex',
+  //         flexDirection: 'row',
+  //         margin: '1rem 0rem',
+  //         padding: '8px',
+  //         maxWidth: '900px',
+  //         width: '100%'
+  //       }}>
+  //           <div style={{
+  //           flex: 1,
+  //           flexDirection: 'column',
+  //           display: 'flex',
+  //           justifyContent: 'center',
+  //           alignItems: 'center'
+  //         }}>
+  //           <img src="https://via.placeholder.com/200" alt="placeholder img" />
+  //         </div>
+  //         <div style={{
+  //           flex: 2,
+  //           flexDirection: 'column',
+  //           color: '#F1F1F1',
+  //           display: 'flex',
+  //           justifyContent: 'center'
+  //         }}>
+  //           {/* <h1>{owner.name.toUpperCase()}</h1> */}
+  //           <h1>Dog {owner.myDogs}</h1>
+  //         </div>
+  //       </div>
+  //       <div style={{
+  //         display: 'flex',
+  //         flexDirection: 'row',
+  //         justifyContent: 'flex-end',
+  //         width: '100%',
+  //         maxWidth: '900px'
+  //       }}>
+  //       </div>
+  //     </Fragment>
+  //   )
+  // }
 
   return (
     <div style={{

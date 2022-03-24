@@ -8,9 +8,11 @@ const Home = () => {
   return (
     <Container>
       <Splash image={splashImage} style={{ color: "F1F1F1" }}>
-        <h1 style={{textAlign: "center"}}>Lorem Ipsum</h1>
-        <h2 style={{textAlign: "center"}}>do eiusmod tempor incididunt ut labore </h2>
-        </Splash>
+        <h1 style={{fontFamily: 'Oswald, sans-serif', marginTop: "3em", textAlign: "center" }}>For Them</h1>
+        <h2 style={{fontFamily: 'Oswald, sans-serif', marginTop: "1em", textAlign: "center" }}>
+          Balence. Friendship. Loyalty
+        </h2>
+      </Splash>
     </Container>
   );
 };
