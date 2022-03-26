@@ -2,7 +2,7 @@ import React from "react";
 import splashImage from "../../assets/splash.jpg";
 import Container from "../common/Container";
 import Splash from "../common/Splash";
-
+import Overlay from "../Overlay";
 
 const Home = () => {
   return (

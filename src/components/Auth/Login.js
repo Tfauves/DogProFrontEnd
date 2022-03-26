@@ -1,15 +1,14 @@
-import React, {useState, useContext} from 'react';
-import axios from 'axios';
-import {AuthContext} from '../Providers/AuthProvider';
-import {useNavigate} from 'react-router-dom';
-import LoginForm from './LoginForm';
+import React, { useState, useContext } from "react";
+import axios from "axios";
+import { AuthContext } from "../Providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import LoginForm from "./LoginForm";
 
 const Login = () => {
-
   const [query, setQuery] = useState({
-    username: '',
-    password: ''
-  })
+    username: "",
+    password: "",
+  });
   const [submitting, setSubmitting] = useState(false);
   // const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -18,9 +17,9 @@ const Login = () => {
   const updateForm = (field, value) => {
     setQuery({
       ...query,
-      [field]: value
-    })
-  }
+      [field]: value,
+    });
+  };
 
   const onSubmit = async () => {
     // submit query to backend to login.
@@ -28,39 +27,41 @@ const Login = () => {
     try {
       const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
       const res = await axios.post(`${host}/api/auth/signin`, query);
-      const profileRes = await axios.get(`${host}/api/profile/self`,{
+      const profileRes = await axios.get(`${host}/api/profile/self`, {
         headers: {
-          "Authorization": `Bearer ${res.data.token}`
-        }
+          Authorization: `Bearer ${res.data.token}`,
+        },
       });
       console.log(profileRes.data);
-      setAuth({token: res.data.token, profile: profileRes.data});
+      setAuth({ token: res.data.token, profile: profileRes.data });
       setSubmitting(false);
-      navigate('/profile');
+      navigate("/profile");
     } catch (err) {
       console.error(err.response.data.message);
       alert(err.response.data.error);
       setSubmitting(false);
     }
-  }
+  };
 
   return (
-    <div style={{
-      display: "flex",
-      flex: "1",
-      flexDirection: "column",
-      alignItems: 'center',
-      minHeight: '100vh',
-    }}>
-      <h1 style={{marginTop: "1em"}}>Login</h1>
-      <LoginForm 
-        query={query} 
-        updateForm={updateForm} 
+    <div
+      style={{
+        display: "flex",
+        flex: "1",
+        flexDirection: "column",
+        alignItems: "center",
+        minHeight: "100vh",
+      }}
+    >
+      <h1 style={{ marginTop: "1em" }}>Login</h1>
+      <LoginForm
+        query={query}
+        updateForm={updateForm}
         onSubmit={onSubmit}
         submitting={submitting}
       />
     </div>
-  )
-}
+  );
+};
 
 export default Login;
