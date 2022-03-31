@@ -64,7 +64,7 @@ const NewUserForm = (props) => {
           value={query.confirm}
         />
       </InlineInputContainer>
-      <Button style={{marginTop: "10px"}} variant='primary' size='lg' type='submit'>Submit</Button>
+      <Button style={{marginTop: "10px"}} variant='primary' size='lg' type='submit'>Sign Up</Button>
       {/* <Button>Submit</Button> */}
     </Form>
   )

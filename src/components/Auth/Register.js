@@ -85,8 +85,9 @@ const Register = () => {
       flexDirection: "column",
       alignItems: 'center',
       minHeight: '100vh',
+     
     }}>
-      <h1>Register</h1>
+      <h1 style={{ marginTop: "1em", fontFamily: 'Bebas Neue, cursive', letterSpacing: "8px" }}>Register</h1>
       <NewUserForm 
         query={query}
         updateForm={updateForm}
