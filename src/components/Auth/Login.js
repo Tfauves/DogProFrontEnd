@@ -51,9 +51,10 @@ const Login = () => {
         flexDirection: "column",
         alignItems: "center",
         minHeight: "100vh",
+        boxShadow: "inset 0 0 0, 1000px, rgba 0 0 0 .2"
       }}
     >
-      <h1 style={{ marginTop: "1em" }}>Login</h1>
+      <h1 style={{ marginTop: "1em", fontFamily: 'Bebas Neue, cursive', letterSpacing: "8px" }}>Welcome Bark!</h1>
       <LoginForm
         query={query}
         updateForm={updateForm}

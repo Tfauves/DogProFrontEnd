@@ -61,7 +61,7 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
           size="lg"
           type="submit"
         >
-          Submit
+          Login
         </Button>
       </Form>
     </div>
