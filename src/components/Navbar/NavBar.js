@@ -41,7 +41,10 @@ const NavBar = (props) => {
         }}>
           <NavButton style={{fontFamily: 'specialElite, cursive'}} to="/" label="home" />
           {auth.token ? (
-            <NavButton style={{fontFamily: 'specialElite, cursive'}} to="/profile" label="profile" />
+            <Fragment>
+              <NavButton style={{fontFamily: 'specialElite, cursive'}} to="/profile" label="profile" />
+              <NavButton style={{fontFamily: 'specialElite, cursive'}} to="/dogs" label="Dogs" />
+            </Fragment>
           ) : (
             <Fragment>
               <NavButton style={{fontFamily: 'specialElite, cursive'}} to="/login" label="login" />

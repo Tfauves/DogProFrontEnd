@@ -70,7 +70,7 @@ const Profile = (props) => {
             justifyContent: 'center'
           }}>
             <h1>{owner.name.toUpperCase()}</h1>
-            {/* <h2>Dog {owner.myDogs}</h2> */}
+            
           </div>
         </div>
         <div style={{
@@ -80,6 +80,7 @@ const Profile = (props) => {
           width: '100%',
           maxWidth: '900px'
         }}>
+          
           {/* <Button style={{
             width: 'auto',
             color: '#F1F1F1',
@@ -99,51 +100,7 @@ const Profile = (props) => {
     )
   }
 
-  // const displayDogProfile = () => {
-  //   return (
-  //     <Fragment>
-  //        <div style={{
-  //         backgroundImage: `url(${image})`,
-  //         backgroundSize: 'cover',
-  //         height: '27vh',
-  //         display: 'flex',
-  //         flexDirection: 'row',
-  //         margin: '1rem 0rem',
-  //         padding: '8px',
-  //         maxWidth: '900px',
-  //         width: '100%'
-  //       }}>
-  //           <div style={{
-  //           flex: 1,
-  //           flexDirection: 'column',
-  //           display: 'flex',
-  //           justifyContent: 'center',
-  //           alignItems: 'center'
-  //         }}>
-  //           <img src="https://via.placeholder.com/200" alt="placeholder img" />
-  //         </div>
-  //         <div style={{
-  //           flex: 2,
-  //           flexDirection: 'column',
-  //           color: '#F1F1F1',
-  //           display: 'flex',
-  //           justifyContent: 'center'
-  //         }}>
-  //           {/* <h1>{owner.name.toUpperCase()}</h1> */}
-  //           <h1>Dog {owner.myDogs}</h1>
-  //         </div>
-  //       </div>
-  //       <div style={{
-  //         display: 'flex',
-  //         flexDirection: 'row',
-  //         justifyContent: 'flex-end',
-  //         width: '100%',
-  //         maxWidth: '900px'
-  //       }}>
-  //       </div>
-  //     </Fragment>
-  //   )
-  // }
+  
 
   return (
     <div style={{
@@ -156,9 +113,7 @@ const Profile = (props) => {
       {loading ? (
         <Spinner /> 
       ) : 
-      // <h1>Profile, {owner.name}</h1>
       displayProfile()
-     
    
       }
     </div>
