@@ -3,6 +3,8 @@ import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
+import loginSplash from "../../assets/loginSplash.jpg";
+import Splash from "../common/Splash";
 
 const Login = () => {
   const [query, setQuery] = useState({

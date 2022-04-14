@@ -10,6 +10,7 @@ import image from '../../assets/bgimg.jpg'
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 // import Avatar from "./Avatar";
 
+
 const Profile = (props) => {
   const params = useParams();
   const [owner, setOwner] = useState({
@@ -69,7 +70,7 @@ const Profile = (props) => {
             display: 'flex',
             justifyContent: 'center'
           }}>
-            <h1>{owner.name.toUpperCase()}</h1>
+            <h1>{owner.name.toUpperCase()}</h1>      
             
           </div>
         </div>
