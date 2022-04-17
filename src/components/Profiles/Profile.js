@@ -9,6 +9,7 @@ import image from '../../assets/bgimg.jpg'
 // import {faPaw} from '@fortawesome/free-solid-svg-icons'
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 // import Avatar from "./Avatar";
+import Dog from "./Dog";
 
 
 const Profile = (props) => {
@@ -71,7 +72,7 @@ const Profile = (props) => {
             justifyContent: 'center'
           }}>
             <h1>{owner.name.toUpperCase()}</h1>      
-            
+            <li>{owner.myDogs.map((dog, i) => <Dog dog={dog} key={i} />)}</li>
           </div>
         </div>
         <div style={{
