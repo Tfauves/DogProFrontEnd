@@ -12,7 +12,7 @@ const Dogs = () => {
     const getDogs = async () => {
       try {
         const host = "http://localhost:8080";
-        const res = await axios.get(`${host}/api/dogs/mydog`, {
+        const res = await axios.get(`${host}/api/dogs/${dogs.id}`, {
           headers: {
             Authorization: `Bearer ${auth.token}`,
           },

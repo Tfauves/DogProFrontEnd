@@ -5,6 +5,7 @@ import Home from "../Home/Home";
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 import Profile from "../Profiles/Profile";
+import Dogs from '../Profiles/Dogs';
 
 const AppRouter = () => {
 
@@ -19,7 +20,7 @@ const AppRouter = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/:ownId" element={<Profile />} />
-          
+          <Route path="/dog" element={<Dogs />} />
         </Routes>
       </div>
     </div>
