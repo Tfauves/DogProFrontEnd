@@ -8,7 +8,6 @@ import { Fragment } from "react/cjs/react.production.min";
 import image from "../../assets/bgimg.jpg";
 // import {faPaw} from '@fortawesome/free-solid-svg-icons'
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import Avatar from "./Avatar";
 import Dog from "./Dog";
 
 const Profile = (props) => {
@@ -82,7 +81,7 @@ const Profile = (props) => {
               justify: "left",
             }}
           >
-            <h3>{owner.myDogs.map((dog, i) => (<Dog dog={dog} key={i} />))}</h3>  
+            <h3>{owner.myDogs.map((dog, i) => (<Dog dog={dog} key={dog.id} />))}</h3>  
         </div>
         <div
           style={{
