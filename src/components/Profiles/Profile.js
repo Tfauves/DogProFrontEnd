@@ -6,9 +6,14 @@ import Spinner from "../faCommon/Spinner";
 // import Button from "../common/Button";
 import { Fragment } from "react/cjs/react.production.min";
 import image from "../../assets/bgimg.jpg";
+import { Container } from "react-bootstrap";
 // import {faPaw} from '@fortawesome/free-solid-svg-icons'
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Dog from "./Dog";
+import Dogs from "./Dogs";
+
+
+
 
 const Profile = (props) => {
   const params = useParams();
@@ -59,7 +64,7 @@ const Profile = (props) => {
               alignItems: "center",
             }}
           >
-            <img src="https://via.placeholder.com/200" alt="placeholder img" />
+            <img src={owner.avatar.url} alt="placeholder img" />
           </div>
           <div
             style={{
@@ -73,16 +78,42 @@ const Profile = (props) => {
             <h1>{owner.name.toUpperCase()}</h1>
           </div>
         </div>
-        <div
-            style={{
-              flex: 2,
-              // flexDirection: "column",
-              display: "flex",
-              justify: "left",
-            }}
-          >
-            <h3>{owner.myDogs.map((dog, i) => (<Dog dog={dog} key={dog.id} />))}</h3>  
-        </div>
+
+        <Container fluid>
+          <div>
+            <h1
+              style={{
+                fontFamily: "Bebas Neue, cursive",
+                marginTop: "1em",
+                textAlign: "center",
+                fontSize: "3em",
+                letterSpacing: "13px",
+                marginBottom: "1em",
+                textDecorationLine: "underline",
+              }}
+            >
+              Your Dogs
+            </h1>
+           
+            
+
+            {/* <li
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "80%",
+                textAlign: "center",
+              }}
+            >
+              {owner.myDogs.map((dog, i) => (
+                <Dog dog={dog} key={dog.id} />
+              ))}
+            </li> */}
+          </div>
+
+          <Dogs />
+        </Container>
+
         <div
           style={{
             display: "flex",
@@ -110,6 +141,9 @@ const Profile = (props) => {
       </Fragment>
     );
   };
+
+
+
 
   return (
     <div

@@ -2,6 +2,7 @@ import React from "react";
 import splashOverlay from "../../assets/splashOverlay.jpg";
 import Container from "../common/Container";
 import Splash from "../common/Splash";
+// import { Container } from "react-bootstrap";
 
 const Home = () => {
   return (
