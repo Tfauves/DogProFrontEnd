@@ -3,6 +3,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Dog from "./Dog";
+import Breed from "./Breed";
 
 
 
@@ -32,6 +33,7 @@ const Dogs = () => {
   }, []);
 
   const displayDogs = () => {
+    
     return dogs.map((dog, i) => <Dog dog={dog} key={dog.id} onSelect={onSelect} />);
   };
 

@@ -1,9 +1,10 @@
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
+import Breed from "./Breed";
 // import BorderCard from '../common/BorderCard';
 
 const Dog = (props) => {
-  const { id, name, age, weight, sex } = props.dog;
+  const { id, name, age, weight, sex} = props.dog;
 
   return (
     // <BorderCard onClick={() => props.onSelect(id)}>
@@ -26,8 +27,7 @@ const Dog = (props) => {
               </Card.Text>
             </Card.Body>
           </Card>
-        </Col>
-      
+        </Col> 
     </Row>
   );
 };
