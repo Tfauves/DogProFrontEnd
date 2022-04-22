@@ -34,7 +34,7 @@ const Dogs = () => {
 
   const displayDogs = () => {
     
-    return dogs.map((dog, i) => <Dog dog={dog} key={dog.id} onSelect={onSelect} />);
+    return dogs.map((dog, i) => <Dog dog={dog} key={dog.id} onSelect={onSelect} />, <Breed/>);
   };
 
   const onSelect = (dogId) => {

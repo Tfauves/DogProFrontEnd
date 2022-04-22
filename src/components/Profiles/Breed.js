@@ -5,10 +5,8 @@ const Breed = (props) => {
   const { id, breedName, breedGroup } = props.breed;
 
   return (
-    <Card.Text>
-      <p>{breedName}</p>
-      <p>{breedGroup} </p>
-    </Card.Text>
+    <h1>breed</h1>
+  
   );
 };
 

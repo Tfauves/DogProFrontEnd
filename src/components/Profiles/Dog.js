@@ -1,34 +1,32 @@
 import React from "react";
-import { Row, Col, Card } from "react-bootstrap";
 import Breed from "./Breed";
-// import BorderCard from '../common/BorderCard';
+import BorderCard from '../common/BorderCard';
 
 const Dog = (props) => {
-  const { id, name, age, weight, sex} = props.dog;
+  const { id, name, age, weight, sex, breed} = props.dog;
+  if (breed != null) {
+    return (
+      <BorderCard onClick={() => props.onSelect(id)}>
+        <h2>Name: {name}</h2>
+        <p>Age: {age}</p>
+        <p>Weight: {weight} lbs</p>
+        <p>Sex: {sex}</p>
+        <p>Breed: {breed.breedName}</p>
+        <p>Breed Group: {breed.breedGroup}</p>
+      </BorderCard>
+    )
+  }
 
   return (
-    // <BorderCard onClick={() => props.onSelect(id)}>
-    //   <h2>Name: {name}</h2>
-    //   <p>Age: {age}</p>
-    //   <p>Weight: {weight} lbs</p>
-    //   <p>Sex: {sex}</p>
-    // </BorderCard>
+    <BorderCard onClick={() => props.onSelect(id)}>
+      <h2>Name: {name}</h2>
+      <p>Age: {age}</p>
+      <p>Weight: {weight} lbs</p>
+      <p>Sex: {sex}</p>
+   
+  
+    </BorderCard>
 
-    <Row xs={1} md={3} className="g-4">
-        <Col>
-          <Card>
-            <Card.Img variant="top" src="https://via.placeholder.com/200" />
-            <Card.Body>
-              <Card.Title>{name}</Card.Title>
-              <Card.Text>
-                <li>Age: {age}</li>
-                <li>Weight: {weight} lbs</li>
-                <li>Sex: {sex}</li>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col> 
-    </Row>
   );
 };
 
