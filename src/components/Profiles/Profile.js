@@ -3,12 +3,13 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Spinner from "../faCommon/Spinner";
+import AdvButton from "../common/AdvButton"
 // import Button from "../common/Button";
 import { Fragment } from "react/cjs/react.production.min";
 import image from "../../assets/bgimg.jpg";
 import { Container } from "react-bootstrap";
-// import {faPaw} from '@fortawesome/free-solid-svg-icons'
-// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faPaw} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Dog from "./Dog";
 import Dogs from "./Dogs";
 
@@ -123,20 +124,20 @@ const Profile = (props) => {
             maxWidth: "900px",
           }}
         >
-          {/* <Button style={{
+          <AdvButton style={{
             width: 'auto',
             color: '#F1F1F1',
-            backgroundColor: '#23881c'
+            backgroundColor: 'gray'
           }}>
             <FontAwesomeIcon icon={faPaw} /> Add New Dog
-          </Button>
-          <Button style={{
+          </AdvButton>
+          <AdvButton style={{
             width: 'auto',
             color: '#F1F1F1',
-            backgroundColor: '#cf0303'
+            backgroundColor: '#303030'
           }}>
             Delete Dog <FontAwesomeIcon icon={faPaw} />
-          </Button>  */}
+          </AdvButton> 
         </div>
       </Fragment>
     );
