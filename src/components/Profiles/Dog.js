@@ -3,7 +3,7 @@ import Breed from "./Breed";
 import BorderCard from '../common/BorderCard';
 
 const Dog = (props) => {
-  const { id, name, age, weight, sex, breed} = props.dog;
+  const { id, name, age, weight, sex, breed, journal} = props.dog;
   if (breed != null) {
     return (
       <BorderCard onClick={() => props.onSelect(id)}>
@@ -23,8 +23,8 @@ const Dog = (props) => {
       <p>Age: {age}</p>
       <p>Weight: {weight} lbs</p>
       <p>Sex: {sex}</p>
-   
-  
+      
+
     </BorderCard>
 
   );
