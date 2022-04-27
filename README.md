@@ -1,1 +1,2 @@
-forntend practice for cap project
+# DogPro
+React frontend for the DogPro application.
