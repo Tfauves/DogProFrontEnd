@@ -58,6 +58,11 @@ const NavBar = (props) => {
               to="/profile"
               label="profile"
             />
+            {/* <NavButton
+              style={{ fontFamily: "specialElite, cursive" }}
+              to="/newDog"
+              label="add dog"
+            /> */}
           </Fragment>
         ) : (
           <Fragment>

@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 
 const NewUserForm = (props) => {
   const {query, updateForm, onSubmit} = props;
-
   const handleChange = (e) => {
     updateForm(e.target.id, e.target.value);
   }
