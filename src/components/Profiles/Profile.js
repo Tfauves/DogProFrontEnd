@@ -4,19 +4,19 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Spinner from "../faCommon/Spinner";
 import AdvButton from "../common/AdvButton"
-// import Button from "../common/Button";
 import { Fragment } from "react/cjs/react.production.min";
 import image from "../../assets/bgimg.jpg";
 import { Container } from "react-bootstrap";
 import {faPaw} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import Dog from "./Dog";
 import Dogs from "./Dogs";
+import {useNavigate} from "react-router-dom";
 
 
 
 
 const Profile = (props) => {
+  let navigate = useNavigate();
   const params = useParams();
   const [owner, setOwner] = useState({
     id: params.proId,
@@ -39,6 +39,10 @@ const Profile = (props) => {
     setLoading(true);
     _fetchOwner();
   }, []);
+
+  const onClick = () => {
+    navigate("/newDog")
+  }
 
   const displayProfile = () => {
     return (
@@ -95,23 +99,7 @@ const Profile = (props) => {
             >
               Your Dogs
             </h1>
-           
-            
-
-            {/* <li
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "80%",
-                textAlign: "center",
-              }}
-            >
-              {owner.myDogs.map((dog, i) => (
-                <Dog dog={dog} key={dog.id} />
-              ))}
-            </li> */}
           </div>
-
           <Dogs />
         </Container>
 
@@ -124,7 +112,7 @@ const Profile = (props) => {
             maxWidth: "900px",
           }}
         >
-          <AdvButton style={{
+          <AdvButton onClick={onClick} style={{
             width: 'auto',
             color: '#F1F1F1',
             backgroundColor: 'gray'
@@ -142,9 +130,6 @@ const Profile = (props) => {
       </Fragment>
     );
   };
-
-
-
 
   return (
     <div
