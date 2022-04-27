@@ -5,7 +5,6 @@ import axios from 'axios';
 import { AuthContext } from './Providers/AuthProvider';
 
 
-
 const NewDog = () => {
     const host = "http://localhost:8080";
 
@@ -16,8 +15,8 @@ const NewDog = () => {
         age: "",
         weight: "",
         sex: "",
-        breedName: "",
-        breedGroup: "",
+        // breedName: "",
+        // breedGroup: "",
 
     });
 
@@ -37,8 +36,8 @@ const NewDog = () => {
         data.weight = query.weight;
         data.sex = query.sex;
     
-        data.breedName = query.breedName;
-        data.breedGroup = query.breedGroup;
+        // data.breedName = query.breedName;
+        // data.breedGroup = query.breedGroup;
         
         try {
             const res = await axios.post(
@@ -50,8 +49,10 @@ const NewDog = () => {
                       "Authorization": `Bearer ${token}`
                     }
                   }
+            
                  
                  )
+                 setAuth({token})
             
             navigate('/profile')
 
