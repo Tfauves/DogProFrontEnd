@@ -15,12 +15,10 @@ const NewDog = () => {
         age: "",
         weight: "",
         sex: "",
-        // breedName: "",
-        // breedGroup: "",
 
     });
 
-    const [auth, setAuth] = useContext(AuthContext)
+    const [auth] = useContext(AuthContext)
 
     const updateForm = (field, value) => {
         setQuery({
@@ -31,14 +29,12 @@ const NewDog = () => {
 
     const onSubmit = async (token) => {
         const data = query;
-        data.name = query.name;
-        data.age = query.age;
-        data.weight = query.weight;
-        data.sex = query.sex;
-    
-        // data.breedName = query.breedName;
-        // data.breedGroup = query.breedGroup;
-        
+        console.log(data);
+        data.breed = {
+            breedName: data.breedName,
+            breedGroup: data.breedGroup
+        }
+        data.journal = {};
         try {
             const res = await axios.post(
                
@@ -46,14 +42,10 @@ const NewDog = () => {
                  data,
                  {
                     headers: {
-                      "Authorization": `Bearer ${token}`
+                      "Authorization": `Bearer ${auth.token}`
                     }
                   }
-            
-                 
                  )
-                 setAuth({token})
-            
             navigate('/profile')
 
         }catch (err) {
