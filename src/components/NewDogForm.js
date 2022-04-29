@@ -5,8 +5,8 @@ import AdvButton from "./common/AdvButton";
 import Form from "./common/Form";
 
 const NewDogForm = (props) => {
-  const {query, updateForm, onSubmit } = props;
-console.log(query);
+  const {updateForm, onSubmit } = props;
+
   const handleChange = (e) => {
     updateForm(e.target.id, e.target.value);
   };
@@ -30,7 +30,7 @@ console.log(query);
             id="name"
             placeholder="Name"
             onChange={handleChange}
-            value={query.name}
+            // value={query.name}
           />
           <Input
             id="age"
@@ -56,12 +56,6 @@ console.log(query);
         />
         </InlineInputContainer>
         <InlineInputContainer>
-          {/* <Input
-          id="breed"
-          placeholder="Breed"
-          onChange={handleChange}
-        //   value={query.breed}
-        /> */}
           <Input
             id="breedName"
             placeholder="Breed Name"
@@ -83,7 +77,6 @@ console.log(query);
         >
           Add Dog
         </AdvButton>
-        {/* <Button>Submit</Button> */}
       </Form>
     </div>
   );
