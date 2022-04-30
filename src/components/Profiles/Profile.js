@@ -2,15 +2,15 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import {useNavigate} from "react-router-dom";
 import Spinner from "../faCommon/Spinner";
 import AdvButton from "../common/AdvButton"
 import { Fragment } from "react/cjs/react.production.min";
-import image from "../../assets/bgimg.jpg";
+import image from "../../assets/cardImg.jpg";
 import { Container } from "react-bootstrap";
 import {faPaw} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Dogs from "./Dogs";
-import {useNavigate} from "react-router-dom";
 
 
 
@@ -21,6 +21,7 @@ const Profile = (props) => {
   const [owner, setOwner] = useState({
     id: params.proId,
   });
+
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
   const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
@@ -32,6 +33,7 @@ const Profile = (props) => {
           Authorization: `Bearer ${auth.token}`,
         },
       });
+     
       console.log(res.data);
       setOwner(res.data);
       setLoading(false);
@@ -55,9 +57,11 @@ const Profile = (props) => {
             display: "flex",
             flexDirection: "row",
             margin: "1rem 0rem",
+            marginTop: "3rem",
             padding: "8px",
             maxWidth: "900px",
             width: "100%",
+            borderRadius: "15px"
           }}
         >
           <div
@@ -67,15 +71,17 @@ const Profile = (props) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+             
             }}
           >
-            <img src={owner.avatar.url} alt="placeholder img" />
-          </div>
+            <img style={{ borderRadius: "100px"}} src={owner.avatar.url} width={200} height={250} alt="placeholder img" />
+          </div>,
           <div
             style={{
+              fontFamily: "Bebas Neue, cursive",
               flex: 2,
               flexDirection: "column",
-              color: "#F1F1F1",
+              color: "#303030",
               display: "flex",
               justifyContent: "center",
             }}
@@ -83,7 +89,6 @@ const Profile = (props) => {
             <h1>{owner.name.toUpperCase()}</h1>
           </div>
         </div>
-
         <Container fluid>
           <div>
             <h1
@@ -99,38 +104,39 @@ const Profile = (props) => {
             >
               Your Dogs
             </h1>
-          </div>
-          <Dogs />
-        </Container>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            width: "100%",
-            maxWidth: "900px",
-          }}
-        >
-          <AdvButton onClick={onClick} style={{
+                      <AdvButton onClick={onClick} style={{
             width: 'auto',
             color: '#F1F1F1',
             backgroundColor: 'gray'
           }}>
             <FontAwesomeIcon icon={faPaw} /> Add New Dog
           </AdvButton>
-          <AdvButton style={{
+          </div>
+        </Container>
+        <Dogs />
+
+        <div
+          // style={{
+          //   display: "flex",
+          //   flexDirection: "row",
+          //   justifyContent: "flex-end",
+          //   width: "100%",
+          //   maxWidth: "900px",
+          // }}
+        >
+
+          {/* <AdvButton style={{
             width: 'auto',
             color: '#F1F1F1',
             backgroundColor: '#303030'
           }}>
             Delete Dog <FontAwesomeIcon icon={faPaw} />
-          </AdvButton> 
+          </AdvButton>  */}
         </div>
       </Fragment>
     );
   };
-
+  
   return (
     <div
       style={{
