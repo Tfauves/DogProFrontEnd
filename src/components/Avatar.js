@@ -6,9 +6,6 @@ const Avatar = (props) => {
     
     <h1>avatar</h1>
 
-
-
-
     )
 };
 

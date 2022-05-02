@@ -7,7 +7,7 @@ import Splash from "../common/Splash";
 const Home = () => {
   return (
     <Container>
-      <Splash image={splashOverlay} style={{ color: "#303030" }}>
+      <Splash image={splashOverlay} style={{ color: "#303030", backgroundPosition: "center" }}>
         <h1 style={{fontFamily: 'Bebas Neue, cursive',
         marginTop: "3em", 
         textAlign: "center", 
