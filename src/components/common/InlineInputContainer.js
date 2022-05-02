@@ -16,7 +16,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
+    width: "50%",
     minWidth: 400,
     borderRadius: 5,
     overflow: "hidden",
