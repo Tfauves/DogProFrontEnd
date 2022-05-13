@@ -6,12 +6,10 @@ import Dog from "./Dog";
 import Breed from "./Breed";
 import Avatar from "react-avatar";
 
-
-
 const Dogs = () => {
   const [dogs, setDogs] = useState({});
   const [loading, setLoading] = useState(true);
-  const [auth] =  useContext(AuthContext)
+  const [auth] = useContext(AuthContext);
   const navigate = useNavigate();
   useEffect(() => {
     const getDogs = async () => {
@@ -34,13 +32,15 @@ const Dogs = () => {
   }, []);
 
   const displayDogs = () => {
-    
-    return dogs.map((dog, i) => <Dog dog={dog} key={dog.id} onSelect={onSelect} />, <Breed/>);
+    return dogs.map(
+      (dog, i) => <Dog dog={dog} key={dog.id} onSelect={onSelect} />,
+      <Breed />
+    );
   };
 
   const onSelect = (dogId) => {
-    navigate(`/dogs/${dogId}`)
-  }
+    navigate(`/dogs/${dogId}`);
+  };
 
   return (
     <div style={{ width: "100%", justifyContent: "center" }}>
