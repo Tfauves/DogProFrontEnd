@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Breed from "./Breed";
 import BorderCard from "../common/BorderCard";
 import AdvButton from "../common/AdvButton";
+import DogProfile from "./DogProfile";
 
 const Dog = (props) => {
+  let navigate = useNavigate();
+  const onClick = () => {
+    navigate("/dogProfile");
+  };
   const { id, name, age, weight, sex, breed, deleted } = props.dog;
   if (breed != null) {
     return (

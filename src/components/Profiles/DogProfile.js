@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Spinner from "../faCommon/Spinner";
 import { Fragment } from "react/cjs/react.production.min";
@@ -98,3 +98,4 @@ const DogProfile = (props) => {
     </div>
   );
 };
+export default DogProfile;
