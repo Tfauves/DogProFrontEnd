@@ -18,7 +18,7 @@ const DogProfile = (props) => {
 
   useEffect(() => {
     const getDog = async () => {
-      const res = await axios.get(`${host}/api/dogs/${dogProfile.id}`, {
+      const res = await axios.get(`${host}/api/dogs/all`, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
