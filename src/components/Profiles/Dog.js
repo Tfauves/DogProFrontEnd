@@ -6,6 +6,7 @@ import AdvButton from "../common/AdvButton";
 const Dog = (props) => {
   let navigate = useNavigate();
   const { id, name, age, weight, sex, breed, deleted } = props.dog;
+
   return (
     <BorderCard>
       <h2>Name: {name}</h2>
