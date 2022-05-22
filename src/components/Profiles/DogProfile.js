@@ -15,7 +15,6 @@ const DogProfile = (props) => {
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
   const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
-  let navigate = useNavigate();
   useEffect(() => {
     const getDog = async () => {
       const res = await axios.get(`${host}/api/dogs/${params.dogId}`, {
@@ -30,10 +29,6 @@ const DogProfile = (props) => {
     setLoading(true);
     getDog();
   }, []);
-
-  const onSelect = (dogId) => {
-    navigate(`/dogs/${dogId}`);
-  };
 
   const displayProfile = () => {
     return (
