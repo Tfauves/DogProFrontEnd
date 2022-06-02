@@ -3,8 +3,6 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Dog from "./Dog";
-import Breed from "./Breed";
-import Avatar from "react-avatar";
 
 const Dogs = () => {
   const [dogs, setDogs] = useState({});
@@ -32,14 +30,13 @@ const Dogs = () => {
   }, []);
 
   const displayDogs = () => {
-    return dogs.map(
-      (dog, i) => <Dog dog={dog} key={dog.id} onSelect={onSelect} />,
-      <Breed />
-    );
+    return dogs.map((dog) => (
+      <Dog dog={dog} key={dog.id} onSelect={onSelect} />
+    ));
   };
 
   const onSelect = (dogId) => {
-    navigate(`/dogs/${dogId}`);
+    navigate(`/dogProfile/${dogId}`);
   };
 
   return (

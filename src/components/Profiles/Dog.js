@@ -1,10 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import BorderCard from "../common/BorderCard";
 import AdvButton from "../common/AdvButton";
 
 const Dog = (props) => {
-  let navigate = useNavigate();
   const { id, name, age, weight, sex, breed, deleted } = props.dog;
   return (
     <BorderCard>
@@ -20,14 +18,14 @@ const Dog = (props) => {
         Quick Entry
       </AdvButton>
       <AdvButton
-        onClick={() => props.onSelect(id)}
+        onClick={() => props.onSelect(props.dog.id)}
         style={{
           width: "auto",
           color: "#F1F1F1",
           backgroundColor: "#303030",
         }}
       >
-        View More
+        View Profile
       </AdvButton>
     </BorderCard>
   );
