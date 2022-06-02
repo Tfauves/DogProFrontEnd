@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Spinner from "../faCommon/Spinner";
 import { Fragment } from "react/cjs/react.production.min";
@@ -10,15 +10,15 @@ import { apiHost } from "../../config";
 
 const DogProfile = (props) => {
   const params = useParams();
-  let navigate = useNavigate();
-  const [dogProfile, setDogProfile] = useState([]);
-
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
+  const [dogProfile, setDogProfile] = useState({
+    id: params.dogId,
+  });
 
   useEffect(() => {
     const getDog = async () => {
-      const res = await axios.get(`${apiHost}/api/dogs`, {
+      const res = await axios.get(`${apiHost}/api/dogs/${dogProfile.id}`, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
@@ -30,10 +30,6 @@ const DogProfile = (props) => {
     setLoading(true);
     getDog();
   }, []);
-
-  const onSelect = (dogId) => {
-    navigate(`/dogProfile/${dogId}`);
-  };
 
   const displayProfile = () => {
     return (
