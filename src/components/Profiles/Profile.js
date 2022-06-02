@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import AdvButton from "../common/AdvButton";
 import { Fragment } from "react/cjs/react.production.min";
@@ -21,11 +22,10 @@ const Profile = (props) => {
 
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
-  const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
 
   useEffect(() => {
     const _fetchOwner = async () => {
-      const res = await axios.get(`${host}/api/profile/${owner.id}`, {
+      const res = await axios.get(`${apiHost}/api/profile/${owner.id}`, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },

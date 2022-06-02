@@ -77,7 +77,12 @@ const DogProfile = (props) => {
               justifyContent: "center",
             }}
           >
-            <h1>{dogProfile.name.toUpperCase()}</h1>
+            <h1>Name: {dogProfile.name.toUpperCase()}</h1>
+            <h2>{dogProfile.breed.breedName}</h2>
+            <h2>{dogProfile.breed.breedGroup}</h2>
+            <h2>Age: {dogProfile.age}</h2>
+            <h2>Sex: {dogProfile.sex}</h2>
+            <h2>Weight: {dogProfile.weight + " lbs"}</h2>
           </div>
         </div>
       </Fragment>

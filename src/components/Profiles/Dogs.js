@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { apiHost } from "../../config";
 import axios from "axios";
 import Dog from "./Dog";
 
@@ -12,8 +13,7 @@ const Dogs = () => {
   useEffect(() => {
     const getDogs = async () => {
       try {
-        const host = "http://localhost:8080";
-        const res = await axios.get(`${host}/api/dogs/mydog`, {
+        const res = await axios.get(`${apiHost}/api/dogs/mydog`, {
           headers: {
             Authorization: `Bearer ${auth.token}`,
           },
