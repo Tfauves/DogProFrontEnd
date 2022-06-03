@@ -4,8 +4,7 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Spinner from "../faCommon/Spinner";
 import { Fragment } from "react/cjs/react.production.min";
-import image from "../../assets/cardImg.jpg";
-import Dog from "./Dog";
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { apiHost } from "../../config";
 
 const DogProfile = (props) => {
@@ -34,7 +33,7 @@ const DogProfile = (props) => {
   const displayProfile = () => {
     return (
       <Fragment>
-        <div
+        {/* <div
           style={{
             backgroundImage: `url(${image})`,
             backgroundSize: "cover",
@@ -59,15 +58,15 @@ const DogProfile = (props) => {
             }}
           >
             <img
-              style={{ borderRadius: "100px" }}
+              style={{ borderRadius: "3px", padding: "1em" }}
               src={dogProfile.avatar.url}
-              width={200}
+              width={300}
               height={250}
               alt="placeholder img"
             />
           </div>
-          ,
-          <div
+          , */}
+        {/* <div
             style={{
               fontFamily: "Bebas Neue, cursive",
               flex: 2,
@@ -83,8 +82,27 @@ const DogProfile = (props) => {
             <h2>Age: {dogProfile.age}</h2>
             <h2>Sex: {dogProfile.sex}</h2>
             <h2>Weight: {dogProfile.weight + " lbs"}</h2>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
+
+        <Card style={{ width: "50rem", paddingTop: "3rem" }}>
+          <Card.Img variant="top" src={dogProfile.avatar.url} />
+          <Card.Body>
+            <Card.Title>{dogProfile.name.toUpperCase()}</Card.Title>
+            <Card.Text>Latest Journal Entry</Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>{dogProfile.breed.breedName}</ListGroupItem>
+            <ListGroupItem>{dogProfile.breed.breedGroup}</ListGroupItem>
+            <ListGroupItem>Age: {dogProfile.age}</ListGroupItem>
+            <ListGroupItem>Sex: {dogProfile.sex}</ListGroupItem>
+            <ListGroupItem>Weight: {dogProfile.weight} lbs</ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Card.Link href="#">Card Link</Card.Link>
+            <Card.Link href="#">Another Link</Card.Link>
+          </Card.Body>
+        </Card>
       </Fragment>
     );
   };
