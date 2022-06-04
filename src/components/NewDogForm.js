@@ -5,7 +5,7 @@ import AdvButton from "./common/AdvButton";
 import Form from "./common/Form";
 
 const NewDogForm = (props) => {
-  const {updateForm, onSubmit } = props;
+  const { updateForm, onSubmit } = props;
 
   const handleChange = (e) => {
     updateForm(e.target.id, e.target.value);
@@ -36,7 +36,7 @@ const NewDogForm = (props) => {
             id="age"
             placeholder="Age"
             onChange={handleChange}
-              // value={query.age}
+            // value={query.age}
           />
         </InlineInputContainer>
         <InlineInputContainer>
@@ -44,29 +44,37 @@ const NewDogForm = (props) => {
             id="weight"
             placeholder="Weight"
             onChange={handleChange}
-              // value={query.weight}
+            // value={query.weight}
           />
         </InlineInputContainer>
         <InlineInputContainer>
           <Input
-          id="sex"
-          placeholder="Sex"
-          onChange={handleChange}
-          // value={query.sex}
-        />
+            id="sex"
+            placeholder="Sex"
+            onChange={handleChange}
+            // value={query.sex}
+          />
+        </InlineInputContainer>
+        <InlineInputContainer>
+          <Input
+            id="avatar"
+            placeholder="url"
+            onChange={handleChange}
+            // value={query.sex}
+          />
         </InlineInputContainer>
         <InlineInputContainer>
           <Input
             id="breedName"
             placeholder="Breed Name"
             onChange={handleChange}
-              // value={query.breedName}
+            // value={query.breedName}
           />
           <Input
             id="breedGroup"
             placeholder="Breed Group"
             onChange={handleChange}
-              // value={query.breedGroup}
+            // value={query.breedGroup}
           />
         </InlineInputContainer>
         <AdvButton
