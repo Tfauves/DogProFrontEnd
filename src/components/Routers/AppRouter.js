@@ -8,6 +8,7 @@ import Profile from "../Profiles/Profile";
 import Dogs from "../Profiles/Dogs";
 import NewDog from "../NewDog";
 import DogProfile from "../Profiles/DogProfile";
+import Journal from "./../Journal/Journal";
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
           <Route path="/profile/:ownId" element={<Profile />} />
           <Route path="/dog" element={<Dogs />} />
           <Route path="/dogProfile/:dogId" element={<DogProfile />} />
+          <Route path="/journalEntry" element={<Journal />} />
         </Routes>
       </div>
     </div>
