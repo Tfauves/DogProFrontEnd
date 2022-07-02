@@ -13,7 +13,7 @@ const Dogs = () => {
   useEffect(() => {
     const getDogs = async () => {
       try {
-        const res = await axios.get(`${apiHost}/api/dogs/mydog`, {
+        const res = await axios.get(`${apiHost}/api/dog/mydog`, {
           headers: {
             Authorization: `Bearer ${auth.token}`,
           },
