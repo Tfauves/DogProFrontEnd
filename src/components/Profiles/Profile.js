@@ -72,7 +72,11 @@ const Profile = (props) => {
           >
             <img
               style={{ borderRadius: "100px" }}
-              src={owner.avatar.url}
+              src={
+                owner.avatar
+                  ? owner.avatar.url
+                  : "https://via.placeholder.com/150"
+              }
               width={200}
               height={250}
               alt="placeholder img"

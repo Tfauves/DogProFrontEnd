@@ -35,7 +35,7 @@ const NewDog = () => {
     data.journal = {};
     data.avatar = { url: data.avatar.url };
     try {
-      const res = await axios.post(`${host}/api/dogs/new`, data, {
+      const res = await axios.post(`${host}/api/dog/new`, data, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
