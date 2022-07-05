@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import loginbackground from "../../assets/loginbackground.jpg";
 import Splash from "../common/Splash";
+import bark from "../../assets/barkalt1.jpg";
 
 const Login = () => {
   const [query, setQuery] = useState({
@@ -47,24 +48,33 @@ const Login = () => {
 
   return (
     <Splash image={loginbackground}>
-    <div
-      style={{
-        display: "flex",
-        flex: "1",
-        flexDirection: "column",
-        alignItems: "center",
-        minHeight: "100vh",
-        boxShadow: "inset 0 0 0, 1000px, rgba 0 0 0 .2"
-      }}
-    >
-      <h1 style={{ marginTop: "2em", paddingBottom: ".5em", fontFamily: 'Bebas Neue, cursive', letterSpacing: "8px" }}>Welcome Bark!</h1>
-      <LoginForm
-        query={query}
-        updateForm={updateForm}
-        onSubmit={onSubmit}
-        submitting={submitting}
-      />
-    </div>
+      <div
+        style={{
+          display: "flex",
+          flex: "1",
+          flexDirection: "column",
+          alignItems: "center",
+          minHeight: "100vh",
+          boxShadow: "inset 0 0 0, 1000px, rgba 0 0 0 .2",
+        }}
+      >
+        <h1
+          style={{
+            marginTop: "2em",
+            paddingBottom: ".5em",
+            fontFamily: "Bebas Neue, cursive",
+            letterSpacing: "8px",
+          }}
+        >
+          Welcome Bark!
+        </h1>
+        <LoginForm
+          query={query}
+          updateForm={updateForm}
+          onSubmit={onSubmit}
+          submitting={submitting}
+        />
+      </div>
     </Splash>
   );
 };

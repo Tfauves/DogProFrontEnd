@@ -3,7 +3,7 @@ import Form from "../common/Form";
 import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Button from "react-bootstrap/Button";
-import image from "../../assets/loginSplash.jpg";
+import bark from "../../assets/barkalt1.jpg";
 
 const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
   const handleChange = (e) => {
@@ -17,12 +17,12 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
   return (
     <div
       style={{
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${bark})`,
         backgroundSize: "cover",
         height: "50vh",
         display: "flex",
         flexDirection: "row",
-        margin: "1rem 0rem",
+        margin: "3rem 0rem",
         padding: "8px",
         maxWidth: "900px",
         width: "100%",

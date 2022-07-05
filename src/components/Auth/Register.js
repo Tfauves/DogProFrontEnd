@@ -3,6 +3,7 @@ import NewUserForm from "./NewUserForm";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import loginbackground from "../../assets/loginbackground.jpg";
 
 const Register = () => {
   const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
@@ -79,11 +80,14 @@ const Register = () => {
         flexDirection: "column",
         alignItems: "center",
         minHeight: "100vh",
+        backgroundImage: `url(${loginbackground})`,
+        backgroundSize: "cover",
       }}
     >
       <h1
         style={{
-          marginTop: "1em",
+          marginTop: "2em",
+          paddingBottom: ".5em",
           fontFamily: "Bebas Neue, cursive",
           letterSpacing: "8px",
         }}
