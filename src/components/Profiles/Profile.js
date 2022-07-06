@@ -8,7 +8,7 @@ import Spinner from "../faCommon/Spinner";
 import AdvButton from "../common/AdvButton";
 import { Fragment } from "react/cjs/react.production.min";
 import image from "../../assets/cardImg.jpg";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dogs from "./Dogs";
@@ -41,6 +41,9 @@ const Profile = (props) => {
 
   const onClick = () => {
     navigate("/newDog");
+  };
+  const onClickPro = () => {
+    navigate("/updateProfile");
   };
 
   const displayProfile = () => {
@@ -81,6 +84,16 @@ const Profile = (props) => {
               height={250}
               alt="placeholder img"
             />
+            <AdvButton
+              onClick={onClickPro}
+              style={{
+                width: "auto",
+                color: "#F1F1F1",
+                backgroundColor: "gray",
+              }}
+            >
+              Edit Profile
+            </AdvButton>
           </div>
           ,
           <div

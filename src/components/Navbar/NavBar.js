@@ -46,11 +46,6 @@ const NavBar = (props) => {
           justifyContent: "flex-end",
         }}
       >
-        {/* <NavButton
-          style={{ fontFamily: "specialElite, cursive" }}
-          to="/"
-          label="home"
-        /> */}
         {auth.token ? (
           <Fragment>
             <NavButton
