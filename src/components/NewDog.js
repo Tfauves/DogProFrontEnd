@@ -14,6 +14,7 @@ const NewDog = () => {
     age: "",
     weight: "",
     sex: "",
+    avatar: "",
   });
 
   const [auth] = useContext(AuthContext);
@@ -33,7 +34,9 @@ const NewDog = () => {
       breedGroup: data.breedGroup,
     };
     data.journal = {};
-    data.avatar = { url: data.avatar.url };
+    data.avatar = { url: data.avatar };
+    console.log("after");
+    console.log(data);
     try {
       const res = await axios.post(`${host}/api/dog/new`, data, {
         headers: {

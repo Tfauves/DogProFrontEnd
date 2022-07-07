@@ -25,12 +25,9 @@ const UpdatedProfile = () => {
   const onSubmit = async (token) => {
     const data = query;
     console.log(data);
-    data.name = {
-      name: data.name,
-    };
     data.avatar = { url: data.avatar.url };
     try {
-      const res = await axios.put(`${host}/api/profile`, data, {
+      const res = await axios.put(`${host}/api/profile/photo`, data, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },

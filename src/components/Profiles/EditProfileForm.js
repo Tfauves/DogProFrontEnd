@@ -25,21 +25,16 @@ const EditProfileForm = (props) => {
           width: "100%",
         }}
       >
-        <InlineInputContainer>
+        {/* <InlineInputContainer>
           <Input
             id="name"
             placeholder="Name"
             onChange={handleChange}
             // value={query.name}
           />
-        </InlineInputContainer>
+        </InlineInputContainer> */}
         <InlineInputContainer>
-          <Input
-            id="avatar"
-            placeholder="url"
-            onChange={handleChange}
-            // value={query.sex}
-          />
+          <Input id="avatar" placeholder="url" onChange={handleChange} />
         </InlineInputContainer>
         <AdvButton
           style={{ marginTop: "10px" }}

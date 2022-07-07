@@ -3,6 +3,7 @@ import InlineInputContainer from "./common/InlineInputContainer";
 import Input from "./common/Input";
 import AdvButton from "./common/AdvButton";
 import Form from "./common/Form";
+import { queryAllByAltText } from "@testing-library/react";
 
 const NewDogForm = (props) => {
   const { updateForm, onSubmit } = props;
@@ -48,33 +49,21 @@ const NewDogForm = (props) => {
           />
         </InlineInputContainer>
         <InlineInputContainer>
-          <Input
-            id="sex"
-            placeholder="Sex"
-            onChange={handleChange}
-            // value={query.sex}
-          />
+          <Input id="sex" placeholder="Sex" onChange={handleChange} />
         </InlineInputContainer>
         <InlineInputContainer>
-          <Input
-            id="avatar"
-            placeholder="url"
-            onChange={handleChange}
-            // value={query.sex}
-          />
+          <Input id="avatar" placeholder="url" onChange={handleChange} />
         </InlineInputContainer>
         <InlineInputContainer>
           <Input
             id="breedName"
             placeholder="Breed Name"
             onChange={handleChange}
-            // value={query.breedName}
           />
           <Input
             id="breedGroup"
             placeholder="Breed Group"
             onChange={handleChange}
-            // value={query.breedGroup}
           />
         </InlineInputContainer>
         <AdvButton
