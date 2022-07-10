@@ -7,7 +7,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import TextArea from "../common/TextArea";
 
-const Journal = ({ query, submitting, updateForm, onSubmit }) => {
+const JournalForm = ({ query, submitting, updateForm, onSubmit }) => {
   const [value, setValue] = useState("");
 
   const handleSelect = (e) => {
@@ -59,4 +59,4 @@ const Journal = ({ query, submitting, updateForm, onSubmit }) => {
   );
 };
 
-export default Journal;
+export default JournalForm;
