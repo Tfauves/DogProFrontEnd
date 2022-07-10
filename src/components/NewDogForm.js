@@ -3,7 +3,6 @@ import InlineInputContainer from "./common/InlineInputContainer";
 import Input from "./common/Input";
 import AdvButton from "./common/AdvButton";
 import Form from "./common/Form";
-import { queryAllByAltText } from "@testing-library/react";
 
 const NewDogForm = (props) => {
   const { updateForm, onSubmit } = props;
