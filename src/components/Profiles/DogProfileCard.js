@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import NavButton from "../Navbar/NavButton";
 
 const DogProfileCard = (props) => {
   const [auth] = useContext(AuthContext);
@@ -21,10 +22,7 @@ const DogProfileCard = (props) => {
         <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
         <ListGroupItem>Vestibulum at eros</ListGroupItem>
       </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
+      <Card.Body></Card.Body>
     </Card>
   );
 };

@@ -7,7 +7,8 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import TextArea from "../common/TextArea";
 
-const JournalForm = ({ query, submitting, updateForm, onSubmit }) => {
+const JournalForm = (props) => {
+  const { updateForm, onSubmit } = props;
   const [value, setValue] = useState("");
 
   const handleSelect = (e) => {
@@ -28,14 +29,20 @@ const JournalForm = ({ query, submitting, updateForm, onSubmit }) => {
       <h1>journal</h1>
       <div>
         <DropdownButton
-          alignRight
+          // alignRight
           title="Select Activity"
           id="dropdown-menu-align-right"
           onSelect={handleSelect}
         >
-          <Dropdown.Item eventKey="Activity-1">Activity-1</Dropdown.Item>
-          <Dropdown.Item eventKey="Activity-2">Activity-2</Dropdown.Item>
-          <Dropdown.Item eventKey="Activity-3">Activity-3</Dropdown.Item>
+          <Dropdown.Item onChange={handleChange} eventKey="Activity-1">
+            Activity-1
+          </Dropdown.Item>
+          <Dropdown.Item onChange={handleChange} eventKey="Activity-2">
+            Activity-2
+          </Dropdown.Item>
+          <Dropdown.Item onChange={handleChange} eventKey="Activity-3">
+            Activity-3
+          </Dropdown.Item>
         </DropdownButton>
         <h4>{value}</h4>
         <Form

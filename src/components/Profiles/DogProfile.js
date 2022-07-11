@@ -6,6 +6,8 @@ import Spinner from "../faCommon/Spinner";
 import { Fragment } from "react/cjs/react.production.min";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { apiHost } from "../../config";
+import AdvButton from "../common/AdvButton";
+import { useNavigate } from "react-router-dom";
 
 const DogProfile = (props) => {
   const params = useParams();
@@ -14,6 +16,8 @@ const DogProfile = (props) => {
   const [dogProfile, setDogProfile] = useState({
     id: params.dogId,
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getDog = async () => {
@@ -29,6 +33,10 @@ const DogProfile = (props) => {
     setLoading(true);
     getDog();
   }, []);
+
+  const onClick = (journalId) => {
+    navigate(`/journal/${journalId}`);
+  };
 
   const displayProfile = () => {
     return (
@@ -99,8 +107,17 @@ const DogProfile = (props) => {
             <ListGroupItem>Weight: {dogProfile.weight} lbs</ListGroupItem>
           </ListGroup>
           <Card.Body>
-            <Card.Link href="#">Card Link</Card.Link>
-            <Card.Link href="#">Another Link</Card.Link>
+            <AdvButton
+              onClick={onClick}
+              style={{
+                width: "auto",
+                color: "#F1F1F1",
+                backgroundColor: "gray",
+              }}
+            >
+              Journal
+            </AdvButton>
+            {/* <Card.Link href="#">Another Link</Card.Link> */}
           </Card.Body>
         </Card>
       </Fragment>
