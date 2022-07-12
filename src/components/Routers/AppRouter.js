@@ -26,6 +26,7 @@ const AppRouter = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/:ownId" element={<Profile />} />
           <Route path="/dog" element={<Dogs />} />
+          <Route path="/journal" element={<Journal />} />
           <Route path="/dogProfile/:dogId" element={<DogProfile />} />
           <Route path="/journal/:journalId" element={<Journal />} />
           <Route path="/journalEntry" element={<JournalForm />} />
