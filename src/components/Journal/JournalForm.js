@@ -6,6 +6,8 @@ import AdvButton from "../common/AdvButton";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import TextArea from "../common/TextArea";
+import JournalEntry from "./JournalEntry";
+import JournalEntryForm from "./JournalEntryForm";
 
 const JournalForm = (props) => {
   const { updateForm, onSubmit } = props;
@@ -28,7 +30,12 @@ const JournalForm = (props) => {
     <div>
       <h1>journal</h1>
       <div>
-        <DropdownButton
+        <JournalEntryForm
+          query={value}
+          updateForm={updateForm}
+          onSubmit={onSubmit}
+        />
+        {/* <DropdownButton
           // alignRight
           title="Select Activity"
           id="dropdown-menu-align-right"
@@ -44,8 +51,8 @@ const JournalForm = (props) => {
             Activity-3
           </Dropdown.Item>
         </DropdownButton>
-        <h4>{value}</h4>
-        <Form
+        <h4>{value}</h4> */}
+        {/* <Form
           onSubmit={handleSubmit}
           style={{ maxWidth: "800px", width: "100" }}
         >
@@ -60,7 +67,7 @@ const JournalForm = (props) => {
           >
             Submit
           </AdvButton>
-        </Form>
+        </Form> */}
       </div>
     </div>
   );

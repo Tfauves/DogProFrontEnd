@@ -39,19 +39,18 @@ const Journal = (props) => {
   };
 
   return (
-    // <div
-    //   style={{
-    //     display: "flex",
-    //     flex: "1",
-    //     flexDirection: "column",
-    //     alignItems: "center",
-    //     minHeight: "100vh",
-    //   }}
-    // >
-
-    //   {/* {loading ? <Spinner /> : displayJournal()} */}
-    // </div>
-    displayJournal()
+    <div
+      style={{
+        display: "flex",
+        flex: "1",
+        flexDirection: "column",
+        alignItems: "center",
+        minHeight: "100vh",
+      }}
+    >
+      {loading ? <Spinner /> : displayJournal()}
+    </div>
+    // displayJournal()
   );
 };
 

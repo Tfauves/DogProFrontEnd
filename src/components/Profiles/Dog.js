@@ -8,7 +8,8 @@ const Dog = (props) => {
   const onClick = () => {
     navigate("/journalEntry");
   };
-  const { id, name, avatar, age, weight, sex, breed, deleted } = props.dog;
+  const { id, name, avatar, age, weight, sex, breed, deleted, journal } =
+    props.dog;
   return (
     <BorderCard>
       <h2>Name: {name}</h2>

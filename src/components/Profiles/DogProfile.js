@@ -13,7 +13,7 @@ const DogProfile = (props) => {
   const params = useParams();
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
-  const [dogProfile, setDogProfile] = useState({
+  const [dogProfile, setDogProfile, journalId] = useState({
     id: params.dogId,
   });
 
@@ -27,6 +27,7 @@ const DogProfile = (props) => {
         },
       });
       console.log(res.data);
+
       setDogProfile(res.data);
       setLoading(false);
     };
@@ -35,7 +36,7 @@ const DogProfile = (props) => {
   }, []);
 
   const onClick = (journalId) => {
-    navigate(`/journal/${journalId}`);
+    navigate(`/journal/${dogProfile.journal.id}`);
   };
 
   const displayProfile = () => {
