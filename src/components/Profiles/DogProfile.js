@@ -32,8 +32,11 @@ const DogProfile = (props) => {
       setLoading(false);
     };
     setLoading(true);
+    if (!auth.token) {
+      return;
+    }
     getDog();
-  }, []);
+  }, [auth]);
 
   const onClick = (journalId) => {
     navigate(`/journal/${dogProfile.journal.id}`);

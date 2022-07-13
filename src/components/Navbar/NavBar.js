@@ -53,6 +53,11 @@ const NavBar = (props) => {
               to="/profile"
               label="profile"
             />
+            <NavButton
+              style={{ fontFamily: "specialElite, cursive" }}
+              to="/logout"
+              label="logout"
+            />
           </Fragment>
         ) : (
           <Fragment>

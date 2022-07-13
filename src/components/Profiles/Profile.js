@@ -36,8 +36,11 @@ const Profile = (props) => {
       setLoading(false);
     };
     setLoading(true);
+    if (!auth.token) {
+      return;
+    }
     _fetchOwner();
-  }, []);
+  }, [auth]);
 
   const onClick = () => {
     navigate("/newDog");

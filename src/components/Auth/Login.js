@@ -15,7 +15,7 @@ const Login = () => {
   const [submitting, setSubmitting] = useState(false);
   // const [errors, setErrors] = useState({});
   const navigate = useNavigate();
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth, setAuth, saveAuth] = useContext(AuthContext);
 
   const updateForm = (field, value) => {
     setQuery({
@@ -39,6 +39,7 @@ const Login = () => {
       setAuth({ token: res.data.token, profile: profileRes.data });
       setSubmitting(false);
       navigate("/profile");
+      saveAuth(res.data);
     } catch (err) {
       console.error(err.response.data.message);
       alert(err.response.data.error);

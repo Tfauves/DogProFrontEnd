@@ -11,6 +11,7 @@ import DogProfile from "../Profiles/DogProfile";
 import UpdatedProfile from "../Profiles/UpdateProfile";
 import JournalForm from "../Journal/JournalForm";
 import Journal from "../Journal/Journal";
+import Logout from "../Auth/Logout";
 
 const AppRouter = () => {
   return (
@@ -21,6 +22,7 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route path="/newDog" element={<NewDog />} />
           <Route path="/login" element={<Login />} />
+          <Route path="logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
           <Route path="/updateProfile" element={<UpdatedProfile />} />
           <Route path="/profile" element={<Profile />} />
