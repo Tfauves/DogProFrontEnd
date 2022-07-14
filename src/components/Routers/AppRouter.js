@@ -12,6 +12,7 @@ import UpdatedProfile from "../Profiles/UpdateProfile";
 import JournalForm from "../Journal/JournalForm";
 import Journal from "../Journal/Journal";
 import Logout from "../Auth/Logout";
+import JournalEntry from "./../Journal/JournalEntry";
 
 const AppRouter = () => {
   return (
@@ -31,7 +32,7 @@ const AppRouter = () => {
           <Route path="/journal" element={<Journal />} />
           <Route path="/dogProfile/:dogId" element={<DogProfile />} />
           <Route path="/journal/:journalId" element={<Journal />} />
-          <Route path="/journalEntry" element={<JournalForm />} />
+          <Route path="/journalEntry" element={<JournalEntry />} />
         </Routes>
       </div>
     </div>

@@ -6,18 +6,19 @@ import AdvButton from "../common/AdvButton";
 import TextArea from "../common/TextArea";
 
 const JournalEntryForm = (props) => {
-  const { query, updateForm, onSubmit } = props;
+  const { query, updateForm } = props;
+
   const handleChange = (e) => {
     updateForm(e.target.id, e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    onSubmit(e);
-  };
+  // const handleSubmit = (e) => {
+  //   onSubmit(e);
+  // };
 
   return (
     <div>
-      <Form style={{ maxWidth: "800px", width: "100" }}>
+      <Form style={{ maxWidth: "800px", width: "100", height: "300px" }}>
         <Input>
           <TextArea />
         </Input>

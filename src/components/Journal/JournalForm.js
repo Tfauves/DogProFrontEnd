@@ -52,7 +52,7 @@ const JournalForm = (props) => {
           </Dropdown.Item>
         </DropdownButton>
         <h4>{value}</h4> */}
-        {/* <Form
+        <Form
           onSubmit={handleSubmit}
           style={{ maxWidth: "800px", width: "100" }}
         >
@@ -67,7 +67,7 @@ const JournalForm = (props) => {
           >
             Submit
           </AdvButton>
-        </Form> */}
+        </Form>
       </div>
     </div>
   );
