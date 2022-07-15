@@ -4,13 +4,13 @@ import axios from "axios";
 import JournalForm from "./JournalForm";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "./../../config";
-// import JournalEntryForm from "./JournalEntryForm";
 
-const JournalEntry = () => {
+const JournalEntry = (props) => {
   let navigate = useNavigate();
+  const { journalId } = props;
 
   const [query, setQuery] = useState({
-    entry: "",
+    activity: "",
   });
 
   const [auth] = useContext(AuthContext);
@@ -24,26 +24,23 @@ const JournalEntry = () => {
 
   const onSubmit = async (token) => {
     const data = query;
-    data.entry = { type: data.entry.type, activity: data.entry.activity };
+    data.type = { id: data.type };
+    data.entry = { activity: data.activity };
+    console.log(data);
     try {
-      const res = await axios.post(`${apiHost}/api/entry`, data, {
+      console.log(journalId);
+      const res = await axios.post(`${apiHost}/api/entry/${journalId}`, data, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
       });
+      // todo: not navigating
       navigate("/journal");
     } catch (err) {
       alert(err.response.data.message);
     }
   };
 
-  return (
-    <JournalForm
-      // activity={}
-      // entry={}
-      updateForm={updateForm}
-      onSubmit={onSubmit}
-    />
-  );
+  return <JournalForm updateForm={updateForm} onSubmit={onSubmit} />;
 };
 export default JournalEntry;

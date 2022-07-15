@@ -5,6 +5,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import { Fragment } from "react/cjs/react.production.min";
+import JournalEntry from "./JournalEntry";
 
 const Journal = (props) => {
   const params = useParams();
@@ -28,13 +29,19 @@ const Journal = (props) => {
     setLoading(true);
     getJournal();
   }, []);
-
+  // todo: not displaying journal entries
   const displayJournal = () => {
     return (
-      <Fragment>
-        <h1>Journal</h1>
-        <p>{journal.id}</p>
-      </Fragment>
+      <div>
+        <Fragment>
+          <h1>Journal Home</h1>
+          <p> dog journal Id {journal.id}</p>
+        </Fragment>
+        <Fragment>
+          <p>{}</p>
+          <JournalEntry journalId={journal.id} />
+        </Fragment>
+      </div>
     );
   };
 
@@ -50,7 +57,6 @@ const Journal = (props) => {
     >
       {loading ? <Spinner /> : displayJournal()}
     </div>
-    // displayJournal()
   );
 };
 

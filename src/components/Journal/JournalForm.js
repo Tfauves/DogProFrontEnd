@@ -3,11 +3,7 @@ import Form from "../common/Form";
 import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
 import AdvButton from "../common/AdvButton";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
-import TextArea from "../common/TextArea";
-import JournalEntry from "./JournalEntry";
-import JournalEntryForm from "./JournalEntryForm";
+import TypeDropdown from "../EntryDropdown/TypeDropdown";
 
 const JournalForm = (props) => {
   const { updateForm, onSubmit } = props;
@@ -28,37 +24,37 @@ const JournalForm = (props) => {
 
   return (
     <div>
-      <h1>journal</h1>
       <div>
-        <JournalEntryForm
-          query={value}
-          updateForm={updateForm}
-          onSubmit={onSubmit}
-        />
-        {/* <DropdownButton
-          // alignRight
-          title="Select Activity"
-          id="dropdown-menu-align-right"
-          onSelect={handleSelect}
-        >
-          <Dropdown.Item onChange={handleChange} eventKey="Activity-1">
-            Activity-1
-          </Dropdown.Item>
-          <Dropdown.Item onChange={handleChange} eventKey="Activity-2">
-            Activity-2
-          </Dropdown.Item>
-          <Dropdown.Item onChange={handleChange} eventKey="Activity-3">
-            Activity-3
-          </Dropdown.Item>
-        </DropdownButton>
-        <h4>{value}</h4> */}
         <Form
           onSubmit={handleSubmit}
           style={{ maxWidth: "800px", width: "100" }}
         >
+          {/* <InlineInputContainer>
+            <div style={{ marginBottom: "100px" }}>
+              <TypeDropdown value={value} />
+            </div>
+          </InlineInputContainer> */}
           <InlineInputContainer>
-            <TextArea />
+            <Input
+              id="type"
+              placeholder="type"
+              type="text"
+              onChange={handleChange}
+              value={value.type}
+              required
+            />
           </InlineInputContainer>
+          <InlineInputContainer>
+            <Input
+              id="activity"
+              placeholder="activity"
+              type="text"
+              onChange={handleChange}
+              value={value.activity}
+              required
+            />
+          </InlineInputContainer>
+
           <AdvButton
             style={{ marginTop: "10px" }}
             variant="primary"
