@@ -6,6 +6,7 @@ import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import { Fragment } from "react/cjs/react.production.min";
 import JournalEntry from "./JournalEntry";
+import Entries from "./Entries";
 
 const Journal = (props) => {
   const params = useParams();
@@ -29,18 +30,33 @@ const Journal = (props) => {
     setLoading(true);
     getJournal();
   }, []);
-  // todo: not displaying journal entries
+
+  // todo: map through entries
   const displayJournal = () => {
+    // console.log((journal.entry = { activity: journal.entry[0] }));
+    console.log(journal.entry[0].type.type);
     return (
-      <div>
-        <Fragment>
-          <h1>Journal Home</h1>
-          <p> dog journal Id {journal.id}</p>
-        </Fragment>
-        <Fragment>
-          <p>{}</p>
+      <div style={{ marginTop: "3em" }}>
+        <h1>Journal Home</h1>
+
+        <Entries />
+        {/* <p> dog journal Id {journal.id}</p> */}
+        <p> Type: {journal.entry[0].type.type}</p>
+        <p> Activity: {journal.entry[0].activity}</p>
+        <p> Time: {journal.entry[0].timestamp}</p>
+
+        <p> Type: {journal.entry[1].type.type}</p>
+        <p> Activity: {journal.entry[1].activity}</p>
+        <p> Time: {journal.entry[1].timestamp}</p>
+
+        <p> Type: {journal.entry[2].type.type}</p>
+        <p> Activity: {journal.entry[2].activity}</p>
+        <p> Time: {journal.entry[2].timestamp}</p>
+
+        <div style={{ marginTop: "6em" }}>
+          <h1>Add A New Entry</h1>
           <JournalEntry journalId={journal.id} />
-        </Fragment>
+        </div>
       </div>
     );
   };
