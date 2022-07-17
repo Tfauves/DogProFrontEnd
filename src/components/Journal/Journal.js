@@ -32,14 +32,16 @@ const Journal = (props) => {
   }, []);
 
   // todo: map through entries
+
   const displayJournal = () => {
     // console.log((journal.entry = { activity: journal.entry[0] }));
     console.log(journal.entry[0].type.type);
+    console.log(journal.entry[0].type.id);
+
     return (
       <div style={{ marginTop: "3em" }}>
         <h1>Journal Home</h1>
 
-        <Entries />
         {/* <p> dog journal Id {journal.id}</p> */}
         <p> Type: {journal.entry[0].type.type}</p>
         <p> Activity: {journal.entry[0].activity}</p>
