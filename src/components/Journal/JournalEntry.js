@@ -1,12 +1,10 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import JournalForm from "./JournalForm";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "./../../config";
 
 const JournalEntry = (props) => {
-  let navigate = useNavigate();
   const { journalId } = props;
 
   const [query, setQuery] = useState({
@@ -34,8 +32,6 @@ const JournalEntry = (props) => {
           Authorization: `Bearer ${auth.token}`,
         },
       });
-      // todo: not navigating
-      navigate("/journal");
     } catch (err) {
       alert(err.response.data.message);
     }

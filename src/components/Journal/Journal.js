@@ -31,8 +31,7 @@ const Journal = (props) => {
     setLoading(true);
     getJournal();
   }, []);
-
-  // todo: map through entries
+  // todo: each child needs unique key prop
   const displayEntires = () => {
     return journal.entry.map(({ type: { id, type }, activity, timestamp }) => (
       <div>
@@ -42,13 +41,12 @@ const Journal = (props) => {
         <p>{activity}</p>
       </div>
 
-      // <Entries entry={entry} key={count++} />
+      // <Entries entry={entry} key={} />
     ));
   };
   const displayJournal = () => {
-    // console.log((journal.entry = { activity: journal.entry[0] }));
-    console.log(journal.entry[0].type.type);
-    console.log(journal.entry[0].type.id);
+    // console.log(journal.entry[0].type.type);
+    // console.log(journal.entry[0].type.id);
 
     return (
       <div style={{ marginTop: "3em" }}>
@@ -66,6 +64,7 @@ const Journal = (props) => {
         <p> Type: {journal.entry[2].type.type}</p>
         <p> Activity: {journal.entry[2].activity}</p>
         <p> Time: {journal.entry[2].timestamp}</p> */}
+
         <div style={{ marginTop: "6em" }}>
           <h1>Add A New Entry</h1>
           <JournalEntry journalId={journal.id} />
