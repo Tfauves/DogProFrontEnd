@@ -2,7 +2,7 @@ import React from "react";
 import BorderCard from "../common/BorderCard";
 
 const Entries = (props) => {
-  const { id, type, activity, timestamp } = props.entry;
+  const { type, activity, timestamp } = props.entry;
   return (
     <BorderCard>
       <h1>Type: {type}</h1>

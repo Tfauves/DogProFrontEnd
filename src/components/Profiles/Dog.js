@@ -2,7 +2,7 @@ import React from "react";
 import BorderCard from "../common/BorderCard";
 import AdvButton from "../common/AdvButton";
 import { useNavigate } from "react-router-dom";
-
+// todo: need to send journal id over with the quick entry button
 const Dog = (props) => {
   const navigate = useNavigate();
   const onClick = () => {

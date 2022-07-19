@@ -7,6 +7,7 @@ import Spinner from "../faCommon/Spinner";
 import { Fragment } from "react/cjs/react.production.min";
 import JournalEntry from "./JournalEntry";
 import Entries from "./Entries";
+import EntryType from "./EntryType";
 
 const Journal = (props) => {
   const params = useParams();
@@ -32,7 +33,18 @@ const Journal = (props) => {
   }, []);
 
   // todo: map through entries
+  const displayEntires = () => {
+    return journal.entry.map(({ type: { id, type }, activity, timestamp }) => (
+      <div>
+        <p>{id}</p>
+        <p>{type}</p>
+        <p>{timestamp}</p>
+        <p>{activity}</p>
+      </div>
 
+      // <Entries entry={entry} key={count++} />
+    ));
+  };
   const displayJournal = () => {
     // console.log((journal.entry = { activity: journal.entry[0] }));
     console.log(journal.entry[0].type.type);
@@ -41,9 +53,9 @@ const Journal = (props) => {
     return (
       <div style={{ marginTop: "3em" }}>
         <h1>Journal Home</h1>
-
+        {displayEntires()}
         {/* <p> dog journal Id {journal.id}</p> */}
-        <p> Type: {journal.entry[0].type.type}</p>
+        {/* <p> Type: {journal.entry[0].type.type}</p>
         <p> Activity: {journal.entry[0].activity}</p>
         <p> Time: {journal.entry[0].timestamp}</p>
 
@@ -53,8 +65,7 @@ const Journal = (props) => {
 
         <p> Type: {journal.entry[2].type.type}</p>
         <p> Activity: {journal.entry[2].activity}</p>
-        <p> Time: {journal.entry[2].timestamp}</p>
-
+        <p> Time: {journal.entry[2].timestamp}</p> */}
         <div style={{ marginTop: "6em" }}>
           <h1>Add A New Entry</h1>
           <JournalEntry journalId={journal.id} />
