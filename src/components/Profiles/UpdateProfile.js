@@ -3,10 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import EditProfileForm from "./EditProfileForm";
+import { apiHost } from "../../config";
 
 const UpdatedProfile = () => {
-  const host = "http://localhost:8080";
-
   let navigate = useNavigate();
 
   const [query, setQuery] = useState({
@@ -26,7 +25,7 @@ const UpdatedProfile = () => {
     const data = query;
     data.avatar = { url: data.avatar };
     try {
-      const res = await axios.put(`${host}/api/profile`, data, {
+      const res = await axios.put(`${apiHost}/api/profile`, data, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },

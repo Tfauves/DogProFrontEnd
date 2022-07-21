@@ -37,6 +37,8 @@ const JournalEntry = (props) => {
     }
   };
 
-  return <JournalForm updateForm={updateForm} onSubmit={onSubmit} />;
+  return (
+    <JournalForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
+  );
 };
 export default JournalEntry;

@@ -4,10 +4,9 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
-import { Fragment } from "react/cjs/react.production.min";
 import JournalEntry from "./JournalEntry";
-import Entries from "./Entries";
-import EntryType from "./EntryType";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 
 const Journal = (props) => {
   const params = useParams();
@@ -31,40 +30,35 @@ const Journal = (props) => {
     setLoading(true);
     getJournal();
   }, []);
-  // todo: each child needs unique key prop
   const displayEntires = () => {
     return journal.entry.map(({ type: { id, type }, activity, timestamp }) => (
       <div>
-        <p>{id}</p>
+        <Card style={{ width: "18rem" }}>
+          <ListGroup variant="flush">
+            {/* <ListGroup.Item>{id}</ListGroup.Item> */}
+            <ListGroup.Item>
+              <h3>{type}</h3>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <p>Time: {timestamp}</p>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <p>Activity: {activity}</p>
+            </ListGroup.Item>
+          </ListGroup>
+        </Card>
+        {/* <p></p>
         <p>{type}</p>
         <p>{timestamp}</p>
-        <p>{activity}</p>
+        <p>{activity}</p> */}
       </div>
-
-      // <Entries entry={entry} key={} />
     ));
   };
   const displayJournal = () => {
-    // console.log(journal.entry[0].type.type);
-    // console.log(journal.entry[0].type.id);
-
     return (
       <div style={{ marginTop: "3em" }}>
         <h1>Journal Home</h1>
         {displayEntires()}
-        {/* <p> dog journal Id {journal.id}</p> */}
-        {/* <p> Type: {journal.entry[0].type.type}</p>
-        <p> Activity: {journal.entry[0].activity}</p>
-        <p> Time: {journal.entry[0].timestamp}</p>
-
-        <p> Type: {journal.entry[1].type.type}</p>
-        <p> Activity: {journal.entry[1].activity}</p>
-        <p> Time: {journal.entry[1].timestamp}</p>
-
-        <p> Type: {journal.entry[2].type.type}</p>
-        <p> Activity: {journal.entry[2].activity}</p>
-        <p> Time: {journal.entry[2].timestamp}</p> */}
-
         <div style={{ marginTop: "6em" }}>
           <h1>Add A New Entry</h1>
           <JournalEntry journalId={journal.id} />
@@ -72,7 +66,6 @@ const Journal = (props) => {
       </div>
     );
   };
-
   return (
     <div
       style={{
