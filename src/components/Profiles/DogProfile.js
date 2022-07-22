@@ -45,67 +45,19 @@ const DogProfile = (props) => {
   const displayProfile = () => {
     return (
       <Fragment>
-        {/* <div
-          style={{
-            backgroundImage: `url(${image})`,
-            backgroundSize: "cover",
-            height: "27vh",
-            display: "flex",
-            flexDirection: "row",
-            margin: "1rem 0rem",
-            marginTop: "3rem",
-            padding: "8px",
-            maxWidth: "900px",
-            width: "100%",
-            borderRadius: "15px",
-          }}
-        >
-          <div
-            style={{
-              flex: 1,
-              flexDirection: "column",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img
-              style={{ borderRadius: "3px", padding: "1em" }}
-              src={dogProfile.avatar.url}
-              width={300}
-              height={250}
-              alt="placeholder img"
-            />
-          </div>
-          , */}
-        {/* <div
-            style={{
-              fontFamily: "Bebas Neue, cursive",
-              flex: 2,
-              flexDirection: "column",
-              color: "#303030",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <h1>Name: {dogProfile.name.toUpperCase()}</h1>
-            <h2>{dogProfile.breed.breedName}</h2>
-            <h2>{dogProfile.breed.breedGroup}</h2>
-            <h2>Age: {dogProfile.age}</h2>
-            <h2>Sex: {dogProfile.sex}</h2>
-            <h2>Weight: {dogProfile.weight + " lbs"}</h2>
-          </div> */}
-        {/* </div> */}
-
         <Card style={{ width: "50rem", paddingTop: "3rem" }}>
           <Card.Img variant="top" src={dogProfile.avatar.url} />
           <Card.Body>
             <Card.Title>{dogProfile.name.toUpperCase()}</Card.Title>
-            <Card.Text>Latest Journal Entry</Card.Text>
+            {/* <Card.Text>Latest Journal Entry</Card.Text> */}
           </Card.Body>
           <ListGroup className="list-group-flush">
-            <ListGroupItem>{dogProfile.breed.breedName}</ListGroupItem>
-            <ListGroupItem>{dogProfile.breed.breedGroup}</ListGroupItem>
+            <ListGroupItem>
+              Breed Name: {dogProfile.breed.breedName}
+            </ListGroupItem>
+            <ListGroupItem>
+              Breed Group: {dogProfile.breed.breedGroup}
+            </ListGroupItem>
             <ListGroupItem>Age: {dogProfile.age}</ListGroupItem>
             <ListGroupItem>Sex: {dogProfile.sex}</ListGroupItem>
             <ListGroupItem>Weight: {dogProfile.weight} lbs</ListGroupItem>

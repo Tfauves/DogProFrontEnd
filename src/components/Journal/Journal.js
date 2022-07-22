@@ -47,10 +47,6 @@ const Journal = (props) => {
             </ListGroup.Item>
           </ListGroup>
         </Card>
-        {/* <p></p>
-        <p>{type}</p>
-        <p>{timestamp}</p>
-        <p>{activity}</p> */}
       </div>
     ));
   };

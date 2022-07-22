@@ -8,7 +8,7 @@ import Spinner from "../faCommon/Spinner";
 import AdvButton from "../common/AdvButton";
 import { Fragment } from "react/cjs/react.production.min";
 import image from "../../assets/cardImg.jpg";
-import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dogs from "./Dogs";
@@ -140,26 +140,6 @@ const Profile = (props) => {
           </div>
         </Container>
         <Dogs />
-
-        {/* <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            width: "100%",
-            maxWidth: "900px",
-          }}
-        >
-          <AdvButton
-            style={{
-              width: "auto",
-              color: "#F1F1F1",
-              backgroundColor: "#303030",
-            }}
-          >
-            Delete Dog <FontAwesomeIcon icon={faPaw} />
-          </AdvButton>
-        </div> */}
       </Fragment>
     );
   };

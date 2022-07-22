@@ -3,8 +3,7 @@ import Form from "../common/Form";
 import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
 import AdvButton from "../common/AdvButton";
-import TypeDropdown from "../EntryDropdown/TypeDropdown";
-import { useNavigate } from "react-router-dom";
+// import TypeDropdown from "../EntryDropdown/TypeDropdown";
 
 const JournalForm = (props) => {
   const { updateForm, onSubmit } = props;

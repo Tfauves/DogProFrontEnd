@@ -9,7 +9,6 @@ import Dogs from "../Profiles/Dogs";
 import NewDog from "../NewDog";
 import DogProfile from "../Profiles/DogProfile";
 import UpdatedProfile from "../Profiles/UpdateProfile";
-import JournalForm from "../Journal/JournalForm";
 import Journal from "../Journal/Journal";
 import Logout from "../Auth/Logout";
 import JournalEntry from "./../Journal/JournalEntry";
