@@ -57,7 +57,7 @@ const Journal = (props) => {
         {displayEntires()}
         <div style={{ marginTop: "6em" }}>
           <h1>Add A New Entry</h1>
-          <JournalEntry journalId={journal.id} />
+          <JournalEntry query={journal.entry} journalId={journal.id} />
         </div>
       </div>
     );

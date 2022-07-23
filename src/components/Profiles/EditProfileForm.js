@@ -34,7 +34,7 @@ const EditProfileForm = (props) => {
           />
         </InlineInputContainer>
         <InlineInputContainer>
-          <Input id="avatar" placeholder="url" onChange={handleChange} />
+          <Input id="avatar" placeholder="img url" onChange={handleChange} />
         </InlineInputContainer>
         <AdvButton
           style={{ marginTop: "10px" }}
