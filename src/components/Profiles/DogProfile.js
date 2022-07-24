@@ -8,6 +8,7 @@ import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { apiHost } from "../../config";
 import AdvButton from "../common/AdvButton";
 import { useNavigate } from "react-router-dom";
+import DeleteDog from "./DeleteDog";
 
 const DogProfile = (props) => {
   const params = useParams();
@@ -42,6 +43,23 @@ const DogProfile = (props) => {
     navigate(`/journal/${dogProfile.journal.id}`);
   };
 
+  const deleteOnClick = (dogId) => {
+    const deleteDog = async () => {
+      const res = await axios.delete(`${apiHost}/api/dog/${dogProfile.id}`, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      console.log(res.data);
+      setDogProfile(res.data);
+      setLoading(false);
+    };
+    deleteDog();
+    navigate("/profile");
+
+    console.log(dogProfile.id);
+  };
+
   const displayProfile = () => {
     return (
       <Fragment>
@@ -72,6 +90,16 @@ const DogProfile = (props) => {
               }}
             >
               Journal
+            </AdvButton>
+            <AdvButton
+              onClick={deleteOnClick}
+              style={{
+                width: "auto",
+                color: "#F1F1F1",
+                backgroundColor: "gray",
+              }}
+            >
+              delete Dog
             </AdvButton>
             {/* <Card.Link href="#">Another Link</Card.Link> */}
           </Card.Body>
