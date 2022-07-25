@@ -4,10 +4,9 @@ import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import loginbackground from "../../assets/loginbackground.jpg";
+import { apiHost } from "../../config";
 
 const Register = () => {
-  const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
-
   let navigate = useNavigate();
 
   const [query, setQuery] = useState({
@@ -35,9 +34,8 @@ const Register = () => {
     }
     const data = query;
     data.name = query.fname + " " + query.lname;
-    data.cohort = parseInt(query.cohort);
     try {
-      const res = await axios.post(`${host}/api/auth/signup`, data);
+      const res = await axios.post(`${apiHost}/api/auth/signup`, data);
 
       login(data);
     } catch (err) {
@@ -47,7 +45,7 @@ const Register = () => {
 
   const login = async (data) => {
     try {
-      const res = await axios.post(`${host}/api/auth/signin`, data);
+      const res = await axios.post(`${apiHost}/api/auth/signin`, data);
       // alert(res.data.token);
       createProfile(data, res.data.token);
     } catch (err) {
@@ -58,7 +56,7 @@ const Register = () => {
   const createProfile = async (data, token) => {
     data.email = data.username;
     try {
-      const res = await axios.post(`${host}/api/profile`, data, {
+      const res = await axios.post(`${apiHost}/api/profile`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

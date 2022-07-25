@@ -25,7 +25,7 @@ const UpdatedProfile = () => {
     const data = query;
     data.avatar = { url: data.avatar };
     try {
-      const res = await axios.put(`${apiHost}/api/profile`, data, {
+      const res = await axios.put(`${apiHost}/api/profile/`, data, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
