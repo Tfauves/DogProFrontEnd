@@ -46,7 +46,8 @@ const Register = () => {
 
   const login = async (data) => {
     try {
-      const res = await axios.post(`${apiHost}/api/auth/signin`, data);
+      const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
+      const res = await axios.post(`${host}/api/auth/signin`, data);
       // alert(res.data.token);
       createProfile(data, res.data.token);
     } catch (err) {
@@ -57,7 +58,8 @@ const Register = () => {
   const createProfile = async (data, token) => {
     data.email = data.username;
     try {
-      const res = await axios.post(`${apiHost}/api/profile`, data, {
+      const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
+      const res = await axios.post(`${host}/api/profile`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
