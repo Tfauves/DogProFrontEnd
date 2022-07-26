@@ -7,6 +7,7 @@ import Spinner from "../faCommon/Spinner";
 import JournalEntry from "./JournalEntry";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import TypeSelect from "../EntryDropdown/TypeSelect";
 
 const Journal = (props) => {
   const params = useParams();
@@ -30,7 +31,7 @@ const Journal = (props) => {
     setLoading(true);
     getJournal();
   }, []);
-  const displayEntires = () => {
+  const displayEntries = () => {
     return journal.entry.map(({ type: { id, type }, activity, timestamp }) => (
       <div>
         <Card style={{ width: "18rem" }}>
@@ -54,9 +55,11 @@ const Journal = (props) => {
     return (
       <div style={{ marginTop: "3em" }}>
         <h1>Journal Home</h1>
-        {displayEntires()}
+        {displayEntries()}
         <div style={{ marginTop: "6em" }}>
           <h1>Add A New Entry</h1>
+          <h3>Select a Entry Type</h3>
+          <TypeSelect />
           <JournalEntry query={journal.entry} journalId={journal.id} />
         </div>
       </div>

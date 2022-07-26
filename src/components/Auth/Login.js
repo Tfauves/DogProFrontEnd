@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import loginbackground from "../../assets/loginbackground.jpg";
 import Splash from "../common/Splash";
-import bark from "../../assets/barkalt1.jpg";
+// import bark from "../../assets/barkalt1.jpg";
 
 const Login = () => {
   const [query, setQuery] = useState({
