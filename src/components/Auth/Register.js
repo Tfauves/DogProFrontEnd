@@ -35,7 +35,8 @@ const Register = () => {
     const data = query;
     data.name = query.fname + " " + query.lname;
     try {
-      const res = await axios.post(`${apiHost}/api/auth/signup`, data);
+      const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
+      const res = await axios.post(`${host}/api/auth/signup`, data);
 
       login(data);
     } catch (err) {
