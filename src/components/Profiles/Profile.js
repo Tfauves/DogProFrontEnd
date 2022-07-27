@@ -79,9 +79,9 @@ const Profile = (props) => {
             <img
               style={{ borderRadius: "100px" }}
               src={
-                owner.avatar
+                owner.avatar.url
                   ? owner.avatar.url
-                  : "https://via.placeholder.com/150"
+                  : "https://stonegatesl.com/wp-content/uploads/2021/01/avatar.jpg"
               }
               width={200}
               height={250}

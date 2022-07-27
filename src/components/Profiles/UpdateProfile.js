@@ -10,6 +10,7 @@ const UpdatedProfile = () => {
 
   const [query, setQuery] = useState({
     name: "",
+    avatar: "",
   });
 
   const [auth] = useContext(AuthContext);
