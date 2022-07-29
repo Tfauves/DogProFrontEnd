@@ -8,6 +8,7 @@ import JournalEntry from "./JournalEntry";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import TypeSelect from "../EntryDropdown/TypeSelect";
+import AdvButton from "../common/AdvButton";
 
 const Journal = (props) => {
   const params = useParams();
@@ -31,6 +32,7 @@ const Journal = (props) => {
     setLoading(true);
     getJournal();
   }, []);
+
   const displayEntries = () => {
     return journal.entry.map(({ type: { id, type }, activity, timestamp }) => (
       <div>
@@ -46,11 +48,13 @@ const Journal = (props) => {
             <ListGroup.Item>
               <p>Activity: {activity}</p>
             </ListGroup.Item>
+            <AdvButton>delete entry</AdvButton>
           </ListGroup>
         </Card>
       </div>
     ));
   };
+
   const displayJournal = () => {
     return (
       <div style={{ marginTop: "3em" }}>
@@ -59,6 +63,7 @@ const Journal = (props) => {
         <div style={{ marginTop: "6em" }}>
           <h1>Add A New Entry</h1>
           <h3>Select a Entry Type</h3>
+
           <TypeSelect />
           <JournalEntry query={journal.entry} journalId={journal.id} />
         </div>

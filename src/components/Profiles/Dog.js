@@ -5,16 +5,17 @@ import { useNavigate } from "react-router-dom";
 // todo: need to send journal id over with the quick entry button
 const Dog = (props) => {
   const navigate = useNavigate();
-  const onClick = () => {
-    navigate("/journalEntry");
-  };
   const { id, name, avatar, age, weight, sex, breed, deleted, journal } =
     props.dog;
+  const onClick = (props) => {
+    navigate(`/journalEntry`);
+  };
+
   return (
     <BorderCard>
       <h2>Name: {name}</h2>
       <AdvButton
-        onClick={onClick}
+        onClick={() => onClick()}
         style={{
           width: "auto",
           color: "#F1F1F1",

@@ -71,7 +71,6 @@ const DogProfile = (props) => {
           <Card.Img variant="top" src={dogProfile.avatar.url} />
           <Card.Body>
             <Card.Title>{dogProfile.name.toUpperCase()}</Card.Title>
-            {/* <Card.Text>Latest Journal Entry</Card.Text> */}
           </Card.Body>
           <ListGroup className="list-group-flush">
             <ListGroupItem>
@@ -115,7 +114,6 @@ const DogProfile = (props) => {
             >
               get breed info
             </AdvButton>
-            {/* <Card.Link href="#">Another Link</Card.Link> */}
           </Card.Body>
         </Card>
       </Fragment>
