@@ -43,6 +43,10 @@ const DogProfile = (props) => {
     navigate(`/journal/${dogProfile.journal.id}`);
   };
 
+  const goToBreedInfo = () => {
+    navigate(`/breedInfo`);
+  };
+
   const deleteOnClick = (dogId) => {
     const deleteDog = async () => {
       const res = await axios.delete(`${apiHost}/api/dog/${dogProfile.id}`, {
@@ -100,6 +104,16 @@ const DogProfile = (props) => {
               }}
             >
               delete Dog
+            </AdvButton>
+            <AdvButton
+              onClick={goToBreedInfo}
+              style={{
+                width: "auto",
+                color: "#F1F1F1",
+                backgroundColor: "gray",
+              }}
+            >
+              get breed info
             </AdvButton>
             {/* <Card.Link href="#">Another Link</Card.Link> */}
           </Card.Body>
