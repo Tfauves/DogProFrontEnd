@@ -16,12 +16,14 @@ const GetBreedInfo = (props) => {
 
   useEffect(() => {
     const getBreedInfo = async () => {
-      const res = await axios.get(`${apiHost}/api/info/breed/${breedInfo.id}`, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      console.log(res.data);
+      const res = await axios.get(
+        `${apiHost}/api/info/breed/${breedInfo.breedName}`,
+        {
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+          },
+        }
+      );
       setBreedInfo(res.data);
       setLoading(false);
     };
@@ -32,7 +34,6 @@ const GetBreedInfo = (props) => {
   const displayBreedInfo = () => {
     return (
       <div style={{ marginTop: "3em" }}>
-        <h1>Breed Info</h1>
         <BreedInfo query={params.breedName} journalId={breedInfo.id} />
         <div style={{ marginTop: "6em" }}></div>
       </div>

@@ -4,9 +4,11 @@ import BreedInfoForm from "./BreedInfoForm";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "./../../config";
 import { useNavigate } from "react-router-dom";
+import BreedInfoObj from "./BreedInfoObj";
 
 const BreedInfo = (props) => {
   const { breedName } = props;
+  const [infos, setInfos] = useState({});
 
   const [query, setQuery] = useState({
     breedName: "",
@@ -21,15 +23,12 @@ const BreedInfo = (props) => {
     });
   };
 
-  // let navigate = useNavigate();
   const onSubmit = async (token) => {
     const data = query;
-
-    console.log(data);
     try {
-      console.log(breedName);
+      // console.log(data.breedName);
       const res = await axios.get(
-        `${apiHost}/api/info/breed/${breedName}`,
+        `${apiHost}/api/info/breed/${data.breedName}`,
         data,
         {
           headers: {
@@ -37,14 +36,25 @@ const BreedInfo = (props) => {
           },
         }
       );
-      // navigate("/journal");
+      console.log(res.data[0].name);
     } catch (err) {
       alert(err.response.data.message);
     }
   };
 
+  // const displayInfos = () => {
+  //   return infos.map((dog) => <BreedInfoObj name={dog.name} key={dog.id} />);
+  // };
+
   return (
-    <BreedInfoForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
+    <div style={{ marginTop: "6em" }}>
+      <h1 style={{ textAlign: "center" }}>Breed Info Finder</h1>
+      <BreedInfoForm
+        query={breedName}
+        updateForm={updateForm}
+        onSubmit={onSubmit}
+      />
+    </div>
   );
 };
 export default BreedInfo;

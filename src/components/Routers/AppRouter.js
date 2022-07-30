@@ -12,7 +12,8 @@ import UpdatedProfile from "../Profiles/UpdateProfile";
 import Journal from "../Journal/Journal";
 import Logout from "../Auth/Logout";
 import JournalEntry from "./../Journal/JournalEntry";
-import BreedInfoForm from "../BreedApi/BreedInfoForm";
+import GetBreedInfo from "../BreedApi/GetBreedInfo";
+import BreedInfo from "../BreedApi/BreedInfo";
 
 const AppRouter = () => {
   return (
@@ -33,7 +34,7 @@ const AppRouter = () => {
           <Route path="/dogProfile/:dogId" element={<DogProfile />} />
           <Route path="/journal/:journalId" element={<Journal />} />
           <Route path="/journalEntry" element={<JournalEntry />} />
-          <Route path="/breedInfo" element={<BreedInfoForm />} />
+          <Route path="/breedInfo" element={<GetBreedInfo />} />
         </Routes>
       </div>
     </div>
