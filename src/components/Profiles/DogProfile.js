@@ -44,7 +44,7 @@ const DogProfile = (props) => {
   };
 
   const goToBreedInfo = () => {
-    navigate(`/breedInfo`);
+    navigate(`/infoPlz`);
   };
 
   const deleteOnClick = (dogId) => {

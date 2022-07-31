@@ -1,20 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
-import BreedInfoForm from "./BreedInfoForm";
 import { AuthContext } from "../Providers/AuthProvider";
-import { apiHost } from "./../../config";
-import { useNavigate } from "react-router-dom";
+import { apiHost } from "../../config";
+import ApiForm from "./ApiForm";
 
-const BreedInfo = (props) => {
+const ApiFormHandler = (props) => {
   const { breedName } = props;
   const [infos, setInfos] = useState({});
-
   const [query, setQuery] = useState({
     breedName: "",
   });
 
   const [auth] = useContext(AuthContext);
-  const navigate = useNavigate();
   const updateForm = (field, value) => {
     setQuery({
       ...query,
@@ -24,6 +21,7 @@ const BreedInfo = (props) => {
 
   const onSubmit = async (token) => {
     const data = query;
+    console.log(data);
     try {
       // console.log(data.breedName);
       const res = await axios.get(
@@ -36,7 +34,8 @@ const BreedInfo = (props) => {
         }
       );
 
-      console.log(res.data[0]);
+      console.log(res.data);
+
       // console.log(res.data[0].name);
       // console.log(res.data[0].bred_for);
       // console.log(res.data[0].breed_group);
@@ -51,12 +50,8 @@ const BreedInfo = (props) => {
   return (
     <div style={{ marginTop: "6em" }}>
       <h1 style={{ textAlign: "center" }}>Breed Info Finder</h1>
-      <BreedInfoForm
-        query={breedName}
-        updateForm={updateForm}
-        onSubmit={onSubmit}
-      />
+      <ApiForm query={breedName} updateForm={updateForm} onSubmit={onSubmit} />
     </div>
   );
 };
-export default BreedInfo;
+export default ApiFormHandler;

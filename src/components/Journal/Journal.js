@@ -33,6 +33,20 @@ const Journal = (props) => {
     getJournal();
   }, []);
 
+  const deleteOnClick = (journalId) => {
+    const deleteEntry = async () => {
+      const res = await axios.delete(`${apiHost}/api/entry/${journal.id}`, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      console.log(res.data);
+      setJournal(res.data);
+      setLoading(false);
+    };
+    deleteEntry();
+  };
+
   const displayEntries = () => {
     return journal.entry.map(({ type: { id, type }, activity, timestamp }) => (
       <div>
@@ -48,7 +62,7 @@ const Journal = (props) => {
             <ListGroup.Item>
               <p>Activity: {activity}</p>
             </ListGroup.Item>
-            <AdvButton>delete entry</AdvButton>
+            <AdvButton onclick={deleteOnClick}>delete entry</AdvButton>
           </ListGroup>
         </Card>
       </div>

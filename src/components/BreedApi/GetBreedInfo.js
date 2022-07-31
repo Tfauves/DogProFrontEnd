@@ -31,11 +31,18 @@ const GetBreedInfo = (props) => {
     getBreedInfo();
   }, []);
 
-  const displayBreedInfo = () => {
+  // const displayBreedInfo = () => {
+  //   return (
+  //     <div style={{ marginTop: "3em" }}>
+  //       <BreedInfo query={params.breedName} journalId={breedInfo.id} />
+  //     </div>
+  //   );
+  // };
+
+  const displayBreedForm = () => {
     return (
       <div style={{ marginTop: "3em" }}>
         <BreedInfo query={params.breedName} journalId={breedInfo.id} />
-        <div style={{ marginTop: "6em" }}></div>
       </div>
     );
   };
@@ -50,7 +57,7 @@ const GetBreedInfo = (props) => {
         minHeight: "100vh",
       }}
     >
-      {loading ? <Spinner /> : displayBreedInfo()}
+      {loading ? <Spinner /> : displayBreedForm()}
     </div>
   );
 };

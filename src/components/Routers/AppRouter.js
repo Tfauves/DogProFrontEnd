@@ -14,6 +14,8 @@ import Logout from "../Auth/Logout";
 import JournalEntry from "./../Journal/JournalEntry";
 import GetBreedInfo from "../BreedApi/GetBreedInfo";
 import BreedInfo from "../BreedApi/BreedInfo";
+import ApiInfo from "../Api/ApiInfo";
+import ApiFormHandler from "./../Api/ApiFormHandler";
 
 const AppRouter = () => {
   return (
@@ -34,7 +36,7 @@ const AppRouter = () => {
           <Route path="/dogProfile/:dogId" element={<DogProfile />} />
           <Route path="/journal/:journalId" element={<Journal />} />
           <Route path="/journalEntry" element={<JournalEntry />} />
-          <Route path="/breedInfo" element={<GetBreedInfo />} />
+          <Route path="/infoPlz" element={<ApiFormHandler />} />
         </Routes>
       </div>
     </div>
