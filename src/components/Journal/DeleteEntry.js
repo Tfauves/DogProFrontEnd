@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
+import AdvButton from "../common/AdvButton";
 
 const DeleteEntry = (props) => {
   const params = useParams();
@@ -26,7 +27,21 @@ const DeleteEntry = (props) => {
     deleteEntry();
   }, []);
 
-  return <h1>Delete </h1>;
+  const deleteOnClick = (entryId) => {
+    const deleteEntry = async () => {
+      const res = await axios.delete(`${apiHost}/api/entry/${entry.id}`, {
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+        },
+      });
+      console.log(res.data);
+      setEntryId(res.data);
+      setLoading(false);
+    };
+    deleteEntry();
+  };
+
+  return <AdvButton onclick={console.log("hello")}>delete entry</AdvButton>;
 };
 
 export default DeleteEntry;

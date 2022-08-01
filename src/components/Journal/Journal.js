@@ -9,6 +9,8 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import TypeSelect from "../EntryDropdown/TypeSelect";
 import AdvButton from "../common/AdvButton";
+import DeleteEntry from "./DeleteEntry";
+import DisplayEntries from "./Entry";
 
 const Journal = (props) => {
   const params = useParams();
@@ -33,47 +35,33 @@ const Journal = (props) => {
     getJournal();
   }, []);
 
-  const deleteOnClick = (journalId) => {
-    const deleteEntry = async () => {
-      const res = await axios.delete(`${apiHost}/api/entry/${journal.id}`, {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      });
-      console.log(res.data);
-      setJournal(res.data);
-      setLoading(false);
-    };
-    deleteEntry();
-  };
-
-  const displayEntries = () => {
-    return journal.entry.map(({ type: { id, type }, activity, timestamp }) => (
-      <div>
-        <Card style={{ width: "18rem" }}>
-          <ListGroup variant="flush">
-            {/* <ListGroup.Item>{id}</ListGroup.Item> */}
-            <ListGroup.Item>
-              <h3>{type}</h3>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <p>Time: {timestamp}</p>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <p>Activity: {activity}</p>
-            </ListGroup.Item>
-            <AdvButton onclick={deleteOnClick}>delete entry</AdvButton>
-          </ListGroup>
-        </Card>
-      </div>
-    ));
-  };
+  // const displayEntries = () => {
+  //   return journal.entry.map(({ type: { id, type }, activity, timestamp }) => (
+  //     <div>
+  //       <Card style={{ width: "18rem" }}>
+  //         <ListGroup variant="flush">
+  //           {/* <ListGroup.Item>{id}</ListGroup.Item> */}
+  //           <ListGroup.Item>
+  //             <h3>{type}</h3>
+  //           </ListGroup.Item>
+  //           <ListGroup.Item>
+  //             <p>Time: {timestamp}</p>
+  //           </ListGroup.Item>
+  //           <ListGroup.Item>
+  //             <p>Activity: {activity}</p>
+  //           </ListGroup.Item>
+  //         </ListGroup>
+  //       </Card>
+  //     </div>
+  //   ));
+  // };
 
   const displayJournal = () => {
     return (
       <div style={{ marginTop: "3em" }}>
         <h1>Journal Home</h1>
-        {displayEntries()}
+        <DisplayEntries journal={journal} />
+        {/* {displayEntries()} */}
         <div style={{ marginTop: "6em" }}>
           <h1>Add A New Entry</h1>
           <h3>Select a Entry Type</h3>
