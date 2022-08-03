@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import Type from "./Type";
 
 const DisplayEntries = (props) => {
   //   return props.journal.entry.map((entry) => (

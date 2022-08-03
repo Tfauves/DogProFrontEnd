@@ -5,7 +5,6 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import JournalEntry from "./JournalEntry";
-import TypeSelect from "../EntryDropdown/TypeSelect";
 import DisplayEntries from "./Entry";
 
 const Journal = (props) => {
