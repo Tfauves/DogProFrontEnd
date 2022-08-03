@@ -5,24 +5,26 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import JournalEntry from "./JournalEntry";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 import TypeSelect from "../EntryDropdown/TypeSelect";
-import AdvButton from "../common/AdvButton";
-import DeleteEntry from "./DeleteEntry";
 import DisplayEntries from "./Entry";
 
 const Journal = (props) => {
   const params = useParams();
+  const { journalId } = params;
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
-  const [journal, setJournal] = useState({
-    id: params.journalId,
-  });
+  const [journal, setJournal] = useState([]);
+
+  const updateJournal = (newJournal) => {
+    setJournal({
+      ...journal,
+      entry: [...journal.entry, newJournal],
+    });
+  };
 
   useEffect(() => {
     const getJournal = async () => {
-      const res = await axios.get(`${apiHost}/api/journal/${journal.id}`, {
+      const res = await axios.get(`${apiHost}/api/journal/${journalId}`, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
@@ -35,39 +37,19 @@ const Journal = (props) => {
     getJournal();
   }, []);
 
-  // const displayEntries = () => {
-  //   return journal.entry.map(({ type: { id, type }, activity, timestamp }) => (
-  //     <div>
-  //       <Card style={{ width: "18rem" }}>
-  //         <ListGroup variant="flush">
-  //           {/* <ListGroup.Item>{id}</ListGroup.Item> */}
-  //           <ListGroup.Item>
-  //             <h3>{type}</h3>
-  //           </ListGroup.Item>
-  //           <ListGroup.Item>
-  //             <p>Time: {timestamp}</p>
-  //           </ListGroup.Item>
-  //           <ListGroup.Item>
-  //             <p>Activity: {activity}</p>
-  //           </ListGroup.Item>
-  //         </ListGroup>
-  //       </Card>
-  //     </div>
-  //   ));
-  // };
-
   const displayJournal = () => {
     return (
       <div style={{ marginTop: "3em" }}>
         <h1>Journal Home</h1>
         <DisplayEntries journal={journal} />
-        {/* {displayEntries()} */}
         <div style={{ marginTop: "6em" }}>
           <h1>Add A New Entry</h1>
           <h3>Select a Entry Type</h3>
-
-          <TypeSelect />
-          <JournalEntry query={journal.entry} journalId={journal.id} />
+          <JournalEntry
+            query={journal.entry}
+            journalId={journalId}
+            onAdd={updateJournal}
+          />
         </div>
       </div>
     );

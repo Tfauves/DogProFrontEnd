@@ -31,6 +31,7 @@ const TypeSelect = () => {
   const displayTypes = () => {
     return type.map((type) => <EntryType type={type} key={type.id} />);
   };
+
   return (
     <div style={{ width: "100%", justifyContent: "center" }}>
       {loading ? <p>Loading...</p> : displayTypes()}

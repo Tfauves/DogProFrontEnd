@@ -3,10 +3,11 @@ import Form from "../common/Form";
 import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
 import AdvButton from "../common/AdvButton";
+import TypeSelect from "../EntryDropdown/TypeSelect";
 
 const JournalForm = (props) => {
   const { updateForm, onSubmit } = props;
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState({});
 
   const handleSelect = (e) => {
     console.log(e);
@@ -28,6 +29,9 @@ const JournalForm = (props) => {
           onSubmit={handleSubmit}
           style={{ maxWidth: "800px", width: "100" }}
         >
+          <InlineInputContainer>
+            <TypeSelect />
+          </InlineInputContainer>
           <InlineInputContainer>
             <Input
               id="type"
