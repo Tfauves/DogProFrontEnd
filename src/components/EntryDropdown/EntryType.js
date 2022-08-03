@@ -1,5 +1,4 @@
 import React from "react";
-
 const EntryType = (props) => {
   const { id, type } = props.type;
 

@@ -34,9 +34,10 @@ const JournalEntry = (props) => {
           Authorization: `Bearer ${auth.token}`,
         },
       });
+      props.onAdd(res.data);
       // navigate("/journal");
     } catch (err) {
-      alert(err.response.data.message);
+      alert(err.response ? err.response.data.message : err.message);
     }
   };
 
