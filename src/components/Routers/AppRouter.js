@@ -12,8 +12,6 @@ import UpdatedProfile from "../Profiles/UpdateProfile";
 import Journal from "../Journal/Journal";
 import Logout from "../Auth/Logout";
 import JournalEntry from "./../Journal/JournalEntry";
-import GetBreedInfo from "../BreedApi/GetBreedInfo";
-import BreedInfo from "../BreedApi/BreedInfo";
 import ApiInfo from "../Api/ApiInfo";
 import ApiFormHandler from "./../Api/ApiFormHandler";
 

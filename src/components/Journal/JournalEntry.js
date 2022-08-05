@@ -3,7 +3,6 @@ import axios from "axios";
 import JournalForm from "./JournalForm";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "./../../config";
-import { useNavigate } from "react-router-dom";
 
 const JournalEntry = (props) => {
   const { journalId } = props;
@@ -13,7 +12,7 @@ const JournalEntry = (props) => {
   });
 
   const [auth] = useContext(AuthContext);
-  const navigate = useNavigate();
+
   const updateForm = (field, value) => {
     setQuery({
       ...query,
@@ -21,7 +20,6 @@ const JournalEntry = (props) => {
     });
   };
 
-  // let navigate = useNavigate();
   const onSubmit = async (token) => {
     const data = query;
     data.type = { id: data.type };
@@ -35,7 +33,6 @@ const JournalEntry = (props) => {
         },
       });
       props.onAdd(res.data);
-      // navigate("/journal");
     } catch (err) {
       alert(err.response ? err.response.data.message : err.message);
     }
