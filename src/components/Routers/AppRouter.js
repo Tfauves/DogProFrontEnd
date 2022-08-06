@@ -33,8 +33,8 @@ const AppRouter = () => {
           <Route path="/journal" element={<Journal />} />
           <Route path="/dogProfile/:dogId" element={<DogProfile />} />
           <Route path="/journal/:journalId" element={<Journal />} />
-          <Route path="/journalEntry/:journalId" element={<JournalEntry />} />
-          <Route path="/infoPlz" element={<ApiFormHandler />} />
+          {/* <Route path="/journalEntry/:journalId" element={<JournalEntry />} /> */}
+          <Route path="/infoPlz" element={<ApiInfo />} />
         </Routes>
       </div>
     </div>

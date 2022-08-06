@@ -4,27 +4,22 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
-import Card from "react-bootstrap/Card";
 import ApiFormHandler from "./ApiFormHandler";
-import ListGroup from "react-bootstrap/ListGroup";
-import AdvButton from "../common/AdvButton";
 
 const ApiInfo = (props) => {
   const params = useParams();
+  const { breedName } = params;
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
-  const [info, setInfo] = useState({
-    id: params.breedName,
-  });
+  const [info, setInfo] = useState([]);
 
   useEffect(() => {
     const getInfo = async () => {
-      const res = await axios.get(`${apiHost}/api/info/breed/${info.id}`, {
+      const res = await axios.get(`${apiHost}/api/info/breed/${breedName}`, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
       });
-      console.log(res.data);
       setInfo(res.data);
       setLoading(false);
     };
@@ -35,32 +30,20 @@ const ApiInfo = (props) => {
   const displayInfo = () => {
     return info.map(({ weight: { imperial }, name, breed_group }) => (
       <div>
-        <Card style={{ width: "18rem" }}>
-          <ListGroup variant="flush">
-            {/* <ListGroup.Item>{id}</ListGroup.Item> */}
-            <ListGroup.Item>
-              <h3>{info.weight.imperial}</h3>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <p>Time: {name}</p>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <p>Activity: {breed_group}</p>
-            </ListGroup.Item>
-            <AdvButton>delete entry</AdvButton>
-          </ListGroup>
-        </Card>
+        <p>{name}</p>
+        <p> {breed_group}</p>
       </div>
     ));
   };
+
+  displayInfo();
 
   const displayResponse = () => {
     return (
       <div style={{ marginTop: "3em" }}>
         <h1>breed info</h1>
-        {displayInfo()}
         <div style={{ marginTop: "6em" }}>
-          {/* <ApiFormHandler query={info.name} breedName={info.id} /> */}
+          <ApiFormHandler query={info} breedName={breedName} />
         </div>
       </div>
     );
