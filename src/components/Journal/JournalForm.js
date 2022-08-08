@@ -10,7 +10,6 @@ const JournalForm = (props) => {
   const [value, setValue] = useState({});
 
   const handleSelect = (e) => {
-    console.log(e);
     setValue(e);
   };
 
@@ -38,7 +37,7 @@ const JournalForm = (props) => {
               placeholder="type"
               type="text"
               onChange={handleChange}
-              value={value.type}
+              // value={value.type}
               required
             />
           </InlineInputContainer>
@@ -48,7 +47,7 @@ const JournalForm = (props) => {
               placeholder="activity"
               type="text"
               onChange={handleChange}
-              value={value.activity}
+              // value={value.activity}
               required
             />
           </InlineInputContainer>

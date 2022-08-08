@@ -13,7 +13,6 @@ const Login = () => {
     password: "",
   });
   const [submitting, setSubmitting] = useState(false);
-  // const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   const [auth, setAuth, saveAuth] = useContext(AuthContext);
 

@@ -8,6 +8,7 @@ const JournalEntry = (props) => {
   const { journalId } = props;
 
   const [query, setQuery] = useState({
+    type: "",
     activity: "",
   });
 

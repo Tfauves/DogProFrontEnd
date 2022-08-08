@@ -5,7 +5,6 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import ApiFormHandler from "./ApiFormHandler";
-import BreedInfo from "./BreedInfo";
 
 const ApiInfo = (props) => {
   const params = useParams();
@@ -28,25 +27,16 @@ const ApiInfo = (props) => {
     getInfo();
   }, []);
 
-  const displayInfo = () => {
-    return;
-  };
-
-  const displayResponse = () => {
+  const displayForm = () => {
     return (
       <div style={{ marginTop: "3em" }}>
-        <ul>
-          {info.map((info) => (
-            <li key={info.id}>{info.name}</li>
-          ))}
-        </ul>
-        <h1>breed info</h1>
         <div style={{ marginTop: "6em" }}>
           <ApiFormHandler query={info} breedName={breedName} />
         </div>
       </div>
     );
   };
+
   return (
     <div
       style={{
@@ -57,7 +47,7 @@ const ApiInfo = (props) => {
         minHeight: "100vh",
       }}
     >
-      {loading ? <Spinner /> : displayResponse()}
+      {loading ? <Spinner /> : displayForm()}
     </div>
   );
 };
