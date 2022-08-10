@@ -98,7 +98,6 @@ const Profile = (props) => {
               Edit Profile
             </AdvButton>
           </div>
-          ,
           <div
             style={{
               fontFamily: "Bebas Neue, cursive",
@@ -113,10 +112,17 @@ const Profile = (props) => {
           </div>
         </div>
         <Container fluid>
-          <div>
+          <div
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              marginTop: "1em",
+              textAlign: "center",
+              textDecorationLine: "underline",
+            }}
+          >
             <h1
               style={{
-                fontFamily: "Bebas Neue, cursive",
+                fontFamily: "Poppins, sans-serif",
                 marginTop: "1em",
                 textAlign: "center",
                 fontSize: "3em",
@@ -127,17 +133,17 @@ const Profile = (props) => {
             >
               Your Dogs
             </h1>
-            <AdvButton
-              onClick={onClick}
-              style={{
-                width: "auto",
-                color: "#F1F1F1",
-                backgroundColor: "gray",
-              }}
-            >
-              <FontAwesomeIcon icon={faPaw} /> Add New Dog
-            </AdvButton>
           </div>
+          <AdvButton
+            onClick={onClick}
+            style={{
+              width: "auto",
+              color: "#F1F1F1",
+              backgroundColor: "gray",
+            }}
+          >
+            <FontAwesomeIcon icon={faPaw} /> Add New Dog
+          </AdvButton>
         </Container>
         <Dogs />
       </Fragment>

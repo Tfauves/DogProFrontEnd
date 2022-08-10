@@ -55,6 +55,11 @@ const NavBar = (props) => {
             />
             <NavButton
               style={{ fontFamily: "specialElite, cursive" }}
+              to="/updateProfile"
+              label="edit profile"
+            />
+            <NavButton
+              style={{ fontFamily: "specialElite, cursive" }}
               to="/logout"
               label="logout"
             />
