@@ -1,10 +1,12 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import BorderCardAdv from "./../common/BorderCardAdv";
 
 const Breed = (props) => {
-  const { id, breedName, breedGroup } = props.breed;
+  const { id, name, bred_for, breed_group, life_span, temperament } =
+    props.breed;
 
-  return <div>{props.children}</div>;
+  return <BorderCardAdv>{props.breed.name}</BorderCardAdv>;
 };
 
 export default Breed;

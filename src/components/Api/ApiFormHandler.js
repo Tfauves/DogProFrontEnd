@@ -3,6 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import ApiForm from "./ApiForm";
+import Breed from "../Profiles/Breed";
 
 const ApiFormHandler = (props) => {
   const [info, setInfo] = useState([]);
@@ -44,7 +45,11 @@ const ApiFormHandler = (props) => {
       <div>
         <ul>
           {info.map((info) => (
-            <li key={info.id}>{info.temperament}</li>
+            <Breed breed={info} key={info.id} />
+            // <div>
+            //   <li key={info.id}>{info.temperament}</li>
+            //   <li>{info.name}</li>
+            // </div>
           ))}
         </ul>
       </div>
