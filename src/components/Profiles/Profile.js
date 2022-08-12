@@ -87,7 +87,7 @@ const Profile = (props) => {
               height={250}
               alt="placeholder img"
             />
-            <AdvButton
+            {/* <AdvButton
               onClick={onClickPro}
               style={{
                 width: "auto",
@@ -96,7 +96,7 @@ const Profile = (props) => {
               }}
             >
               Edit Profile
-            </AdvButton>
+            </AdvButton> */}
           </div>
           <div
             style={{
@@ -144,8 +144,18 @@ const Profile = (props) => {
           >
             <FontAwesomeIcon icon={faPaw} /> Add New Dog
           </AdvButton>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              flexDirection: "row",
+              maxWidth: "33em",
+            }}
+          >
+            <Dogs />
+          </div>
         </Container>
-        <Dogs />
       </Fragment>
     );
   };

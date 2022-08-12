@@ -33,6 +33,7 @@ const JournalEntry = (props) => {
           Authorization: `Bearer ${auth.token}`,
         },
       });
+
       props.onAdd(res.data);
     } catch (err) {
       alert(err.response ? err.response.data.message : err.message);
