@@ -19,7 +19,6 @@ const ApiFormHandler = (props) => {
       [field]: value,
     });
   };
-
   const onSubmit = async (token) => {
     const data = query;
     try {

@@ -1,6 +1,7 @@
 import React, { useContext, Fragment } from "react";
 import NavButton from "./NavButton";
 import { AuthContext } from "../Providers/AuthProvider";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 const NavBar = (props) => {
   const [auth] = useContext(AuthContext);
@@ -48,7 +49,47 @@ const NavBar = (props) => {
       >
         {auth.token ? (
           <Fragment>
-            <NavButton
+            <NavDropdown
+              style={{
+                fontSize: "1.35em",
+                fontFamily: "specialElite, cursive",
+                // color: "#f1f1f1",
+              }}
+              title="profile"
+              id="nav-dropdown"
+            >
+              <NavDropdown.Item href="/profile">veiw profile</NavDropdown.Item>
+              <NavDropdown.Item href="updateProfile">
+                update profile
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/logout">logout</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+
+            {/* <Dropdown>
+              <Dropdown.Toggle
+                style={{
+                  fontFamily: "specialElite, cursive",
+                  backgroundColor: "#303030",
+                }}
+                id="dropdown"
+              >
+                Dropdown Button
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="/profile">profile</Dropdown.Item>
+                <Dropdown.Item href="/updateProfile">
+                  edit profile
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown> */}
+
+            {/* <NavButton
               style={{ fontFamily: "specialElite, cursive" }}
               to="/profile"
               label="profile"
@@ -57,12 +98,12 @@ const NavBar = (props) => {
               style={{ fontFamily: "specialElite, cursive" }}
               to="/updateProfile"
               label="edit profile"
-            />
-            <NavButton
+            /> */}
+            {/* <NavButton
               style={{ fontFamily: "specialElite, cursive" }}
               to="/logout"
               label="logout"
-            />
+            /> */}
           </Fragment>
         ) : (
           <Fragment>

@@ -134,6 +134,20 @@ const Profile = (props) => {
               Your Dogs
             </h1>
           </div>
+        </Container>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            flexDirection: "row",
+            maxWidth: "30em",
+          }}
+        >
+          <Dogs />
+        </div>
+        <div>
           <AdvButton
             onClick={onClick}
             style={{
@@ -144,18 +158,7 @@ const Profile = (props) => {
           >
             <FontAwesomeIcon icon={faPaw} /> Add New Dog
           </AdvButton>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              flexDirection: "row",
-              maxWidth: "33em",
-            }}
-          >
-            <Dogs />
-          </div>
-        </Container>
+        </div>
       </Fragment>
     );
   };
