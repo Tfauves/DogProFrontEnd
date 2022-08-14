@@ -45,9 +45,6 @@ const Profile = (props) => {
   const onClick = () => {
     navigate("/newDog");
   };
-  const onClickPro = () => {
-    navigate("/updateProfile");
-  };
 
   const displayProfile = () => {
     return (
@@ -87,16 +84,6 @@ const Profile = (props) => {
               height={250}
               alt="placeholder img"
             />
-            {/* <AdvButton
-              onClick={onClickPro}
-              style={{
-                width: "auto",
-                color: "#F1F1F1",
-                backgroundColor: "gray",
-              }}
-            >
-              Edit Profile
-            </AdvButton> */}
           </div>
           <div
             style={{
@@ -111,38 +98,39 @@ const Profile = (props) => {
             <h1>{owner.name.toUpperCase()}</h1>
           </div>
         </div>
-        <Container fluid>
-          <div
+
+        <div
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            marginTop: "1em",
+            // textAlign: "center",
+            textDecorationLine: "underline",
+          }}
+        >
+          <h1
             style={{
               fontFamily: "Poppins, sans-serif",
               marginTop: "1em",
-              textAlign: "center",
+              fontSize: "3em",
+              justifyContent: "center",
+              alignItems: "center",
+              letterSpacing: "13px",
+              display: "flex",
+              marginBottom: "1em",
               textDecorationLine: "underline",
             }}
           >
-            <h1
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                marginTop: "1em",
-                textAlign: "center",
-                fontSize: "3em",
-                letterSpacing: "13px",
-                marginBottom: "1em",
-                textDecorationLine: "underline",
-              }}
-            >
-              Your Dogs
-            </h1>
-          </div>
-        </Container>
+            Your Dogs
+          </h1>
+        </div>
 
         <div
           style={{
             display: "flex",
-            flexWrap: "wrap",
+            // flexWrap: "wrap",
             justifyContent: "space-between",
-            flexDirection: "row",
-            maxWidth: "30em",
+            flexDirection: "column",
+            maxWidth: "33em",
           }}
         >
           <Dogs />
@@ -153,10 +141,10 @@ const Profile = (props) => {
             style={{
               width: "auto",
               color: "#F1F1F1",
-              backgroundColor: "gray",
+              backgroundColor: "#0a55c5",
             }}
           >
-            <FontAwesomeIcon icon={faPaw} /> Add New Dog
+            <FontAwesomeIcon icon={faPaw} /> Add Dog
           </AdvButton>
         </div>
       </Fragment>

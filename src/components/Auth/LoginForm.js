@@ -2,8 +2,10 @@ import React from "react";
 import Form from "../common/Form";
 import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
-import Button from "react-bootstrap/Button";
 import bark from "../../assets/barkalt1.jpg";
+import Splash from "../common/Splash";
+import Container from "react-bootstrap/esm/Container";
+import AdvButton from "../common/AdvButton";
 
 const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
   const handleChange = (e) => {
@@ -25,12 +27,13 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
         margin: "3rem 0rem",
         padding: "8px",
         maxWidth: "900px",
-        width: "100%",
+        width: "800px",
       }}
     >
       <Form
         onSubmit={handleSubmit}
         style={{
+          marginTop: "5em",
           maxWidth: "800px",
           width: "100%",
         }}
@@ -55,14 +58,18 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
             required
           />
         </InlineInputContainer>
-        <Button
-          style={{ marginTop: "10px" }}
+        <AdvButton
+          style={{
+            marginTop: "10px",
+            width: "auto",
+            backgroundColor: "#0a55c5",
+          }}
           variant="primary"
           size="lg"
           type="submit"
         >
           Login
-        </Button>
+        </AdvButton>
       </Form>
     </div>
   );

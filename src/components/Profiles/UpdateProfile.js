@@ -4,6 +4,9 @@ import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import EditProfileForm from "./EditProfileForm";
 import { apiHost } from "../../config";
+import Splash from "../common/Splash";
+import banner from "../../assets/banner.jpg";
+import { Container } from "react-bootstrap";
 
 const UpdatedProfile = () => {
   let navigate = useNavigate();
@@ -38,11 +41,30 @@ const UpdatedProfile = () => {
   };
 
   return (
-    <EditProfileForm
-      query={query}
-      updateForm={updateForm}
-      onSubmit={onSubmit}
-    />
+    <div
+      style={{
+        display: "flex",
+        flex: "1",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
+      <Splash image={banner} style={{ height: "25vh", width: "100%" }} />
+      <div
+        style={{
+          alignItems: "center",
+          display: "flex",
+          justifyContent: "center",
+          marginRight: "6em",
+        }}
+      >
+        <EditProfileForm
+          query={query}
+          updateForm={updateForm}
+          onSubmit={onSubmit}
+        />
+      </div>
+    </div>
   );
 };
 export default UpdatedProfile;

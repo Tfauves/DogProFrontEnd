@@ -17,14 +17,15 @@ const EditProfileForm = (props) => {
 
   return (
     <div>
-      <h1>Edit Profile</h1>
       <Form
         onSubmit={handleSubmit}
         style={{
+          marginTop: "6em",
           maxWidth: "800px",
           width: "100%",
         }}
       >
+        <h1 style={{ fontFamily: "Poppins, sans-serif" }}>Update Profile</h1>
         <InlineInputContainer>
           <Input
             id="name"
@@ -37,12 +38,16 @@ const EditProfileForm = (props) => {
           <Input id="avatar" placeholder="img url" onChange={handleChange} />
         </InlineInputContainer>
         <AdvButton
-          style={{ marginTop: "10px" }}
+          style={{
+            width: "auto",
+            backgroundColor: "#0a55c5",
+            marginTop: "10px",
+          }}
           variant="primary"
           size="lg"
           type="submit"
         >
-          Save
+          Update
         </AdvButton>
       </Form>
     </div>
