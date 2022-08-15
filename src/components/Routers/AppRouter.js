@@ -14,6 +14,7 @@ import Logout from "../Auth/Logout";
 import JournalEntry from "./../Journal/JournalEntry";
 import ApiInfo from "../Api/ApiInfo";
 import ApiFormHandler from "./../Api/ApiFormHandler";
+import Owners from "../Profiles/Owners";
 
 const AppRouter = () => {
   return (
@@ -28,6 +29,7 @@ const AppRouter = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/updateProfile" element={<UpdatedProfile />} />
           <Route path="/profile" element={<Profile />} />
+          {/* <Route path="/profile" element={<Owners />} /> */}
           <Route path="/profile/:ownId" element={<Profile />} />
           <Route path="/dog" element={<Dogs />} />
           <Route path="/journal" element={<Journal />} />

@@ -3,6 +3,8 @@ import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import AdvButton from "../common/AdvButton";
 import Form from "../common/Form";
+import dnaImg from "../../assets/dna.jpg";
+import Splash from "../common/Splash";
 
 const ApiForm = (props) => {
   const { updateForm, onSubmit } = props;
@@ -24,6 +26,14 @@ const ApiForm = (props) => {
           width: "100%",
         }}
       >
+        <h1
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            textDecorationLine: "underline",
+          }}
+        >
+          Breed Info Search
+        </h1>
         <InlineInputContainer>
           <Input
             id="breedName"
@@ -32,7 +42,7 @@ const ApiForm = (props) => {
           />
         </InlineInputContainer>
         <AdvButton
-          style={{ marginTop: "10px" }}
+          style={{ marginTop: "10px", backgroundColor: "#0a55c5" }}
           variant="primary"
           size="lg"
           type="submit"

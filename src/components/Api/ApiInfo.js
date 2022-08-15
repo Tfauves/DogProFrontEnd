@@ -5,6 +5,8 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import ApiFormHandler from "./ApiFormHandler";
+import dnaImg from "../../assets/dna.jpg";
+import Splash from "../common/Splash";
 
 const ApiInfo = (props) => {
   const params = useParams();
@@ -30,9 +32,7 @@ const ApiInfo = (props) => {
   const displayForm = () => {
     return (
       <div style={{ marginTop: "3em" }}>
-        <div style={{ marginTop: "6em" }}>
-          <ApiFormHandler query={info} breedName={breedName} />
-        </div>
+        <ApiFormHandler query={info} breedName={breedName} />
       </div>
     );
   };
@@ -47,6 +47,7 @@ const ApiInfo = (props) => {
         minHeight: "100vh",
       }}
     >
+      <Splash image={dnaImg} style={{ height: "25vh", width: "100%" }} />
       {loading ? <Spinner /> : displayForm()}
     </div>
   );
