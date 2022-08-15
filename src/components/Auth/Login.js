@@ -61,7 +61,7 @@ const Login = () => {
           style={{
             marginTop: "2em",
             paddingBottom: ".5em",
-            fontFamily: "Bebas Neue, cursive",
+            fontFamily: "Poppins, sans-serif",
             letterSpacing: "8px",
           }}
         >

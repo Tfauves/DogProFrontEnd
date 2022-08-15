@@ -41,7 +41,7 @@ const EditProfileForm = (props) => {
           style={{
             width: "auto",
             backgroundColor: "#0a55c5",
-            marginTop: "10px",
+            marginTop: ".5em",
           }}
           variant="primary"
           size="lg"

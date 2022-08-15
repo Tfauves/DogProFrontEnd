@@ -1,9 +1,8 @@
 import React from "react";
-// import Button from '../common/Button';
 import Form from "../common/Form";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
-import Button from "react-bootstrap/Button";
+import AdvButton from "../common/AdvButton";
 import image from "../../assets/loginSplash.jpg";
 
 const NewUserForm = (props) => {
@@ -76,15 +75,18 @@ const NewUserForm = (props) => {
             value={query.confirm}
           />
         </InlineInputContainer>
-        <Button
-          style={{ marginTop: "10px" }}
+        <AdvButton
+          style={{
+            width: "auto",
+            backgroundColor: "#0a55c5",
+            marginTop: ".5em",
+          }}
           variant="primary"
           size="lg"
           type="submit"
         >
           Sign Up
-        </Button>
-        {/* <Button>Submit</Button> */}
+        </AdvButton>
       </Form>
     </div>
   );

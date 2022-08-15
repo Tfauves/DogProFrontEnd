@@ -3,6 +3,7 @@ import InlineInputContainer from "./common/InlineInputContainer";
 import Input from "./common/Input";
 import AdvButton from "./common/AdvButton";
 import Form from "./common/Form";
+import image from "../assets/loginSplash.jpg";
 
 const NewDogForm = (props) => {
   const { updateForm, onSubmit } = props;
@@ -16,8 +17,19 @@ const NewDogForm = (props) => {
   };
 
   return (
-    <div>
-      <h1>create new dog</h1>
+    <div
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: "cover",
+        height: "50vh",
+        display: "flex",
+        flexDirection: "row",
+        margin: "3rem 0rem",
+        padding: "8px",
+        maxWidth: "900px",
+        width: "100%",
+      }}
+    >
       <Form
         onSubmit={handleSubmit}
         style={{
@@ -32,6 +44,7 @@ const NewDogForm = (props) => {
             onChange={handleChange}
             // value={query.name}
           />
+
           <Input
             id="age"
             placeholder="Age"
@@ -66,7 +79,11 @@ const NewDogForm = (props) => {
           />
         </InlineInputContainer>
         <AdvButton
-          style={{ marginTop: "10px" }}
+          style={{
+            marginTop: ".5em",
+            width: "auto",
+            backgroundColor: "#0a55c5",
+          }}
           variant="primary"
           size="lg"
           type="submit"
