@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import NewDogForm from "./NewDogForm";
 import axios from "axios";
 import { AuthContext } from "./Providers/AuthProvider";
+import loginbackground from "../assets/loginbackground.jpg";
 
 const NewDog = () => {
   const host = "http://localhost:8080";
@@ -50,7 +51,30 @@ const NewDog = () => {
   };
 
   return (
-    <NewDogForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
+    <div
+      style={{
+        display: "flex",
+        flex: "1",
+        flexDirection: "column",
+        alignItems: "center",
+        minHeight: "100vh",
+        backgroundImage: `url(${loginbackground})`,
+        backgroundSize: "cover",
+      }}
+    >
+      <h1
+        style={{
+          marginTop: "2em",
+          paddingBottom: ".5em",
+          fontFamily: "Poppins, sans-serif",
+          letterSpacing: "8px",
+        }}
+      >
+        New Dog
+      </h1>
+
+      <NewDogForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
+    </div>
   );
 };
 export default NewDog;

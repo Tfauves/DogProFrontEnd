@@ -39,11 +39,7 @@ const Dogs = () => {
     navigate(`/dogProfile/${dogId}`);
   };
 
-  return (
-    <div style={{ width: "100%", justifyContent: "center" }}>
-      {loading ? <p>Loading...</p> : displayDogs()}
-    </div>
-  );
+  return <div>{loading ? <p>Loading...</p> : displayDogs()}</div>;
 };
 
 export default Dogs;

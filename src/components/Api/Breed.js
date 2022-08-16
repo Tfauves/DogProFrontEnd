@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import BorderCardAdv from "./../common/BorderCardAdv";
+import BorderCardAdv from "../common/BorderCardAdv";
 
 const Breed = (props) => {
   const { id, name, bred_for, breed_group, life_span, temperament } =
@@ -8,7 +8,7 @@ const Breed = (props) => {
 
   // return <BorderCardAdv>{props.breed.name}</BorderCardAdv>;
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "20rem" }}>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{breed_group}</Card.Subtitle>

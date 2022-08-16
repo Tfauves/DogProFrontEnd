@@ -67,7 +67,7 @@ const DogProfile = (props) => {
   const displayProfile = () => {
     return (
       <Fragment>
-        <Card style={{ width: "50rem", paddingTop: "3rem" }}>
+        <Card style={{ width: "50rem", paddingTop: "3em" }}>
           <Card.Img variant="top" src={dogProfile.avatar.url} />
           <Card.Body>
             <Card.Title>{dogProfile.name.toUpperCase()}</Card.Title>
@@ -89,7 +89,7 @@ const DogProfile = (props) => {
               style={{
                 width: "auto",
                 color: "#F1F1F1",
-                backgroundColor: "gray",
+                backgroundColor: "#0a55c5",
               }}
             >
               Journal
@@ -99,7 +99,7 @@ const DogProfile = (props) => {
               style={{
                 width: "auto",
                 color: "#F1F1F1",
-                backgroundColor: "gray",
+                backgroundColor: "#0a55c5",
               }}
             >
               delete Dog
@@ -109,7 +109,7 @@ const DogProfile = (props) => {
               style={{
                 width: "auto",
                 color: "#F1F1F1",
-                backgroundColor: "gray",
+                backgroundColor: "#0a55c5",
               }}
             >
               get breed info

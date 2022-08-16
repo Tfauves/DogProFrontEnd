@@ -13,7 +13,16 @@ const DisplayEntries = (props) => {
   //   ));
   return props.journal.entry.map(
     ({ type: { type }, id, activity, timestamp }) => (
-      <div key={id}>
+      <div
+        // style={{
+        //   display: "flex",
+        //   flexWrap: "wrap",
+        //   flexDirection: "row",
+        //   justifyContent: "center",
+        //   height: "20vh",
+        // }}
+        key={id}
+      >
         <Card style={{ width: "18rem" }}>
           <ListGroup variant="flush">
             <ListGroup.Item>

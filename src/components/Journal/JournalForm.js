@@ -22,46 +22,39 @@ const JournalForm = (props) => {
   };
 
   return (
-    <div>
-      <div>
-        <Form
-          onSubmit={handleSubmit}
-          style={{ maxWidth: "800px", width: "100" }}
-        >
-          <InlineInputContainer>
-            <TypeSelect />
-          </InlineInputContainer>
-          <InlineInputContainer>
-            <Input
-              id="type"
-              placeholder="type"
-              type="text"
-              onChange={handleChange}
-              value={value.type}
-              required
-            />
-          </InlineInputContainer>
-          <InlineInputContainer>
-            <Input
-              id="activity"
-              placeholder="activity"
-              type="text"
-              onChange={handleChange}
-              value={value.activity}
-              required
-            />
-          </InlineInputContainer>
+    <div style={{ justifyContent: "center" }}>
+      <Form onSubmit={handleSubmit} style={{ maxWidth: "800px", width: "100" }}>
+        <InlineInputContainer>{/* <TypeSelect /> */}</InlineInputContainer>
+        <InlineInputContainer>
+          <Input
+            id="type"
+            placeholder="type"
+            type="text"
+            onChange={handleChange}
+            value={value.type}
+            required
+          />
+        </InlineInputContainer>
+        <InlineInputContainer>
+          <Input
+            id="activity"
+            placeholder="activity"
+            type="text"
+            onChange={handleChange}
+            value={value.activity}
+            required
+          />
+        </InlineInputContainer>
 
-          <AdvButton
-            style={{ marginTop: "10px" }}
-            variant="primary"
-            size="lg"
-            type="submit"
-          >
-            Submit
-          </AdvButton>
-        </Form>
-      </div>
+        <AdvButton
+          style={{ marginTop: "10px" }}
+          variant="primary"
+          size="lg"
+          type="submit"
+        >
+          Submit
+        </AdvButton>
+      </Form>
     </div>
   );
 };
