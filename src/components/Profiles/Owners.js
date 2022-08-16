@@ -51,33 +51,100 @@ const Owners = (props) => {
     return (
       <div
         style={{
-          position: "absolute, left: 80px, top: 20px",
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "row",
-          flex: 1,
-          width: "25vh",
-          minHeight: "200px",
+          backgroundColor: "red",
           height: "100vh",
-          backgroundImage: `url(${image})`,
-          marginRight: "auto",
+          width: "100%",
+          flexDirection: "column",
+          flexWrap: "wrap",
         }}
       >
-        <img
+        <div
           style={{
-            borderRadius: "",
-            marginTop: "3em",
-            border: "solid 1px #000",
+            backgroundColor: "blue",
+            display: "flex",
+            flexDirection: "row",
+            width: "15em",
+            justifyContent: "center",
+            height: "100vh",
           }}
-          src={
-            owner.avatar.url
-              ? owner.avatar.url
-              : "https://stonegatesl.com/wp-content/uploads/2021/01/avatar.jpg"
-          }
-          width={200}
-          height={250}
-          alt="placeholder img"
-        />
+        >
+          <img
+            style={{
+              marginTop: "3em",
+            }}
+            src={
+              owner.avatar.url
+                ? owner.avatar.url
+                : "https://stonegatesl.com/wp-content/uploads/2021/01/avatar.jpg"
+            }
+            width={200}
+            height={250}
+            alt="placeholder img"
+          />
+        </div>
+        <div
+          style={{
+            backgroundColor: "green",
+            height: "35em",
+            width: "20em",
+            justifyContent: "center",
+            marginTop: "20em",
+            alignItems: "center",
+            zIndex: 9,
+            marginLeft: "-20em",
+          }}
+        >
+          <h1
+            style={{
+              marginBottom: "19em",
+              marginTop: "7em",
+              marginLeft: "1em",
+            }}
+          >
+            {owner.name.toUpperCase()}
+          </h1>
+        </div>
+
+        <div
+          style={{
+            backgroundColor: "purple",
+            height: "8em",
+            width: "25em",
+            fontFamily: "Poppins, sans-serif",
+            marginTop: "1em",
+            textDecorationLine: "underline",
+            marginLeft: "9em",
+            marginBottom: "3em",
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              marginTop: "1em",
+              fontSize: "3em",
+              justifyContent: "center",
+              alignItems: "center",
+              letterSpacing: "13px",
+              display: "flex",
+
+              textDecorationLine: "underline",
+            }}
+          >
+            Your Dogs
+          </h1>
+        </div>
+
+        <div
+          style={{
+            backgroundColor: "orange",
+            display: "flex",
+            flexWrap: "wrap",
+            flexDirection: "row",
+            flex: "0 0 22.22222%",
+          }}
+        >
+          <Dogs />
+        </div>
       </div>
 
       //   <div

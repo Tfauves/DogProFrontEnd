@@ -127,10 +127,10 @@ const Profile = (props) => {
         <div
           style={{
             display: "flex",
-            // flexWrap: "wrap",
-            justifyContent: "space-between",
-            flexDirection: "column",
-            maxWidth: "33em",
+            alignContent: "center",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "row",
           }}
         >
           <Dogs />

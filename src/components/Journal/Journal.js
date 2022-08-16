@@ -38,19 +38,27 @@ const Journal = (props) => {
 
   const displayJournal = () => {
     return (
-      <div style={{ marginTop: "3em" }}>
-        <h1>Journal Home</h1>
-        <DisplayEntries journal={journal} />
-        <div style={{ marginTop: "6em" }}>
-          <h1>Add A New Entry</h1>
-          <h3>Select a Entry Type</h3>
-          <JournalEntry
-            query={journal.entry}
-            journalId={journalId}
-            onAdd={updateJournal}
-          />
+      <div style={{ backgroundColor: "red", width: "100%", height: "100vh" }}>
+        red
+        <div style={{ backgroundColor: "blue", width: "20em", height: "20em" }}>
+          blue
         </div>
       </div>
+      // <div style={{ display: "flex" }}>
+      //   <div style={{ marginTop: "3em" }}>
+      //     <h1>Journal Home</h1>
+      //     <DisplayEntries journal={journal} />
+      //   </div>
+      //   <div style={{ marginTop: "6em" }}>
+      //     <h1>Add A New Entry</h1>
+      //     <h3>Select a Entry Type</h3>
+      //     <JournalEntry
+      //       query={journal.entry}
+      //       journalId={journalId}
+      //       onAdd={updateJournal}
+      //     />
+      //   </div>
+      // </div>
     );
   };
   return (
