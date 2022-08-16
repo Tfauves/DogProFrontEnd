@@ -53,9 +53,9 @@ const Owners = (props) => {
         style={{
           backgroundColor: "red",
           height: "100vh",
-          width: "100%",
+          width: "100vh",
+
           flexDirection: "column",
-          flexWrap: "wrap",
         }}
       >
         <div
