@@ -33,6 +33,7 @@ const ApiFormHandler = (props) => {
         }
       );
       setInfo(res.data);
+      setQuery({ breedName: "" });
     } catch (err) {
       alert(err.response.data.message);
     }

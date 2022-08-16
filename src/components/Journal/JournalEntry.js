@@ -34,6 +34,9 @@ const JournalEntry = (props) => {
         },
       });
 
+      setQuery({ type: "" });
+      setQuery({ activity: "" });
+
       props.onAdd(res.data);
     } catch (err) {
       alert(err.response ? err.response.data.message : err.message);

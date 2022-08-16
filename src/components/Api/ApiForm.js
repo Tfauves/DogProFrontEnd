@@ -3,11 +3,9 @@ import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import AdvButton from "../common/AdvButton";
 import Form from "../common/Form";
-import dnaImg from "../../assets/dna.jpg";
-import Splash from "../common/Splash";
 
 const ApiForm = (props) => {
-  const { updateForm, onSubmit } = props;
+  const { query, updateForm, onSubmit } = props;
 
   const handleChange = (e) => {
     updateForm(e.target.id, e.target.value);
@@ -39,6 +37,7 @@ const ApiForm = (props) => {
             id="breedName"
             placeholder="Breed Name"
             onChange={handleChange}
+            value={query.breedName}
           />
         </InlineInputContainer>
         <AdvButton

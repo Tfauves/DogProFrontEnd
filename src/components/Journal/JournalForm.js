@@ -6,7 +6,7 @@ import AdvButton from "../common/AdvButton";
 import TypeSelect from "../EntryDropdown/TypeSelect";
 
 const JournalForm = (props) => {
-  const { updateForm, onSubmit } = props;
+  const { query, updateForm, onSubmit } = props;
   const [value, setValue] = useState({});
 
   const handleSelect = (e) => {
@@ -31,7 +31,7 @@ const JournalForm = (props) => {
             placeholder="type"
             type="text"
             onChange={handleChange}
-            value={value.type}
+            value={query.type}
             required
           />
         </InlineInputContainer>
@@ -41,7 +41,7 @@ const JournalForm = (props) => {
             placeholder="activity"
             type="text"
             onChange={handleChange}
-            value={value.activity}
+            value={query.activity}
             required
           />
         </InlineInputContainer>
