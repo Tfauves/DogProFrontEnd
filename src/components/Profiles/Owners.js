@@ -8,11 +8,9 @@ import Spinner from "../faCommon/Spinner";
 import AdvButton from "../common/AdvButton";
 import { Fragment } from "react/cjs/react.production.min";
 import image from "../../assets/cardImg.jpg";
-import { Container } from "react-bootstrap";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dogs from "./Dogs";
-import Splash from "./../common/Splash";
 
 const Owners = (props) => {
   let navigate = useNavigate();
@@ -49,72 +47,63 @@ const Owners = (props) => {
 
   const displayProfile = () => {
     return (
-      <div
-        style={{
-          backgroundColor: "red",
-          height: "100vh",
-          width: "100vh",
-
-          flexDirection: "column",
-        }}
-      >
+      <div>
         <div
           style={{
-            backgroundColor: "blue",
+            backgroundImage: `url(${image})`,
+            backgroundSize: "cover",
+            height: "27vh",
             display: "flex",
             flexDirection: "row",
-            width: "15em",
-            justifyContent: "center",
-            height: "100vh",
+            margin: "1rem 0rem",
+            marginTop: "3rem",
+            padding: "8px",
+            maxWidth: "900px",
+            width: "100%",
+            borderRadius: "15px",
           }}
         >
-          <img
+          <div
             style={{
-              marginTop: "3em",
-            }}
-            src={
-              owner.avatar.url
-                ? owner.avatar.url
-                : "https://stonegatesl.com/wp-content/uploads/2021/01/avatar.jpg"
-            }
-            width={200}
-            height={250}
-            alt="placeholder img"
-          />
-        </div>
-        <div
-          style={{
-            backgroundColor: "green",
-            height: "35em",
-            width: "20em",
-            justifyContent: "center",
-            marginTop: "20em",
-            alignItems: "center",
-            zIndex: 9,
-            marginLeft: "-20em",
-          }}
-        >
-          <h1
-            style={{
-              marginBottom: "19em",
-              marginTop: "7em",
-              marginLeft: "1em",
+              flex: 1,
+              flexDirection: "column",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
-            {owner.name.toUpperCase()}
-          </h1>
+            <img
+              style={{ borderRadius: "100px" }}
+              src={
+                owner.avatar.url
+                  ? owner.avatar.url
+                  : "https://stonegatesl.com/wp-content/uploads/2021/01/avatar.jpg"
+              }
+              width={200}
+              height={250}
+              alt="placeholder img"
+            />
+          </div>
+          <div
+            style={{
+              fontFamily: "Bebas Neue, cursive",
+              flex: 2,
+              flexDirection: "column",
+              color: "#303030",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <h1>{owner.name.toUpperCase()}</h1>
+          </div>
         </div>
 
         <div
           style={{
-            backgroundColor: "purple",
-            height: "8em",
-            width: "25em",
             fontFamily: "Poppins, sans-serif",
             marginTop: "1em",
+            // textAlign: "center",
             textDecorationLine: "underline",
-            marginLeft: "9em",
-            marginBottom: "3em",
           }}
         >
           <h1
@@ -126,7 +115,7 @@ const Owners = (props) => {
               alignItems: "center",
               letterSpacing: "13px",
               display: "flex",
-
+              marginBottom: "1em",
               textDecorationLine: "underline",
             }}
           >
@@ -136,91 +125,40 @@ const Owners = (props) => {
 
         <div
           style={{
-            backgroundColor: "orange",
             display: "flex",
-            flexWrap: "wrap",
+            alignContent: "center",
+            alignItems: "center",
+            justifyContent: "center",
             flexDirection: "row",
-            flex: "0 0 22.22222%",
           }}
         >
           <Dogs />
         </div>
+        <div>
+          <AdvButton
+            onClick={onClick}
+            style={{
+              width: "auto",
+              color: "#F1F1F1",
+              backgroundColor: "#0a55c5",
+            }}
+          >
+            <FontAwesomeIcon icon={faPaw} /> Add Dog
+          </AdvButton>
+        </div>
       </div>
-
-      //   <div
-      //     style={{
-      //       fontFamily: "Bebas Neue, cursive",
-      //       flex: 2,
-      //       flexDirection: "column",
-      //       color: "#303030",
-      //       display: "flex",
-      //       justifyContent: "center",
-      //     }}
-      //   >
-      //     <h1>{owner.name.toUpperCase()}</h1>
-      //   </div>
-      // </div>
-
-      // <div
-      //   style={{
-      //     fontFamily: "Poppins, sans-serif",
-      //     marginTop: "1em",
-      //     // textAlign: "center",
-      //     textDecorationLine: "underline",
-      //   }}
-      // >
-      //   <h1
-      //     style={{
-      //       fontFamily: "Poppins, sans-serif",
-      //       marginTop: "1em",
-      //       fontSize: "3em",
-      //       justifyContent: "center",
-      //       alignItems: "center",
-      //       letterSpacing: "13px",
-      //       display: "flex",
-      //       marginBottom: "1em",
-      //       textDecorationLine: "underline",
-      //     }}
-      //   >
-      //     Your Dogs
-      //   </h1>
-      // </div>
-
-      // <div
-      //   style={{
-      //     display: "flex",
-      //     // flexWrap: "wrap",
-      //     justifyContent: "space-between",
-      //     flexDirection: "column",
-      //     maxWidth: "33em",
-      //   }}
-      // >
-      //   <Dogs />
-      // </div>
-      // <div>
-      //   <AdvButton
-      //     onClick={onClick}
-      //     style={{
-      //       width: "auto",
-      //       color: "#F1F1F1",
-      //       backgroundColor: "#0a55c5",
-      //     }}
-      //   >
-      //     <FontAwesomeIcon icon={faPaw} /> Add Dog
-      //   </AdvButton>
-      // </div>
     );
   };
 
   return (
     <div
-    //   style={{
-    //     display: "flex",
-    //     flex: "1",
-    //     flexDirection: "column",
-    //     alignItems: "center",
-    //     minHeight: "100vh",
-    //   }}
+      style={{
+        display: "flex",
+        flex: "1",
+        flexDirection: "column",
+        alignItems: "center",
+        minHeight: "100vh",
+      }}
     >
       {loading ? <Spinner /> : displayProfile()}
     </div>

@@ -3,6 +3,7 @@ import InlineInputContainer from "../common/InlineInputContainer";
 import AdvButton from "../common/AdvButton";
 import Form from "../common/Form";
 import Input from "../common/Input";
+import { Container } from "react-bootstrap";
 
 const EditProfileForm = (props) => {
   const { updateForm, onSubmit } = props;

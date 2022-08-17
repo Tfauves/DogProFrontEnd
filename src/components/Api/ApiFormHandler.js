@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, Fragment } from "react";
+import React, { useState, useContext, Fragment } from "react";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
@@ -41,7 +41,15 @@ const ApiFormHandler = (props) => {
 
   const displayInfo = () => {
     return (
-      <div>
+      <div
+        style={{
+          marginTop: "3em",
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          minWidth: "100px",
+        }}
+      >
         {info.map((info) => (
           <Breed breed={info} key={info.id} />
         ))}
@@ -55,12 +63,28 @@ const ApiFormHandler = (props) => {
         style={{
           display: "flex",
           flexDirection: "row",
-          position: "relative",
+          justifyContent: "center",
+          marginTop: "-3em",
+          width: "75%",
+          position: "absolute",
         }}
       >
-        <ApiForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
+        <div>
+          <ApiForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
+        </div>
       </div>
-      {displayInfo()}
+      <div
+        style={{
+          marginTop: "20em",
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          minWidth: "100px",
+          position: "absolute",
+        }}
+      >
+        {displayInfo()}
+      </div>
     </Fragment>
   );
 };

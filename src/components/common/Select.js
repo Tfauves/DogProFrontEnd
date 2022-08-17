@@ -2,19 +2,21 @@ import React from "react";
 
 const Select = (props) => {
   return (
-    <select
-      style={{ ...styles.select, ...props.style }}
-      id={props.id}
-      onChange={props.onChange}
-      value={props.value}
-    >
-      {props.placeholder ? (
-        <option value="" disabled>
-          {props.placeholder}
-        </option>
-      ) : null}
-      {props.children}
-    </select>
+    <span>
+      <select
+        style={{ ...styles.select, ...props.style }}
+        id={props.id}
+        onChange={props.onChange}
+        value={props.value}
+      >
+        {props.placeholder ? (
+          <option value="" disabled>
+            {props.placeholder}
+          </option>
+        ) : null}
+        {props.children}
+      </select>
+    </span>
   );
 };
 

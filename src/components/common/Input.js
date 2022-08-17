@@ -2,12 +2,11 @@ import React, { Fragment } from "react";
 
 const Input = (props) => {
   return (
-    <Fragment>
+    <span>
       <input
         style={
           props.error
-            ? 
-              { ...styles.inputError, ...props.errorStyle }
+            ? { ...styles.inputError, ...props.errorStyle }
             : { ...styles.input, ...props.style }
         }
         name={props.name}
@@ -22,7 +21,7 @@ const Input = (props) => {
         disabled={props.disabled}
         autoComplete={props.autoComplete}
       />
-    </Fragment>
+    </span>
   );
 };
 

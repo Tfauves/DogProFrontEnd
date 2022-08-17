@@ -4,6 +4,7 @@ import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
 import AdvButton from "../common/AdvButton";
 import TypeSelect from "../EntryDropdown/TypeSelect";
+import Select from "./../common/Select";
 
 const JournalForm = (props) => {
   const { query, updateForm, onSubmit } = props;
@@ -26,7 +27,7 @@ const JournalForm = (props) => {
       <Form onSubmit={handleSubmit} style={{ maxWidth: "800px", width: "100" }}>
         <InlineInputContainer>{/* <TypeSelect /> */}</InlineInputContainer>
         <InlineInputContainer>
-          <Input
+          <Select
             id="type"
             placeholder="type"
             type="text"
@@ -47,7 +48,11 @@ const JournalForm = (props) => {
         </InlineInputContainer>
 
         <AdvButton
-          style={{ marginTop: "10px" }}
+          style={{
+            width: "auto",
+            backgroundColor: "#0a55c5",
+            marginTop: ".5em",
+          }}
           variant="primary"
           size="lg"
           type="submit"

@@ -40,7 +40,7 @@ const Journal = (props) => {
     return (
       <div
         style={{
-          backgroundColor: "red",
+          // backgroundColor: "red",
           display: "flex",
           flexDirection: "column",
           width: "100%",
@@ -49,10 +49,10 @@ const Journal = (props) => {
           alignItems: "center",
         }}
       >
-        <div
+        {/* <div
           style={{
             marginTop: "-3em",
-            backgroundColor: "green",
+            // backgroundColor: "green",
             height: "5em",
             justifyContent: "center",
           }}
@@ -62,10 +62,10 @@ const Journal = (props) => {
           >
             Journal
           </h1>
-        </div>
+        </div> */}
         <div
           style={{
-            backgroundColor: "orange",
+            // backgroundColor: "orange",
             width: "75%",
             height: "20em",
             justifyContent: "center",
@@ -84,7 +84,7 @@ const Journal = (props) => {
           </h1>
           <div
             style={{
-              backgroundColor: "pink",
+              // backgroundColor: "pink",
               height: "10em",
               width: "60%",
               alignItems: "center",
@@ -106,7 +106,7 @@ const Journal = (props) => {
             flexWrap: "wrap",
             minWidth: "100px",
             justifyContent: "center",
-            backgroundColor: "blue",
+            // backgroundColor: "blue",
             width: "75%",
             height: "20em",
             marginTop: "3em",

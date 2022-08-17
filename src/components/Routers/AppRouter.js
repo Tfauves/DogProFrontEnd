@@ -15,6 +15,7 @@ import JournalEntry from "./../Journal/JournalEntry";
 import ApiInfo from "../Api/ApiInfo";
 import ApiFormHandler from "./../Api/ApiFormHandler";
 import Owners from "../Profiles/Owners";
+import BreedInfoHome from "../Api/BreedInfoHome";
 
 const AppRouter = () => {
   return (
@@ -36,7 +37,8 @@ const AppRouter = () => {
           <Route path="/dogProfile/:dogId" element={<DogProfile />} />
           <Route path="/journal/:journalId" element={<Journal />} />
           {/* <Route path="/journalEntry/:journalId" element={<JournalEntry />} /> */}
-          <Route path="/infoPlz" element={<ApiInfo />} />
+          {/* <Route path="/infoPlz" element={<ApiInfo />} /> */}
+          <Route path="/infoPlz" element={<BreedInfoHome />} />
         </Routes>
       </div>
     </div>
