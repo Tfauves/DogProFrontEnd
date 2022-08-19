@@ -67,6 +67,7 @@ const ApiFormHandler = (props) => {
           marginTop: "-3em",
           width: "75%",
           position: "absolute",
+          zIndex: 1,
         }}
       >
         <div>
@@ -75,12 +76,11 @@ const ApiFormHandler = (props) => {
       </div>
       <div
         style={{
-          marginTop: "20em",
+          marginTop: "50em",
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
           minWidth: "100px",
-          position: "absolute",
         }}
       >
         {displayInfo()}

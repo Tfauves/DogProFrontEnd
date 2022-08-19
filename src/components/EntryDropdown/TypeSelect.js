@@ -3,6 +3,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import axios from "axios";
 import EntryType from "./EntryType";
+import Select from "./../common/Select";
 
 const TypeSelect = () => {
   const [type, setType] = useState({});
@@ -29,7 +30,7 @@ const TypeSelect = () => {
   }, []);
 
   const displayTypes = () => {
-    return type.map((type) => <EntryType type={type} key={type.id} />);
+    return type.map((type) => <Select type={type} key={type.id} />);
   };
 
   return (

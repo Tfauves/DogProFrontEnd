@@ -22,7 +22,6 @@ const DisplayEntries = (props) => {
         //   height: "20vh",
         // }}
         key={id}
-        // type select maybe goes here to map the types array?
       >
         <Card style={{ width: "18rem" }}>
           <ListGroup variant="flush">

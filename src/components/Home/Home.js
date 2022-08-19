@@ -2,8 +2,6 @@ import React from "react";
 import splashOverlay from "../../assets/splashOverlay.jpg";
 import Container from "../common/Container";
 import Splash from "../common/Splash";
-import { AuthContext } from "../Providers/AuthProvider";
-// import { Container } from "react-bootstrap";
 
 const Home = (props) => {
   return (
@@ -14,7 +12,7 @@ const Home = (props) => {
       <Container>
         <h1
           style={{
-            fontFamily: "Bebas Neue, cursive",
+            fontFamily: "Poppins, sans-serif",
             marginTop: "3em",
             textAlign: "center",
             fontSize: "5em",
@@ -26,7 +24,7 @@ const Home = (props) => {
         </h1>
         <h2
           style={{
-            fontFamily: "Oswald, sans-serif",
+            fontFamily: "Poppins, sans-serif",
             letterSpacing: "4px",
             marginTop: "1em",
             textAlign: "center",
