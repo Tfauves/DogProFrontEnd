@@ -6,6 +6,8 @@ import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import JournalEntry from "./JournalEntry";
 import DisplayEntries from "./Entry";
+import bannerImg from "../../assets/journalBanner.jpg";
+import Splash from "./../common/Splash";
 
 const Journal = (props) => {
   const params = useParams();
@@ -40,7 +42,7 @@ const Journal = (props) => {
     return (
       <div
         style={{
-          // backgroundColor: "red",
+          // backgroundImage: `url(${bannerImg})`,
           display: "flex",
           flexDirection: "column",
           width: "100%",
@@ -49,6 +51,10 @@ const Journal = (props) => {
           alignItems: "center",
         }}
       >
+        <Splash
+          image={bannerImg}
+          style={{ marginTop: "-12em", height: "25vh", width: "100%" }}
+        />
         {/* <div
           style={{
             marginTop: "-3em",
@@ -70,7 +76,7 @@ const Journal = (props) => {
             height: "20em",
             justifyContent: "center",
             alignItems: "center",
-            marginTop: "3em",
+            // marginTop: "2em",
             display: "flex",
             flexDirection: "column",
           }}

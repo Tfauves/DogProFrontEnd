@@ -8,7 +8,6 @@ import Spinner from "../faCommon/Spinner";
 import AdvButton from "../common/AdvButton";
 import { Fragment } from "react/cjs/react.production.min";
 import image from "../../assets/cardImg.jpg";
-import { Container } from "react-bootstrap";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dogs from "./Dogs";

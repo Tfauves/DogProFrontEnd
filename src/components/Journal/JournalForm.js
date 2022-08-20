@@ -27,14 +27,10 @@ const JournalForm = (props) => {
       <Form onSubmit={handleSubmit} style={{ maxWidth: "800px", width: "100" }}>
         <InlineInputContainer>{/* <TypeSelect /> */}</InlineInputContainer>
         <InlineInputContainer>
-          <Select
-            id="type"
-            placeholder="type"
-            type="text"
-            onChange={handleChange}
-            value={query.type}
-            required
-          />
+          <Select>
+            <option value={query.id}>id</option>
+            <option value={query.type}>type</option>
+          </Select>
         </InlineInputContainer>
         <InlineInputContainer>
           <Input

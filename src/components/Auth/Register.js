@@ -5,6 +5,8 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import loginbackground from "../../assets/loginbackground.jpg";
 import { apiHost } from "../../config";
+import Splash from "../common/Splash";
+import packimg from "../../assets/dogPack.jpg";
 
 const Register = () => {
   let navigate = useNavigate();
@@ -85,15 +87,24 @@ const Register = () => {
         backgroundSize: "cover",
       }}
     >
+      <div
+        style={{
+          height: "25vh",
+          width: "100%",
+          backgroundImage: `url(${packimg})`,
+          backgroundSize: "cover",
+          marginTop: "-3em",
+        }}
+      ></div>
       <h1
         style={{
-          marginTop: "2em",
+          marginTop: "1em",
           paddingBottom: ".5em",
           fontFamily: "Poppins, sans-serif",
           letterSpacing: "8px",
         }}
       >
-        Register
+        Join The Pack
       </h1>
       <NewUserForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
     </div>
