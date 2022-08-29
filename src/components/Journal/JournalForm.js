@@ -25,12 +25,31 @@ const JournalForm = (props) => {
   return (
     <div style={{ justifyContent: "center" }}>
       <Form onSubmit={handleSubmit} style={{ maxWidth: "800px", width: "100" }}>
-        <InlineInputContainer>{/* <TypeSelect /> */}</InlineInputContainer>
         <InlineInputContainer>
-          <Select>
-            <option value={query.id}>id</option>
-            <option value={query.type}>type</option>
+          <TypeSelect />
+        </InlineInputContainer>
+        {/* <InlineInputContainer>
+          <Select
+            id="typeSelect"
+            onChange={handleChange}
+            type="text"
+            value={query.id}
+          >
+            <option value={"1"}>grooming</option>
+            <option value={"2"}>medical</option>
+            <option value={"3"}>exercise</option>
+            <option value={"4"}>dietary</option>
           </Select>
+        </InlineInputContainer> */}
+        <InlineInputContainer>
+          <Input
+            id="type"
+            placeholder="type id"
+            type="text"
+            onChange={handleChange}
+            value={query.type}
+            required
+          />
         </InlineInputContainer>
         <InlineInputContainer>
           <Input

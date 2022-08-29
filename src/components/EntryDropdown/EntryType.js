@@ -3,10 +3,8 @@ const EntryType = (props) => {
   const { id, type } = props.type;
 
   return (
-    <div>
-      <p>
-        enter {id} for type: {type}
-      </p>
+    <div style={{ display: "flex", backgroundColor: "red" }}>
+      enter {id} for type: {type}
     </div>
   );
 };

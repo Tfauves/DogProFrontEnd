@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { apiHost } from "../../config";
 import Spinner from "../faCommon/Spinner";
 import AdvButton from "../common/AdvButton";
-import { Fragment } from "react/cjs/react.production.min";
 import image from "../../assets/cardImg.jpg";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -47,33 +46,37 @@ const Owners = (props) => {
 
   const displayProfile = () => {
     return (
-      <div>
+      <div
+        style={{
+          // backgroundColor: "red",
+          width: "100%",
+          height: "100vh",
+          // display: "flex",
+        }}
+      >
         <div
           style={{
+            // backgroundColor: "blue",
+            width: "20vw",
             backgroundImage: `url(${image})`,
             backgroundSize: "cover",
-            height: "27vh",
             display: "flex",
-            flexDirection: "row",
-            margin: "1rem 0rem",
-            marginTop: "3rem",
-            padding: "8px",
-            maxWidth: "900px",
-            width: "100%",
-            borderRadius: "15px",
           }}
         >
           <div
             style={{
+              display: "flex",
               flex: 1,
               flexDirection: "column",
-              display: "flex",
-              justifyContent: "center",
               alignItems: "center",
+              objectFit: "contain",
             }}
           >
             <img
-              style={{ borderRadius: "100px" }}
+              style={{
+                marginTop: "3em",
+                display: "flex",
+              }}
               src={
                 owner.avatar.url
                   ? owner.avatar.url
@@ -83,68 +86,77 @@ const Owners = (props) => {
               height={250}
               alt="placeholder img"
             />
-          </div>
-          <div
-            style={{
-              fontFamily: "Bebas Neue, cursive",
-              flex: 2,
-              flexDirection: "column",
-              color: "#303030",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
             <h1>{owner.name.toUpperCase()}</h1>
           </div>
         </div>
 
         <div
           style={{
-            fontFamily: "Poppins, sans-serif",
-            marginTop: "1em",
-            // textAlign: "center",
-            textDecorationLine: "underline",
+            // backgroundColor: "green",
+            width: "50%",
+            height: "10vh",
+            margin: "3em",
+            marginTop: "-1em",
+            justifyContent: "center",
+            marginLeft: "6em",
           }}
         >
-          <h1
+          <div
             style={{
               fontFamily: "Poppins, sans-serif",
               marginTop: "1em",
-              fontSize: "3em",
-              justifyContent: "center",
-              alignItems: "center",
-              letterSpacing: "13px",
-              display: "flex",
-              marginBottom: "1em",
+              textAlign: "center",
               textDecorationLine: "underline",
+              marginLeft: "6em",
+              display: "flex",
+              flexDirection: "row",
             }}
           >
-            Your Dogs
-          </h1>
+            <h1
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                marginTop: "2em",
+                fontSize: "3em",
+                alignItems: "center",
+                letterSpacing: "13px",
+                display: "flex",
+                marginBottom: "1em",
+                textDecorationLine: "underline",
+              }}
+            >
+              Your Dogs
+            </h1>
+          </div>
         </div>
-
         <div
           style={{
+            // backgroundColor: "orange",
             display: "flex",
-            alignContent: "center",
-            alignItems: "center",
-            justifyContent: "center",
             flexDirection: "row",
+            flexWrap: "wrap",
+            minWidth: "100px",
+            justifyContent: "center",
+            width: "75%",
+            height: "20em",
+            marginTop: "20em",
+            marginLeft: "-48em",
           }}
         >
-          <Dogs />
-        </div>
-        <div>
-          <AdvButton
-            onClick={onClick}
-            style={{
-              width: "auto",
-              color: "#F1F1F1",
-              backgroundColor: "#0a55c5",
-            }}
-          >
-            <FontAwesomeIcon icon={faPaw} /> Add Dog
-          </AdvButton>
+          <div style={{}}>
+            <Dogs />
+          </div>
+          <div>
+            <AdvButton
+              onClick={onClick}
+              style={{
+                width: "auto",
+                color: "#F1F1F1",
+                backgroundColor: "#0a55c5",
+              }}
+            >
+              <FontAwesomeIcon icon={faPaw} /> Add Dog
+            </AdvButton>
+          </div>
         </div>
       </div>
     );

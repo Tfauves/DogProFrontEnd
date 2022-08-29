@@ -29,8 +29,8 @@ const AppRouter = () => {
           <Route path="logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
           <Route path="/updateProfile" element={<UpdatedProfile />} />
-          <Route path="/profile" element={<Profile />} />
-          {/* <Route path="/profile" element={<Owners />} /> */}
+          {/* <Route path="/profile" element={<Profile />} /> */}
+          <Route path="/profile" element={<Owners />} />
           <Route path="/profile/:ownId" element={<Profile />} />
           <Route path="/dog" element={<Dogs />} />
           <Route path="/journal" element={<Journal />} />

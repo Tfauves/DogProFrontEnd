@@ -3,6 +3,7 @@ import BorderCard from "../common/BorderCard";
 import AdvButton from "../common/AdvButton";
 import { useNavigate } from "react-router-dom";
 import Card from "react-bootstrap/Card";
+import BorderCardAdv from "./../common/BorderCardAdv";
 
 const Dog = (props) => {
   const navigate = useNavigate();
@@ -12,58 +13,37 @@ const Dog = (props) => {
     navigate(`/journal/${journal.id}`);
   };
 
-  // return (
-  //   <Card style={{ width: "18rem" }}>
-  //     <Card.Body>
-  //       <Card.Title>{name}</Card.Title>
-  //       <AdvButton
-  //         onClick={() => onClick(props.dog.journal.id)}
-  //         style={{
-  //           width: "auto",
-  //           color: "#F1F1F1",
-  //           backgroundColor: "#303030",
-  //         }}
-  //       >
-  //         View Journal
-  //       </AdvButton>
-  //       <AdvButton
-  //         onClick={() => props.onSelect(props.dog.id)}
-  //         style={{
-  //           width: "auto",
-  //           color: "#F1F1F1",
-  //           backgroundColor: "#303030",
-  //         }}
-  //       >
-  //         View Profile
-  //       </AdvButton>
-  //     </Card.Body>
-  //   </Card>
-  // );
-
   return (
-    <BorderCard>
-      <h2>{name}</h2>
-      <AdvButton
-        onClick={() => onClick(props.dog.journal.id)}
-        style={{
-          width: "auto",
-          color: "#F1F1F1",
-          backgroundColor: "#303030",
-        }}
-      >
-        View Journal
-      </AdvButton>
+    <BorderCardAdv
+      style={{
+        backgroundColor: "#f8f8f8",
+        fontFamily: "specialElite, cursive",
+      }}
+    >
+      <h2 style={{ marginTop: ".5em" }}>{name}</h2>
       <AdvButton
         onClick={() => props.onSelect(props.dog.id)}
         style={{
+          marginTop: "2em",
           width: "auto",
           color: "#F1F1F1",
-          backgroundColor: "#303030",
+          backgroundColor: "#0a55c5",
         }}
       >
         View Profile
       </AdvButton>
-    </BorderCard>
+      <AdvButton
+        onClick={() => onClick(props.dog.journal.id)}
+        style={{
+          marginTop: "2em",
+          width: "auto",
+          color: "#F1F1F1",
+          backgroundColor: "#0a55c5",
+        }}
+      >
+        View Journal
+      </AdvButton>
+    </BorderCardAdv>
   );
 };
 

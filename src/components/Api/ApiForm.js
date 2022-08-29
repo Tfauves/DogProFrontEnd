@@ -41,7 +41,11 @@ const ApiForm = (props) => {
           />
         </InlineInputContainer>
         <AdvButton
-          style={{ marginTop: "10px", backgroundColor: "#0a55c5" }}
+          style={{
+            marginTop: "10px",
+            backgroundColor: "#0a55c5",
+            color: "#F1F1F1",
+          }}
           variant="primary"
           size="lg"
           type="submit"
