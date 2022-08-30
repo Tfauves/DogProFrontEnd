@@ -25,23 +25,24 @@ const JournalForm = (props) => {
   return (
     <div style={{ justifyContent: "center" }}>
       <Form onSubmit={handleSubmit} style={{ maxWidth: "800px", width: "100" }}>
-        <InlineInputContainer>
-          <TypeSelect />
-        </InlineInputContainer>
         {/* <InlineInputContainer>
+          <TypeSelect />
+        </InlineInputContainer> */}
+
+        <InlineInputContainer>
           <Select
-            id="typeSelect"
+            id="type"
             onChange={handleChange}
             type="text"
-            value={query.id}
+            value={query.type}
           >
-            <option value={"1"}>grooming</option>
-            <option value={"2"}>medical</option>
-            <option value={"3"}>exercise</option>
-            <option value={"4"}>dietary</option>
+            <option value="1">grooming</option>
+            <option value="2">medical</option>
+            <option value="3">exercise</option>
+            <option value="4">dietary</option>
           </Select>
-        </InlineInputContainer> */}
-        <InlineInputContainer>
+        </InlineInputContainer>
+        {/* <InlineInputContainer>
           <Input
             id="type"
             placeholder="type id"
@@ -50,7 +51,15 @@ const JournalForm = (props) => {
             value={query.type}
             required
           />
-        </InlineInputContainer>
+        </InlineInputContainer> */}
+
+        {/* <label for="cars">Choose a car:</label>
+        <select name="cars" id="cars">
+          <option value={query.type}>grooming</option>
+          <option value="2">medical</option>
+          <option value="3">exercise</option>
+          <option value="4">dietary</option>
+        </select> */}
         <InlineInputContainer>
           <Input
             id="activity"
