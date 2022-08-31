@@ -51,16 +51,15 @@ const Owners = (props) => {
           // backgroundColor: "red",
           width: "100%",
           height: "100vh",
-          // display: "flex",
         }}
       >
         <div
           style={{
             // backgroundColor: "blue",
-            width: "20vw",
+            width: "300px",
+            height: "100vh",
             backgroundImage: `url(${image})`,
             backgroundSize: "cover",
-            display: "flex",
           }}
         >
           <div
@@ -69,7 +68,6 @@ const Owners = (props) => {
               flex: 1,
               flexDirection: "column",
               alignItems: "center",
-              objectFit: "contain",
             }}
           >
             <img
@@ -86,7 +84,19 @@ const Owners = (props) => {
               height={250}
               alt="placeholder img"
             />
-            <h1>{owner.name.toUpperCase()}</h1>
+            <h1 style={{ marginTop: ".5em" }}>{owner.name.toUpperCase()}</h1>
+            <div>
+              <AdvButton
+                onClick={onClick}
+                style={{
+                  width: "auto",
+                  color: "#F1F1F1",
+                  backgroundColor: "#0a55c5",
+                }}
+              >
+                <FontAwesomeIcon icon={faPaw} /> Add Dog
+              </AdvButton>
+            </div>
           </div>
         </div>
 
@@ -101,22 +111,13 @@ const Owners = (props) => {
             marginLeft: "6em",
           }}
         >
-          <div
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              marginTop: "1em",
-              textAlign: "center",
-              textDecorationLine: "underline",
-              marginLeft: "6em",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
+          <div>
             <h1
               style={{
                 fontFamily: "Poppins, sans-serif",
                 marginTop: "2em",
-                fontSize: "3em",
+                position: "absolute",
+                fontSize: "4em",
                 alignItems: "center",
                 letterSpacing: "13px",
                 display: "flex",
@@ -135,27 +136,14 @@ const Owners = (props) => {
             flexDirection: "row",
             flexWrap: "wrap",
             minWidth: "100px",
-            justifyContent: "center",
             width: "75%",
             height: "20em",
             marginTop: "20em",
             marginLeft: "-48em",
           }}
         >
-          <div style={{}}>
+          <div style={{ alignItems: "center" }}>
             <Dogs />
-          </div>
-          <div>
-            <AdvButton
-              onClick={onClick}
-              style={{
-                width: "auto",
-                color: "#F1F1F1",
-                backgroundColor: "#0a55c5",
-              }}
-            >
-              <FontAwesomeIcon icon={faPaw} /> Add Dog
-            </AdvButton>
           </div>
         </div>
       </div>

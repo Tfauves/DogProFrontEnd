@@ -39,7 +39,18 @@ const Dogs = () => {
     navigate(`/dogProfile/${dogId}`);
   };
 
-  return <div>{loading ? <p>Loading...</p> : displayDogs()}</div>;
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        minWidth: "100px",
+      }}
+    >
+      {loading ? <p>Loading...</p> : displayDogs()}
+    </div>
+  );
 };
 
 export default Dogs;
