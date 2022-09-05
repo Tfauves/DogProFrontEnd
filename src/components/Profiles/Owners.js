@@ -115,7 +115,7 @@ const Owners = (props) => {
             <h1
               style={{
                 fontFamily: "Poppins, sans-serif",
-                marginTop: "2em",
+                marginTop: "1em",
                 position: "absolute",
                 fontSize: "4em",
                 alignItems: "center",
@@ -138,7 +138,7 @@ const Owners = (props) => {
             minWidth: "100px",
             width: "75%",
             height: "20em",
-            marginTop: "20em",
+            marginTop: "15em",
             marginLeft: "-48em",
           }}
         >

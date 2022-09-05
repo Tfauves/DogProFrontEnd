@@ -20,7 +20,28 @@ const Dog = (props) => {
         fontFamily: "specialElite, cursive",
       }}
     >
-      <h2 style={{ marginTop: ".5em" }}>{name}</h2>
+      <div
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          display: "flex",
+        }}
+      >
+        <img
+          style={{ borderRadius: "100px", marginTop: ".5em" }}
+          src={
+            avatar.url
+              ? avatar.url
+              : "https://stonegatesl.com/wp-content/uploads/2021/01/avatar.jpg"
+          }
+          width={150}
+          height={150}
+          alt="placeholder img"
+        />
+        <h2 style={{ justifyContent: "center", alignItems: "center" }}>
+          {name}
+        </h2>
+      </div>
       <AdvButton
         onClick={() => props.onSelect(props.dog.id)}
         style={{
