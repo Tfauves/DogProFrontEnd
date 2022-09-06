@@ -41,7 +41,7 @@ const DeleteEntry = (props) => {
     deleteEntry();
   };
 
-  return <AdvButton onclick={console.log("hello")}>delete entry</AdvButton>;
+  return <AdvButton onclick={deleteOnClick}>delete entry</AdvButton>;
 };
 
 export default DeleteEntry;

@@ -16,6 +16,7 @@ const Dog = (props) => {
   return (
     <BorderCardAdv
       style={{
+        width: "13em",
         backgroundColor: "#f8f8f8",
         fontFamily: "specialElite, cursive",
       }}
@@ -28,42 +29,45 @@ const Dog = (props) => {
         }}
       >
         <img
-          style={{ borderRadius: "100px", marginTop: ".5em" }}
+          style={{ borderRadius: "5px", marginTop: ".5em" }}
           src={
             avatar.url
               ? avatar.url
               : "https://stonegatesl.com/wp-content/uploads/2021/01/avatar.jpg"
           }
-          width={150}
-          height={150}
+          // width={150}
+          // height={150}
           alt="placeholder img"
         />
         <h2 style={{ justifyContent: "center", alignItems: "center" }}>
           {name}
         </h2>
       </div>
-      <AdvButton
-        onClick={() => props.onSelect(props.dog.id)}
-        style={{
-          marginTop: "2em",
-          width: "auto",
-          color: "#F1F1F1",
-          backgroundColor: "#0a55c5",
-        }}
-      >
-        View Profile
-      </AdvButton>
-      <AdvButton
-        onClick={() => onClick(props.dog.journal.id)}
-        style={{
-          marginTop: "2em",
-          width: "auto",
-          color: "#F1F1F1",
-          backgroundColor: "#0a55c5",
-        }}
-      >
-        View Journal
-      </AdvButton>
+      <div>
+        <AdvButton
+          onClick={() => props.onSelect(props.dog.id)}
+          style={{
+            marginTop: "1.5em",
+            width: "auto",
+            color: "#F1F1F1",
+            backgroundColor: "#0a55c5",
+          }}
+        >
+          View Profile
+        </AdvButton>
+        <AdvButton
+          onClick={() => onClick(props.dog.journal.id)}
+          style={{
+            marginTop: "1.5em",
+            width: "auto",
+            height: "auto",
+            color: "#F1F1F1",
+            backgroundColor: "#0a55c5",
+          }}
+        >
+          View Journal
+        </AdvButton>
+      </div>
     </BorderCardAdv>
   );
 };

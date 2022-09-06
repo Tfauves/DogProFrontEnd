@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import DeleteEntry from "./DeleteEntry";
 
 const DisplayEntries = (props) => {
   //   return props.journal.entry.map((entry) => (
@@ -35,6 +36,7 @@ const DisplayEntries = (props) => {
               <p>Activity: {activity}</p>
             </ListGroup.Item>
           </ListGroup>
+          {/* <DeleteEntry entryId={id} /> */}
         </Card>
       </div>
     )

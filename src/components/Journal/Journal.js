@@ -8,6 +8,7 @@ import JournalEntry from "./JournalEntry";
 import DisplayEntries from "./Entry";
 import bannerImg from "../../assets/journalBanner.jpg";
 import Splash from "./../common/Splash";
+import DeleteEntry from "./DeleteEntry";
 
 const Journal = (props) => {
   const params = useParams();

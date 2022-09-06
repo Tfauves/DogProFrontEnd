@@ -3,8 +3,8 @@ import Form from "../common/Form";
 import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
 import AdvButton from "../common/AdvButton";
-import TypeSelect from "../EntryDropdown/TypeSelect";
 import Select from "./../common/Select";
+import Type from "./Type";
 
 const JournalForm = (props) => {
   const { query, updateForm, onSubmit } = props;
@@ -25,41 +25,22 @@ const JournalForm = (props) => {
   return (
     <div style={{ justifyContent: "center" }}>
       <Form onSubmit={handleSubmit} style={{ maxWidth: "800px", width: "100" }}>
-        {/* <InlineInputContainer>
-          <TypeSelect />
-        </InlineInputContainer> */}
-
         <InlineInputContainer>
           <Select
             id="type"
             onChange={handleChange}
             type="text"
             value={query.type}
+            defaultValue={"default"}
           >
+            <option value={"default"}>Select Type</option>
             <option value="1">grooming</option>
             <option value="2">medical</option>
             <option value="3">exercise</option>
             <option value="4">dietary</option>
           </Select>
         </InlineInputContainer>
-        {/* <InlineInputContainer>
-          <Input
-            id="type"
-            placeholder="type id"
-            type="text"
-            onChange={handleChange}
-            value={query.type}
-            required
-          />
-        </InlineInputContainer> */}
 
-        {/* <label for="cars">Choose a car:</label>
-        <select name="cars" id="cars">
-          <option value={query.type}>grooming</option>
-          <option value="2">medical</option>
-          <option value="3">exercise</option>
-          <option value="4">dietary</option>
-        </select> */}
         <InlineInputContainer>
           <Input
             id="activity"
@@ -73,9 +54,9 @@ const JournalForm = (props) => {
 
         <AdvButton
           style={{
+            marginTop: "10px",
             width: "auto",
             backgroundColor: "#0a55c5",
-            marginTop: ".5em",
           }}
           variant="primary"
           size="lg"
