@@ -8,7 +8,7 @@ import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { apiHost } from "../../config";
 import AdvButton from "../common/AdvButton";
 import { useNavigate } from "react-router-dom";
-import DeleteDog from "./DeleteDog";
+import DeleteDog from "./DogUtil/DeleteDog";
 
 const DogProfile = (props) => {
   const params = useParams();

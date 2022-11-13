@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import NewDogForm from "./NewDogForm";
 import axios from "axios";
-import { AuthContext } from "./Providers/AuthProvider";
-import loginbackground from "../assets/loginbackground.jpg";
+import loginbackground from "../../../assets/loginbackground.jpg";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const NewDog = () => {
   const host = "http://localhost:8080";

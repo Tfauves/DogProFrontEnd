@@ -1,9 +1,9 @@
 import React from "react";
-import InlineInputContainer from "./common/InlineInputContainer";
-import Input from "./common/Input";
-import AdvButton from "./common/AdvButton";
-import Form from "./common/Form";
-import image from "../assets/loginSplash.jpg";
+import InlineInputContainer from "../../common/InlineInputContainer";
+import Input from "../../common/Input";
+import AdvButton from "../../common/AdvButton";
+import Form from "../../common/Form";
+import image from "../../../assets/loginSplash.jpg";
 
 const NewDogForm = (props) => {
   const { updateForm, onSubmit } = props;

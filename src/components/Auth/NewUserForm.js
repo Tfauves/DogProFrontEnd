@@ -4,6 +4,7 @@ import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import AdvButton from "../common/AdvButton";
 import image from "../../assets/loginSplash.jpg";
+import packimg from "../../assets/dogPack.jpg";
 
 const NewUserForm = (props) => {
   const { query, updateForm, onSubmit } = props;
@@ -18,15 +19,14 @@ const NewUserForm = (props) => {
   return (
     <div
       style={{
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${packimg})`,
         backgroundSize: "cover",
         height: "50vh",
         display: "flex",
         flexDirection: "row",
         margin: "3rem 0rem",
         padding: "8px",
-        maxWidth: "900px",
-        width: "100%",
+        width: "1000px",
       }}
     >
       <Form
@@ -34,6 +34,7 @@ const NewUserForm = (props) => {
         style={{
           maxWidth: "800px",
           width: "100%",
+          marginTop: "20em",
         }}
       >
         <InlineInputContainer>

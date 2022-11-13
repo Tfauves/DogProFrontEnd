@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { AuthContext } from "../Providers/AuthProvider";
-import { apiHost } from "../../config";
+import { apiHost } from "../../../config";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const DeleteDog = (props) => {
   const params = useParams();

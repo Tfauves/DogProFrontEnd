@@ -87,26 +87,25 @@ const Register = () => {
         backgroundSize: "cover",
       }}
     >
-      <div
-        style={{
-          height: "25vh",
-          width: "100%",
-          backgroundImage: `url(${packimg})`,
-          backgroundSize: "cover",
-          marginTop: "-3em",
-        }}
-      ></div>
       <h1
         style={{
           marginTop: "1em",
           paddingBottom: ".5em",
           fontFamily: "Poppins, sans-serif",
           letterSpacing: "8px",
+          zIndex: 9,
         }}
       >
         Join The Pack
       </h1>
-      <NewUserForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
+
+      <div>
+        <NewUserForm
+          query={query}
+          updateForm={updateForm}
+          onSubmit={onSubmit}
+        />
+      </div>
     </div>
   );
 };

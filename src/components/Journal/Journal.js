@@ -54,7 +54,7 @@ const Journal = (props) => {
       >
         <Splash
           image={bannerImg}
-          style={{ marginTop: "-12em", height: "25vh", width: "100%" }}
+          style={{ marginTop: "-18em", height: "25vh", width: "100%" }}
         />
         {/* <div
           style={{

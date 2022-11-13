@@ -26,14 +26,13 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
         flexDirection: "row",
         margin: "3rem 0rem",
         padding: "8px",
-        maxWidth: "900px",
-        width: "800px",
+        width: "1000px",
       }}
     >
       <Form
         onSubmit={handleSubmit}
         style={{
-          marginTop: "5em",
+          marginTop: "20em",
           maxWidth: "800px",
           width: "100%",
         }}
@@ -60,7 +59,7 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
         </InlineInputContainer>
         <AdvButton
           style={{
-            marginTop: "10px",
+            marginTop: ".5em",
             width: "auto",
             backgroundColor: "#0a55c5",
           }}

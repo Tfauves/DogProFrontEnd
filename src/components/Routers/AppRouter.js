@@ -6,7 +6,7 @@ import Login from "../Auth/Login";
 import Register from "../Auth/Register";
 import Profile from "../Profiles/Profile";
 import Dogs from "../Profiles/Dogs";
-import NewDog from "../NewDog";
+import NewDog from "../Profiles/DogUtil/NewDog";
 import DogProfile from "../Profiles/DogProfile";
 import UpdatedProfile from "../Profiles/UpdateProfile";
 import Journal from "../Journal/Journal";

@@ -45,7 +45,7 @@ const ApiInfo = (props) => {
             backgroundImage: `url(${dnaImg})`,
             height: "25vh",
             width: "100%",
-            marginTop: "-32em",
+            marginTop: "-36em",
             justifyContent: "center",
             backgroundSize: "cover",
           }}
