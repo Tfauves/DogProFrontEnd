@@ -1,8 +1,6 @@
 import React from "react";
-import BorderCard from "../common/BorderCard";
 import AdvButton from "../common/AdvButton";
 import { useNavigate } from "react-router-dom";
-import Card from "react-bootstrap/Card";
 import BorderCardAdv from "./../common/BorderCardAdv";
 
 const Dog = (props) => {
@@ -35,8 +33,6 @@ const Dog = (props) => {
               ? avatar.url
               : "https://stonegatesl.com/wp-content/uploads/2021/01/avatar.jpg"
           }
-          // width={150}
-          // height={150}
           alt="placeholder img"
         />
         <h2 style={{ justifyContent: "center", alignItems: "center" }}>

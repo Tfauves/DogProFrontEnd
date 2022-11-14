@@ -3,7 +3,6 @@ import Form from "../common/Form";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import AdvButton from "../common/AdvButton";
-import image from "../../assets/loginSplash.jpg";
 import packimg from "../../assets/dogPack.jpg";
 
 const NewUserForm = (props) => {

@@ -43,7 +43,6 @@ const Journal = (props) => {
     return (
       <div
         style={{
-          // backgroundImage: `url(${bannerImg})`,
           display: "flex",
           flexDirection: "column",
           width: "100%",
@@ -56,28 +55,12 @@ const Journal = (props) => {
           image={bannerImg}
           style={{ marginTop: "-18em", height: "25vh", width: "100%" }}
         />
-        {/* <div
-          style={{
-            marginTop: "-3em",
-            // backgroundColor: "green",
-            height: "5em",
-            justifyContent: "center",
-          }}
-        >
-          <h1
-            style={{ marginBottom: "1em", fontFamily: "Poppins, sans-serif" }}
-          >
-            Journal
-          </h1>
-        </div> */}
         <div
           style={{
-            // backgroundColor: "orange",
             width: "75%",
             height: "20em",
             justifyContent: "center",
             alignItems: "center",
-            // marginTop: "2em",
             display: "flex",
             flexDirection: "column",
           }}
@@ -91,7 +74,6 @@ const Journal = (props) => {
           </h1>
           <div
             style={{
-              // backgroundColor: "pink",
               height: "10em",
               width: "60%",
               alignItems: "center",
@@ -113,7 +95,6 @@ const Journal = (props) => {
             flexWrap: "wrap",
             minWidth: "100px",
             justifyContent: "center",
-            // backgroundColor: "blue",
             width: "75%",
             height: "20em",
             marginTop: "3em",
@@ -122,21 +103,6 @@ const Journal = (props) => {
           <DisplayEntries journal={journal} />
         </div>
       </div>
-      // <div style={{ display: "flex" }}>
-      //   <div style={{ marginTop: "3em" }}>
-      //     <h1>Journal Home</h1>
-      //     <DisplayEntries journal={journal} />
-      //   </div>
-      //   <div style={{ marginTop: "6em" }}>
-      //     <h1>Add A New Entry</h1>
-      //     <h3>Select a Entry Type</h3>
-      //     <JournalEntry
-      //       query={journal.entry}
-      //       journalId={journalId}
-      //       onAdd={updateJournal}
-      //     />
-      //   </div>
-      // </div>
     );
   };
   return (

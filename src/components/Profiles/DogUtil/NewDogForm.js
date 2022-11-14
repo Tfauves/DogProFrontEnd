@@ -38,27 +38,12 @@ const NewDogForm = (props) => {
         }}
       >
         <InlineInputContainer>
-          <Input
-            id="name"
-            placeholder="Name"
-            onChange={handleChange}
-            // value={query.name}
-          />
+          <Input id="name" placeholder="Name" onChange={handleChange} />
 
-          <Input
-            id="age"
-            placeholder="Age"
-            onChange={handleChange}
-            // value={query.age}
-          />
+          <Input id="age" placeholder="Age" onChange={handleChange} />
         </InlineInputContainer>
         <InlineInputContainer>
-          <Input
-            id="weight"
-            placeholder="Weight"
-            onChange={handleChange}
-            // value={query.weight}
-          />
+          <Input id="weight" placeholder="Weight" onChange={handleChange} />
         </InlineInputContainer>
         <InlineInputContainer>
           <Input id="sex" placeholder="Sex" onChange={handleChange} />

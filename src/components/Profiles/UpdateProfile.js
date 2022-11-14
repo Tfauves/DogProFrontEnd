@@ -6,7 +6,6 @@ import EditProfileForm from "./EditProfileForm";
 import { apiHost } from "../../config";
 import Splash from "../common/Splash";
 import banner from "../../assets/banner.jpg";
-import { Container } from "react-bootstrap";
 
 const UpdatedProfile = () => {
   let navigate = useNavigate();

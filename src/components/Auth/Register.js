@@ -4,9 +4,6 @@ import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import loginbackground from "../../assets/loginbackground.jpg";
-import { apiHost } from "../../config";
-import Splash from "../common/Splash";
-import packimg from "../../assets/dogPack.jpg";
 
 const Register = () => {
   let navigate = useNavigate();

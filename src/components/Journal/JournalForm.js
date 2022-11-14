@@ -4,7 +4,6 @@ import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
 import AdvButton from "../common/AdvButton";
 import Select from "./../common/Select";
-import Type from "./Type";
 
 const JournalForm = (props) => {
   const { query, updateForm, onSubmit } = props;

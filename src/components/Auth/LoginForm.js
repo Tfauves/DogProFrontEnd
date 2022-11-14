@@ -3,8 +3,6 @@ import Form from "../common/Form";
 import Input from "../common/Input";
 import InlineInputContainer from "../common/InlineInputContainer";
 import bark from "../../assets/barkalt1.jpg";
-import Splash from "../common/Splash";
-import Container from "react-bootstrap/esm/Container";
 import AdvButton from "../common/AdvButton";
 
 const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {

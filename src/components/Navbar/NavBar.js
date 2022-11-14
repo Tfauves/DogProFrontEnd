@@ -63,47 +63,12 @@ const NavBar = (props) => {
                 update profile
               </NavDropdown.Item>
               <NavDropdown.Item href="/logout">logout</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+              {/* to add link and divider */}
+              {/* <NavDropdown.Divider /> */}
+              {/* <NavDropdown.Item href="#action/3.4">
                 Separated link
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
             </NavDropdown>
-
-            {/* <Dropdown>
-              <Dropdown.Toggle
-                style={{
-                  fontFamily: "specialElite, cursive",
-                  backgroundColor: "#303030",
-                }}
-                id="dropdown"
-              >
-                Dropdown Button
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item href="/profile">profile</Dropdown.Item>
-                <Dropdown.Item href="/updateProfile">
-                  edit profile
-                </Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown> */}
-
-            {/* <NavButton
-              style={{ fontFamily: "specialElite, cursive" }}
-              to="/profile"
-              label="profile"
-            />
-            <NavButton
-              style={{ fontFamily: "specialElite, cursive" }}
-              to="/updateProfile"
-              label="edit profile"
-            /> */}
-            {/* <NavButton
-              style={{ fontFamily: "specialElite, cursive" }}
-              to="/logout"
-              label="logout"
-            /> */}
           </Fragment>
         ) : (
           <Fragment>
