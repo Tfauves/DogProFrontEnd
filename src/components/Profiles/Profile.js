@@ -122,18 +122,6 @@ const Profile = (props) => {
             Your Dogs
           </h1>
         </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignContent: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "row",
-          }}
-        >
-          <Dogs />
-        </div>
         <div>
           <AdvButton
             onClick={onClick}
